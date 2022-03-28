@@ -9,7 +9,7 @@ import List from './pages/list/List';
 import Detail from './pages/detail/Detail';
 import LogIn from './pages/login/LogIn';
 import SignUp from './pages/signup/SignUp';
-import MyPage from './pages/mypage/Mypage';
+import MyPage from './pages/mypage/MyPage';
 
 function Router() {
   return (
