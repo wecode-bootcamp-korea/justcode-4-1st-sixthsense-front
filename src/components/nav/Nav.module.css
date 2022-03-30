@@ -22,7 +22,7 @@
   transform: translate(0, -50%);
 }
 
-.modals {
+.centerMenu {
   display: flex;
   position: absolute;
   top: 50%;
@@ -30,18 +30,19 @@
   transform: translate(-50%, -50%);
 }
 
-.modalWrapper {
+.modalButton {
   height: 20px;
   line-height: 20px;
+  cursor: pointer;
 }
 
-.modalWrapper:last-child {
+.modalButton:last-child {
   margin-left: 15px;
   padding-left: 15px;
   border-left: 1px solid black;
 }
 
-.menu {
+.rightMenu {
   display: flex;
   position: absolute;
   top: 50%;
@@ -54,6 +55,8 @@
   height: 25px;
   line-height: 25px;
   margin-right: 35px;
+  color: black;
+  text-decoration: none;
 }
 .menuList:nth-child(5) {
   padding-left: 30px;
