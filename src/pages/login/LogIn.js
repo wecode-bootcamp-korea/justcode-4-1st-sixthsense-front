@@ -7,7 +7,7 @@ function LogIn() {
   return (
     <div className="login-box">
       <div className="login-title-box">
-        <h1 className="login-title">LOGIN</h1>
+        <h1 className="login-title">L O G I N</h1>
         <h2 className="login-sub-title">로그인</h2>
       </div>
 
@@ -30,7 +30,7 @@ function LogIn() {
 
       <div className="login-button-box">
         <button className="login-button" id="login-button">
-          LOGIN
+          L O G I N
         </button>
         <button className="login-button" id="non-member-reservation-button">
           비회원 예약 조회
