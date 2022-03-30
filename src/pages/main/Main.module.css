@@ -1,0 +1,75 @@
+.sliderBig {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 30px;
+  height: 800px;
+  border: 1px solid black;
+}
+.first {
+  padding-top: 80px;
+  height: 880px;
+}
+
+.sliderMedium {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 30px;
+  height: 600px;
+  border: 1px solid black;
+}
+
+.sliderSmall {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 30px;
+  height: 400px;
+  border: 1px solid black;
+}
+
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 30px;
+  height: 200px;
+  background: url('https://cdn.pixabay.com/photo/2017/12/11/21/17/bridge-3013297_960_720.jpg');
+  background-size: cover;
+  border: 1px solid black;
+}
+
+.travelList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 30px;
+  height: 1500px;
+  border: 1px solid black;
+}
+
+.hashtagList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 30px;
+  height: 500px;
+  border: 1px solid black;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 30px;
+  height: 250px;
+  border: 1px solid black;
+}
