@@ -1,12 +1,36 @@
 .footer {
-  // width: 100%;
-  // border: 1px solid red;
   background-color: #f5f5f5;
-  padding: 175px 50px;
-
+  padding: 175px 30px 70px 30px;
   padding-top: 50px;
-  .logo {
-    // border: 1px solid red;
-    padding-bottom: 40px;
+
+  display: flex;
+  justify-content: space-between;
+
+  .footerLeft {
+    .logo {
+      padding-bottom: 40px;
+    }
+
+    .footerDetail {
+      font-size: 12px;
+      line-height: 30px;
+    }
+
+    .copyRight {
+      margin-top: 40px;
+      font-size: 10px;
+    }
+  }
+
+  .footerRight {
+    .icon {
+      letter-spacing: 10px;
+      margin-bottom: 45px;
+    }
+
+    .list {
+      font-size: 12px;
+      line-height: 30px;
+    }
   }
 }

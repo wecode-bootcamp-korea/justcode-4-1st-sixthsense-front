@@ -4,17 +4,45 @@ import footer from './Footer.module.scss';
 function Footer() {
   return (
     <div className={footer.footer}>
-      <div className={footer.logo}>
-        s t a y <br />
-        forest
+      <div className={footer.footerLeft}>
+        <div className={footer.logo}>
+          S T A Y <br />
+          FOREST
+        </div>
+        <div className={footer.footerDetail}>
+          상호 : ㈜스테이포레스트 &nbsp;&nbsp; 대표자 : 홍길동
+          <br />
+          서울특별시 서울구 서울역로1길 12, 1층(서울동) &nbsp;&nbsp; TEL:
+          1234-5678 &nbsp;&nbsp; help@stayforest.com
+          <br />
+          사업자등록번호: 123-45-67890&nbsp;&nbsp;통신판매업신고 :
+          제1234-서울종로-1234호[사업자정보확인]
+          <br />
+          관광사업자등록 : 일반여행업 1234-123456호(종로구청)
+        </div>
+        <div className={footer.copyRight}>© STAYFOREST</div>
       </div>
-      <div className={footer.test}>
-        상호 : ㈜스테이포레스트대표자 : 이상묵 서울특별시 종로구 자하문로9길 24,
-        2층(통인동)TEL: 1670-4123help@stayfolio.com 사업자등록번호:
-        676-87-00055통신판매업신고 : 제2015-서울종로-0499호[사업자정보확인]
-        관광사업자등록 : 일반여행업 2018-000049호(종로구청)
+      <div className={footer.footerRight}>
+        <div className={footer.icon}>
+          <i class="fa-brands fa-facebook-f" />
+          <i class="fa-brands fa-instagram" />
+          <i class="fa-solid fa-n" />
+          <i class="fab fa-youtube" />
+        </div>
+        <div className={footer.list}>
+          ABOUT <br />
+          4POINT OF VIEW
+          <br />
+          NEWSLETTER
+          <br />
+          CAREERS
+          <br />
+          CONTACT US
+          <br />
+          이용약관 <br />
+          <p>개인정보 처리방침</p>
+        </div>
       </div>
-      <div>asdf</div>
     </div>
   );
 }
