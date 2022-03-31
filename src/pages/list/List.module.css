@@ -1,0 +1,121 @@
+button {
+  font-size: 16px;
+}
+
+.listHeaderWap {
+  display: flex;
+  flex-direction: column;
+  padding: 180px 0 100px 0;
+}
+
+.listHeaderWap p:not(:last-child) {
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 15px;
+}
+
+.listFilter {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 0 30px;
+  max-width: 1500px;
+  min-width: 1100px;
+}
+
+.listFilterSearch {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  border-top: 3px solid black;
+  border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+.listFilterSearch * {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+  padding-right: 15px;
+  width: max-content;
+}
+
+.searchBar {
+  margin-right: 30px;
+  font-weight: bold;
+}
+
+.searchBar input[type='search'] {
+  margin-right: 10px;
+  padding: 8px 3px 8px 10px;
+  border: 1px solid silver;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.searchBar button {
+  padding: 8px 75px 8px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(243, 243, 243);
+}
+
+.modalOverlay {
+  display: none;
+}
+
+.reButton {
+  padding-right: 0px;
+}
+
+.reButton button {
+  border: 1px solid silver;
+  border-radius: 4px;
+  background-color: transparent;
+  padding: 3px 4px 0 4px;
+}
+
+.reButtonImg {
+  padding: 7px;
+  width: 30px;
+  height: auto;
+}
+
+.listFilterNoneSearch {
+  display: flex;
+  border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+.listFilterNoneSearch div {
+  margin-right: 20px;
+  padding: 10px 0;
+}
+
+.listFilterNoneSearch div button {
+  padding: 8px 10px 8px 15px;
+  border: 1px solid silver;
+  border-radius: 4px;
+  background-color: transparent;
+  width: 200px;
+  background-image: url(https://user-images.githubusercontent.com/85507868/160812110-52a487f9-7744-4979-86dc-b7a6385ba96f.png);
+  background-position: 90% center;
+  background-size: 13px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  text-align: left;
+}
+
+.listSearchbutton {
+  margin-top: 40px;
+}
+
+.listSearchbutton button {
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px 10px 30px;
+  width: max-content;
+  background-color: black;
+  color: whitesmoke;
+  letter-spacing: 3px;
+}
