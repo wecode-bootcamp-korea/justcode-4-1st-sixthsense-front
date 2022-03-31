@@ -1,5 +1,7 @@
 import React from 'react';
 import style from './SignUp.module.css';
+import { IoIosArrowDown } from 'react-icons/io';
+import { GoCheck } from 'react-icons/go';
 
 function SignUp() {
   return (
@@ -40,12 +42,16 @@ function SignUp() {
           />
           <div className={style.checkbox}>
             <i class="fa-solid fa-check" />
+            <GoCheck />
             영문
             <i class="fa-solid fa-check" />
+            <GoCheck />
             숫자
             <i class="fa-solid fa-check" />
+            <GoCheck />
             특수문자
             <i class="fa-solid fa-check" />
+            <GoCheck />
             8자 이상 20자 이하
           </div>
         </div>
@@ -733,28 +739,66 @@ function SignUp() {
           사용자 약관 전체동의
         </div>
         <div className={style.checkbtn}>
-          <input type="checkbox" id="check" name="xxx" value="yyy" />
-          <label for="check" />
-          서비스 이용 약관 동의 (필수)
+          <span>
+            <input type="checkbox" id="check" name="xxx" value="yyy" />
+            <label for="check" />
+            서비스 이용 약관 동의 (필수)
+          </span>
+
+          <span className={style.arrow}>
+            <span>
+              <IoIosArrowDown />
+            </span>
+          </span>
         </div>
         <div className={style.checkbtn}>
-          <input type="checkbox" id="check" name="xxx" value="yyy" />
-          <label for="check" />
-          개인정보 처리방침 동의 (필수)
+          <span>
+            <input type="checkbox" id="check" name="xxx" value="yyy" />
+            <label for="check" /> 개인정보 처리방침 동의 (필수)
+          </span>
+
+          <span className={style.arrow}>
+            <span>
+              <IoIosArrowDown />
+            </span>
+          </span>
         </div>
         <div className={style.checkbtn}>
-          <input type="checkbox" id="check" name="xxx" value="yyy" />
-          <label for="check" />만 14세 이상 확인 (필수)
+          <span>
+            <input type="checkbox" id="check" name="xxx" value="yyy" />
+            <label for="check" />만 14세 이상 확인 (필수)
+          </span>
+          <span className={style.arrow}>
+            <span>
+              <IoIosArrowDown />
+            </span>
+          </span>
         </div>
         <div className={style.checkbtn}>
-          <input type="checkbox" id="check" name="xxx" value="yyy" />
-          <label for="check" />
-          평생회원제 동의 (선택)
+          <span>
+            <input type="checkbox" id="check" name="xxx" value="yyy" />
+            <label for="check" />
+            평생회원제 동의 (선택)
+          </span>
+
+          <span className={style.arrow}>
+            <span>
+              <IoIosArrowDown />
+            </span>
+          </span>
         </div>
         <div className={style.checkbtn}>
-          <input type="checkbox" id="check" name="xxx" value="yyy" />
-          <label for="check" />
-          마케팅 정보 수신 동의 (선택)
+          <span>
+            <input type="checkbox" id="check" name="xxx" value="yyy" />
+            <label for="check" />
+            마케팅 정보 수신 동의 (선택)
+          </span>
+
+          <span className={style.arrow}>
+            <span>
+              <IoIosArrowDown />
+            </span>
+          </span>
         </div>
       </div>
       <div className={style.signupbtn}>
@@ -771,16 +815,16 @@ function SignUp() {
         <span className={style.snssignuplink}>SNS 계정으로 로그인하기</span>
         <div className={style.snsemoticonbox}>
           <span className={style.emoticonbox}>
-            a<i />
+            <img src="./img/icon" />
           </span>
           <span>
-            a<i />
+            <img src="./img/icon" />
           </span>
           <span>
-            a<i />
+            <img src="./img/icon" />
           </span>
           <span>
-            a<i />
+            <img src="./img/icon" />
           </span>
         </div>
       </div>

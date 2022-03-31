@@ -150,7 +150,14 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+.arrow {
+  display: flex;
+  align-items: center;
+}
+
 .checkbtn {
+  display: flex;
+  justify-content: space-between;
   margin: 3px 0px;
   padding-bottom: 6px;
   font-size: 13px;
