@@ -19,8 +19,7 @@
 .modal {
   padding: 20px;
   background: white;
-  width: 60vw;
-  height: 90vh;
+  width: 1100px;
   border-radius: 5px;
   box-shadow: 2px 2px 2px;
 }
@@ -31,9 +30,32 @@
 }
 
 .modalTitle {
-  width: 50vw;
+  width: 900px;
   display: flex;
   justify-content: space-between;
-  padding-bottom: 30px;
+  padding: 70px 0 20px 0;
   border-bottom: 1px solid gray;
+}
+input {
+  display: block;
+  margin: 20px auto;
+}
+.location {
+  display: flex;
+  justify-content: center;
+}
+.locationWrapper {
+  width: 400px;
+}
+.domestic {
+  padding-left: 20px;
+}
+ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li {
+  padding: 20px;
 }
