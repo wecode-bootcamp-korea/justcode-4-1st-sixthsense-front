@@ -1,16 +1,16 @@
 import React from 'react';
-import css from './Rooms.module.scss';
+import style from './Rooms.module.sstyle';
 const Rooms = () => {
   return (
-    <div className={css.container}>
-      <div className={css.gray_box}>
-        <div className={css.info}>
-          <h1 className={css.title}>ROOMS</h1>
-          <div className={css.border_line} />
-          <h4 className={css.description}>내려놓는 시간 내려 놓는 마음</h4>
+    <div className={style.container}>
+      <div className={style.gray_box}>
+        <div className={style.info}>
+          <h1 className={style.title}>ROOMS</h1>
+          <div className={style.border_line} />
+          <h4 className={style.description}>내려놓는 시간 내려 놓는 마음</h4>
         </div>
       </div>
-      <div className={css.white_box} />
+      <div className={style.white_box} />
     </div>
   );
 };

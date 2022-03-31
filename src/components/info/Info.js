@@ -1,15 +1,15 @@
 import React from 'react';
-import css from './Info.module.scss';
+import style from './Info.module.sstyle';
 
 const Info = () => {
   return (
-    <div className={css.container}>
-      <div className={css.topDescription}>
+    <div className={style.container}>
+      <div className={style.topDescription}>
         <h1>모든 것을 내려 놓으며, 비로소 느낄 수 있는 머무름의 시간</h1>
-        <p className={css.dormName}>어 연 스 테 이</p>
+        <p className={style.dormName}>어 연 스 테 이</p>
       </div>
-      <div className={css.middleLine} />
-      <div className={css.mainDescription}>
+      <div className={style.middleLine} />
+      <div className={style.mainDescription}>
         <p>
           어연 스테이는 전북 완주군 소양면 오성 한옥 마을 내에 위치한
           풀빌라입니다. 자연 친화적인 180평의 넓은 공간을 단독으로 사용할 수
@@ -20,7 +20,7 @@ const Info = () => {
           명상이나 사색에도 좋은 공간, 어연스테이 입니다.
         </p>
       </div>
-      <div className={css.bottomDescription}>
+      <div className={style.bottomDescription}>
         <p>
           20년 전에 지은 황토 주택을 리모델링하여 탄생한 어연스테이는 우드와
           화이트 톤으로 정갈하면서도 편안함을 추구합니다. 외부는 이국적이지만
