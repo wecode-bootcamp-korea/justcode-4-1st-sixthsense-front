@@ -1,4 +1,4 @@
-.loginbox {
+.signupbox {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,7 +6,7 @@
   width: 100%;
 }
 
-.logintitlebox {
+.signuptitlebox {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +16,7 @@
   border-bottom: 1px solid black;
 }
 
-.logintitle {
+.signuptitle {
   justify-content: center;
   align-items: center;
   height: 30px;
@@ -24,22 +24,30 @@
   font-size: 700;
 }
 
-.loginsubtitle {
+.signupsubtitle {
   justify-content: center;
   align-items: center;
   font-size: 15px;
 }
 
-.logininputbox {
+.signupinputbox {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  height: 170px;
+  height: 300px;
   width: 350px;
 }
 
-.logininput {
+.signupsmallinput {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 300px;
+  width: 350px;
+}
+
+.signupinput {
   opacity: 0.5;
   width: 100%;
   height: 50px;
@@ -47,7 +55,7 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-.loginbuttonbox {
+.signupbuttonbox {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,20 +64,20 @@
   width: 350px;
 }
 
-.loginbutton {
+.signupbutton {
   width: 100%;
   margin: 5px 0px;
   border: none;
 }
 
-.loginbutton:first-child {
+.signupbutton:first-child {
   height: 50px;
   background-color: black;
   color: white;
   font-weight: 100;
 }
 
-.loginbutton:last-child {
+.signupbutton:last-child {
   height: 40px;
   background-color: #d8d8d8;
   color: white;
@@ -84,14 +92,14 @@
   color: #676767;
 }
 
-.snsloginbox {
+.snssignupbox {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   height: 170px;
 }
-.snsloginlink {
+.snssignuplink {
   margin: 30px 0px;
   width: 100%;
 }
