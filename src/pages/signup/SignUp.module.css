@@ -62,14 +62,14 @@
   border: none;
 }
 
-.loginbutton:firstchild {
+.loginbutton:first-child {
   height: 50px;
   background-color: black;
   color: white;
   font-weight: 100;
 }
 
-.loginbutton:lastchild {
+.loginbutton:last-child {
   height: 40px;
   background-color: #d8d8d8;
   color: white;
@@ -77,7 +77,7 @@
 
 .linkbox {
   display: flex;
-  justify-content: spacebetween;
+  justify-content: space-between;
   align-items: center;
   height: 40px;
   width: 350px;
@@ -99,7 +99,7 @@
 .snsemoticonbox {
   display: flex;
   align-items: center;
-  justify-content: spacearound;
+  justify-content: space-around;
   width: 100%;
 }
 
