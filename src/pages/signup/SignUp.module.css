@@ -4,6 +4,7 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
+  margin-top: 80px;
 }
 
 .signuptitlebox {
@@ -35,16 +36,35 @@
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  height: 300px;
+  height: 500px;
   width: 350px;
+  margin-top: 20px;
+}
+
+.checkbox {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  opacity: 0.3;
 }
 
 .signupsmallinput {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 300px;
   width: 350px;
+}
+
+.signupsmallinput span {
+  font-size: 12px;
+}
+
+.selectcountry select {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  font-size: 15px;
 }
 
 .signupinput {
@@ -68,28 +88,10 @@
   width: 100%;
   margin: 5px 0px;
   border: none;
-}
-
-.signupbutton:first-child {
   height: 50px;
   background-color: black;
   color: white;
-  font-weight: 100;
-}
-
-.signupbutton:last-child {
-  height: 40px;
-  background-color: #d8d8d8;
-  color: white;
-}
-
-.linkbox {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 40px;
-  width: 350px;
-  color: #676767;
+  font-weight: 500;
 }
 
 .snssignupbox {
@@ -112,4 +114,44 @@
 }
 
 .emoticonbox {
+}
+
+.signupbtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 60px;
+  width: 350px;
+}
+
+.signupbtnbox {
+  width: 100%;
+  margin: 5px 0px;
+  border: none;
+  height: 60px;
+  background-color: black;
+  color: white;
+  font-weight: 500;
+}
+
+.checkbtnbox {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.headcheckbtn {
+  margin: 4px 0px;
+  padding: 6px 0px;
+  font-size: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.checkbtn {
+  margin: 3px 0px;
+  padding-bottom: 6px;
+  font-size: 13px;
 }
