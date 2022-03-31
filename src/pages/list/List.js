@@ -1,7 +1,34 @@
 import React from 'react';
+import { useState } from 'react';
+
+import SmallModal from '../../components/SmallModal/SmallModal';
+import BlackButton from '../../components/BlackButton/BlackButton';
+
 import style from '../list/List.module.css';
 
 function List() {
+  const [vis1, setVis1] = useState('hidden');
+  const [vis2, setvis2] = useState('hidden');
+  const [vis3, setVis3] = useState('hidden');
+
+  const layoutVisibleHandler = e => {
+    const index = Number(e.target.id);
+    const arr = [
+      [vis1, setVis1],
+      [vis2, setvis2],
+      [vis3, setVis3],
+    ];
+    arr[index][0] === 'hidden'
+      ? arr[index][1]('visible')
+      : arr[index][1]('hidden');
+  };
+
+  const totalLayourHandler = () => {
+    setVis1('hidden');
+    setvis2('hidden');
+    setVis3('hidden');
+  };
+
   return (
     <div>
       <center className={style.listHeaderWap}>
@@ -17,25 +44,6 @@ function List() {
               <input type="search" />
               <button>국내전체</button>
             </div>
-
-            <section className={style.modalOverlay}>
-              <div className="modalWindow">
-                <div className="title">
-                  <h2>어디로 떠날까요?</h2>
-                </div>
-                <div className="xButton">X</div>
-                <div>
-                  <div className="componet">
-                    <h3>국내</h3>
-                    <div>map으로 받기</div>
-                  </div>
-                  <div className="componet">
-                    <h3>해외</h3>
-                    <div>map으로</div>
-                  </div>
-                </div>
-              </div>
-            </section>
 
             <div className="checkIn">
               <p>체크인</p>
@@ -62,13 +70,64 @@ function List() {
         </div>
         <div className={style.listFilterNoneSearch}>
           <div>
-            <button>인원</button>
+            <button
+              id="0"
+              onClick={e => {
+                totalLayourHandler();
+                layoutVisibleHandler(e);
+              }}
+            >
+              인원
+            </button>
+          </div>
+          <div
+            className={style.layout1}
+            style={{
+              visibility: vis1,
+            }}
+          >
+            <SmallModal title="인원" />
+            <BlackButton content="적용하기" />
           </div>
           <div>
-            <button>가격 범위</button>
+            <button
+              id="1"
+              onClick={e => {
+                totalLayourHandler();
+                layoutVisibleHandler(e);
+              }}
+            >
+              가격 범위
+            </button>
+          </div>
+          <div
+            className={style.layout2}
+            style={{
+              visibility: vis2,
+            }}
+          >
+            <SmallModal title="가격 범위" />
+            <BlackButton content="적용하기" />
           </div>
           <div>
-            <button>스테이 유형</button>
+            <button
+              id="2"
+              onClick={e => {
+                totalLayourHandler();
+                layoutVisibleHandler(e);
+              }}
+            >
+              스테이 유형
+            </button>
+          </div>
+          <div
+            className={style.layout3}
+            style={{
+              visibility: vis3,
+            }}
+          >
+            <SmallModal title="스테이 유형" />
+            <BlackButton content="적용하기" />
           </div>
         </div>
       </section>
