@@ -1,3 +1,6 @@
+$font-size1: 13px;
+$font-size2: 11px;
+
 .footer {
   background-color: #f5f5f5;
   padding: 175px 30px 70px 30px;
@@ -12,25 +15,34 @@
     }
 
     .footerDetail {
-      font-size: 12px;
+      font-size: $font-size1;
       line-height: 30px;
     }
 
     .copyRight {
       margin-top: 40px;
-      font-size: 10px;
+      font-size: $font-size2;
     }
   }
 
   .footerRight {
+    padding-left: 30px;
+    border-left: 1.5px solid rgba(128, 128, 128, 0.3);
+
+    p {
+      font-weight: bold;
+    }
     .icon {
       letter-spacing: 10px;
       margin-bottom: 45px;
     }
 
     .list {
-      font-size: 12px;
+      font-size: $font-size1;
       line-height: 30px;
+      a {
+        text-decoration: none;
+      }
     }
   }
 }

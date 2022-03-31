@@ -1,5 +1,6 @@
 import React from 'react';
 import footer from './Footer.module.scss';
+import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
 
 function Footer() {
   return (
@@ -24,23 +25,18 @@ function Footer() {
       </div>
       <div className={footer.footerRight}>
         <div className={footer.icon}>
-          <i class="fa-brands fa-facebook-f" />
-          <i class="fa-brands fa-instagram" />
-          <i class="fa-solid fa-n" />
-          <i class="fab fa-youtube" />
+          <FaFacebookF />
+          &nbsp;
+          <FaInstagram />
+          &nbsp;
+          <FaYoutube />
         </div>
         <div className={footer.list}>
-          ABOUT <br />
-          4POINT OF VIEW
-          <br />
-          NEWSLETTER
-          <br />
-          CAREERS
-          <br />
-          CONTACT US
-          <br />
-          이용약관 <br />
-          <p>개인정보 처리방침</p>
+          <a href="https://velog.io/@shorrysorry">김수빈</a> <br />
+          <a href="https://velog.io/@sonaki0811">유다송</a> <br />
+          <a href="https://velog.io/@xcc629">임근홍</a> <br />
+          <a href="https://velog.io/@hani2525">전하은</a> <br />
+          <a href="https://velog.io/@jml22">이정민</a> <br />
         </div>
       </div>
     </div>
