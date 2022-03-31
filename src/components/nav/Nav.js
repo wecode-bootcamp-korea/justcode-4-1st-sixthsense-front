@@ -1,20 +1,29 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Modal from './Modal';
+import { MdOutlineLocationOn } from 'react-icons/md';
+import { BsCalendar4 } from 'react-icons/bs';
+import { IoLanguageOutline } from 'react-icons/io5';
 import css from './Nav.module.css';
+import WhereModal from './modal/WhereModal';
+import WhenModal from './modal/WhenModal';
 
 function Nav() {
-  const [modalActive, setmodalActive] = useState(0);
-  const modalRef = useRef();
+  const [modalActive, setModalActive] = useState(0);
+  const modalWhereRef = useRef();
+  const modalWhenRef = useRef();
 
-  const openModal = () => setmodalActive(1);
-  const closeModal = () => setmodalActive(0);
+  const openModal1 = () => setModalActive(1);
+  const openModal2 = () => setModalActive(2);
+  const closeModal = () => setModalActive(0);
 
   useEffect(() => {
-    if (modalActive) {
-      modalRef.current.style.display = 'flex';
+    if (modalActive === 1) {
+      modalWhereRef.current.style.display = 'flex';
+    } else if (modalActive === 2) {
+      modalWhenRef.current.style.display = 'flex';
     } else {
-      modalRef.current.style.display = 'none';
+      modalWhenRef.current.style.display = 'none';
+      modalWhereRef.current.style.display = 'none';
     }
   }, [modalActive]);
 
@@ -24,12 +33,20 @@ function Nav() {
         <nav className={css.nav}>
           <div className={css.logo}>logo</div>
           <div className={css.centerMenu}>
-            <p id="modal1" className={css.modalButton} onClick={openModal}>
-              icon1 어디로떠날까요?
-            </p>
-            <p id="modal2" className={css.modalButton} onClick={openModal}>
-              icon2 언제떠날까요?
-            </p>
+            <div className={css.modalBtn} onClick={openModal1}>
+              <div>
+                <MdOutlineLocationOn className={css.modalIcon} size="26" />
+              </div>
+              <p id="modalOpen1" className={css.modalText}>
+                어디로떠날까요?
+              </p>
+            </div>
+            <div className={css.modalBtn} onClick={openModal2}>
+              <BsCalendar4 className={css.modalIcon} size="23" />
+              <p id="modalOpen2" className={css.modalText}>
+                언제떠날까요?
+              </p>
+            </div>
           </div>
           <div className={css.rightMenu}>
             <Link to="/" className={css.menuList}>
@@ -48,12 +65,13 @@ function Nav() {
               LOGIN
             </Link>
             <Link to="/" className={css.menuList}>
-              icon
+              <IoLanguageOutline size="24" />
             </Link>
           </div>
         </nav>
       </div>
-      <Modal closeModal={closeModal} modalRef={modalRef} />
+      <WhereModal modalRef={modalWhereRef} closeModal={closeModal} />
+      <WhenModal modalRef={modalWhenRef} closeModal={closeModal} />
     </>
   );
 }
