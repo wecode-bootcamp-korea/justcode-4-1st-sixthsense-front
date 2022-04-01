@@ -1,5 +1,6 @@
 function BlackButton({ content }) {
   const styles = {
+    margin: 'auto',
     border: 'none',
     borderRadius: 50,
     paddingTop: 10,

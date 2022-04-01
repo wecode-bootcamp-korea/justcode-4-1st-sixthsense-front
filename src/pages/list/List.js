@@ -1,7 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
 
-import SmallModal from '../../components/SmallModal/SmallModal';
+import SmallModal from './SmallModal/SmallModal';
+import SmallModalFirstLayout from './SmallModalFirstLayout/SmallModalFirstLayout';
 import BlackButton from '../../components/BlackButton/BlackButton';
 
 import style from '../list/List.module.css';
@@ -30,7 +31,7 @@ function List() {
   };
 
   return (
-    <div>
+    <div className={style.listWap}>
       <center className={style.listHeaderWap}>
         <p>FIND STAY</p>
         <p>머무는 것 자체로 여행이 되는 공간</p>
@@ -87,6 +88,15 @@ function List() {
             }}
           >
             <SmallModal title="인원" />
+            <section className={style.contentLay}>
+              {firstLayoutArray.map(data => (
+                <SmallModalFirstLayout
+                  key={firstLayoutArray.indexOf(data)}
+                  content={data[0]}
+                  smallContent={data[1]}
+                />
+              ))}
+            </section>
             <BlackButton content="적용하기" />
           </div>
           <div>
@@ -140,3 +150,9 @@ function List() {
 }
 
 export default List;
+
+const firstLayoutArray = [
+  ['성인', '청소년 포함'],
+  ['아동', '24개월~12세'],
+  ['영아', '24개월 미만'],
+];
