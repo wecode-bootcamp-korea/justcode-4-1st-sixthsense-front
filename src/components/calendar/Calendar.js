@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
-import moment from 'moment';
+import React from 'react';
 
-function Calendar() {
-  const [stateMoment, setStateMoment] = useState(moment());
+function Calendar({ stateMoment }) {
   const today = stateMoment;
 
   const firstWeek = today.clone().startOf('month').week();
@@ -10,13 +8,6 @@ function Calendar() {
     today.clone().endOf('month').week() === 1
       ? 53
       : today.clone().endOf('month').week();
-
-  const prev = () => {
-    setStateMoment(stateMoment.clone().subtract(1, 'month'));
-  };
-  const next = () => {
-    setStateMoment(stateMoment.clone().add(1, 'month'));
-  };
 
   const calendarArr = () => {
     let result = [];
@@ -33,32 +24,8 @@ function Calendar() {
                 .week(i)
                 .startOf('week')
                 .add(index, 'day');
-
-              if (
-                moment().format('YYYYMMDD') === days.format('YYYYMMDD') &&
-                days.format('MM') === today.format('MM')
-              ) {
-                return (
-                  <td
-                    key={index}
-                    style={{ backgroundColor: 'red', padding: '10px' }}
-                  >
-                    <span>{days.format('D')}</span>
-                  </td>
-                );
-              } else if (days.format('MM') !== today.format('MM')) {
-                return (
-                  <td
-                    key={index}
-                    style={{
-                      backgroundColor: 'white',
-                      color: 'white',
-                      padding: '10px',
-                    }}
-                  >
-                    <span>{days.format('D')}</span>
-                  </td>
-                );
+              if (days.format('MM') !== today.format('MM')) {
+                return <td />;
               } else {
                 return (
                   <td key={index} style={{ padding: '10px' }}>
@@ -75,8 +42,6 @@ function Calendar() {
 
   return (
     <div>
-      <button onClick={prev}>prev</button>
-      <button onClick={next}>next</button>
       <div>{stateMoment.format('MMMM YYYY')}</div>
       <table>
         <thead>
