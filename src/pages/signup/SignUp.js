@@ -3,15 +3,43 @@ import style from './SignUp.module.css';
 import { IoIosArrowDown } from 'react-icons/io';
 import { GoCheck } from 'react-icons/go';
 
-function SignUpComponent() {
-  const [color, setColor] = useState();
-
-  const handleColor = () => {
-    passwordState.includes([a - z]) ? setColor('blue') : setColor();
-  };
-}
+let num = /^[0-9]*$/; //숫자
+let eng = /^[a-zA-Z]*$/; //영어
+let special = /[!?@#$%^&*():;+-=~{}<>\_\[\]\|\\\"\'\,\.\/\`\₩]/g;
 
 function SignUp() {
+  const [passwordState, setPasswordState] = useState();
+
+  const [engColor, setEngColor] = useState('black');
+  const [numColor, setNumColor] = useState('black');
+  const [specialColor, setSpecialColor] = useState('black');
+  const [overEightColor, setOverEightColor] = useState('black');
+
+  const handlePassword = e => {
+    setPasswordState(e.target.value);
+  };
+  const handleEngColor = () => {
+    setEngColor('blue');
+  };
+
+  const handleNumColor = () => {
+    if (passwordState.includes(num)) {
+      setNumColor('blue');
+    }
+  };
+
+  const handleSpecialColor = () => {
+    if (passwordState.includes(special)) {
+      setSpecialColor('blue');
+    }
+  };
+
+  const handleOverEightColor = () => {
+    if (passwordState >= 8 && passwordState <= 20) {
+      setOverEightColor('blue');
+    }
+  };
+
   return (
     <div className={style.signupbox}>
       <div className={style.signuptitlebox}>
@@ -34,8 +62,8 @@ function SignUp() {
           <input
             className={style.signupinput}
             type="password"
-            name="Password"
-            id="pw"
+            name="name"
+            id="name"
             placeholder="이름을 입력해주세요."
           />
         </div>
@@ -45,27 +73,28 @@ function SignUp() {
             className={style.signupinput}
             type="password"
             name="Password"
-            value={passwordState}
             id="pw"
             placeholder="비밀번호를 입력하세요."
+            value={passwordState}
+            onKeyUp={handleEngColor}
           />
           <div className={style.checkbox}>
-            <div value={color}>
+            <span style={{ engColor }}>
               <GoCheck />
               영문
-            </div>
-            <div value={color}>
+            </span>
+            <span style={{ numColor }}>
               <GoCheck />
               숫자
-            </div>
-            <div value={color}>
+            </span>
+            <span style={{ specialColor }}>
               <GoCheck />
               특수문자
-            </div>
-            <div value={color}>
+            </span>
+            <span style={{ overEightColor }}>
               <GoCheck />
               8자 이상 20자 이하
-            </div>
+            </span>
           </div>
         </div>
         <div className={style.signupsmallinput}>
@@ -75,7 +104,6 @@ function SignUp() {
             name="Password"
             id="pw"
             placeholder="비밀번호를 확인해 주세요."
-            color={handleColor}
           />
         </div>
         <div className={style.signupsmallinput}>
@@ -828,16 +856,16 @@ function SignUp() {
         <span className={style.snssignuplink}>SNS 계정으로 로그인하기</span>
         <div className={style.snsemoticonbox}>
           <span className={style.emoticonbox}>
-            <img src="./img/icon" />
+            <img src="./img/icon.png" />
           </span>
           <span>
-            <img src="./img/icon" />
+            <img src="./img/icon.png" />
           </span>
           <span>
-            <img src="./img/icon" />
+            <img src="./img/icon.png" />
           </span>
           <span>
-            <img src="./img/icon" />
+            <img src="./img/icon.png" />
           </span>
         </div>
       </div>
