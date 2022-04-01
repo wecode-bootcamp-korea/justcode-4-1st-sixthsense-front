@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { MdOutlineLocationOn } from 'react-icons/md';
 import { BsCalendar4 } from 'react-icons/bs';
 import { IoLanguageOutline } from 'react-icons/io5';
-import css from './Nav.module.css';
-import WhereModal from './modal/WhereModal';
-import WhenModal from './modal/WhenModal';
+import style from './Nav.module.css';
+import WhereModal from '../whereModal/WhereModal';
+import WhenModal from '../whenModal/WhenModal';
 
 function Nav() {
   const [modalActive, setModalActive] = useState(0);
@@ -29,42 +29,44 @@ function Nav() {
 
   return (
     <>
-      <div className={css.navWrapper}>
-        <nav className={css.nav}>
-          <div className={css.logo}>logo</div>
-          <div className={css.centerMenu}>
-            <div className={css.modalBtn} onClick={openModal1}>
+      <div className={style.navWrapper}>
+        <nav className={style.nav}>
+          <Link to="/main" className={style.logo}>
+            <img src="#" alt="logo" />
+          </Link>
+          <div className={style.centerMenu}>
+            <div className={style.modalBtn} onClick={openModal1}>
               <div>
-                <MdOutlineLocationOn className={css.modalIcon} size="26" />
+                <MdOutlineLocationOn className={style.modalIcon} size="26" />
               </div>
-              <p id="modalOpen1" className={css.modalText}>
+              <p id="modalOpen1" className={style.modalText}>
                 어디로떠날까요?
               </p>
             </div>
-            <div className={css.modalBtn} onClick={openModal2}>
-              <BsCalendar4 className={css.modalIcon} size="23" />
-              <p id="modalOpen2" className={css.modalText}>
+            <div className={style.modalBtn} onClick={openModal2}>
+              <BsCalendar4 className={style.modalIcon} size="23" />
+              <p id="modalOpen2" className={style.modalText}>
                 언제떠날까요?
               </p>
             </div>
           </div>
-          <div className={css.rightMenu}>
-            <Link to="/" className={css.menuList}>
+          <div className={style.rightMenu}>
+            <Link to="/list" className={style.menuList}>
               FIND STAY
             </Link>
-            <Link to="/" className={css.menuList}>
+            <Link to="/" className={style.menuList}>
               PROMOTION
             </Link>
-            <Link to="/" className={css.menuList}>
+            <Link to="/" className={style.menuList}>
               JOURNAL
             </Link>
-            <Link to="/" className={css.menuList}>
+            <Link to="/" className={style.menuList}>
               PRE-ORDER
             </Link>
-            <Link to="/" className={css.menuList}>
+            <Link to="/login" className={style.menuList}>
               LOGIN
             </Link>
-            <Link to="/" className={css.menuList}>
+            <Link to="/" className={style.menuList}>
               <IoLanguageOutline size="24" />
             </Link>
           </div>

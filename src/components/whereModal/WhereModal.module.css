@@ -36,7 +36,7 @@
   padding: 70px 0 20px 0;
   border-bottom: 1px solid gray;
 }
-input {
+.inputLocation {
   display: block;
   margin: 20px auto;
 }
@@ -50,12 +50,8 @@ input {
 .domestic {
   padding-left: 20px;
 }
-ul {
+.cities {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-}
-
-li {
-  padding: 20px;
 }

@@ -7,7 +7,7 @@
   height: 800px;
   border: 1px solid black;
 }
-.first {
+.mainFirst {
   padding-top: 80px;
   height: 880px;
 }
@@ -33,7 +33,7 @@
   border: 1px solid black;
 }
 
-.banner {
+.mianBanner {
   display: flex;
   justify-content: center;
   align-items: center;

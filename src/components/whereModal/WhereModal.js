@@ -14,11 +14,11 @@ function WhereModal({ modalRef, closeModal }) {
               </button>
             </div>
           </div>
-          <input />
+          <input className={style.inputLocation} />
           <div className={style.location}>
             <div className={style.locationWrapper}>
               <p className={style.domestic}>국내</p>
-              <ul>
+              <ul className={style.cities}>
                 <li>국내전체</li>
                 <li>제주</li>
                 <li>서울</li>
@@ -37,7 +37,7 @@ function WhereModal({ modalRef, closeModal }) {
             </div>
             <div className={style.locationWrapper}>
               <p className={style.domestic}>국내</p>
-              <ul>
+              <ul className={style.cities}>
                 <li>국내전체</li>
                 <li>제주</li>
                 <li>서울</li>
