@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+
+.buttons {
+  width: 20%;
+  margin-left: 40px;
+}
+
+.title {
+  margin: 60px 0px 30px 0px;
+  letter-spacing: 20px;
+}
+
+.contents {
+  margin-top: 60px;
+  width: 60%;
+}

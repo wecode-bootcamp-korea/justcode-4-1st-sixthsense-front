@@ -1,0 +1,36 @@
+.placesWrapper {
+  width: 100%;
+}
+
+.placesList {
+  margin-top: 50px;
+}
+
+.place {
+  display: flex;
+  flex-wrap: wrap;
+  float: left;
+  margin: 20px;
+  padding-top: 10px;
+  border-top: 3.5px solid black;
+}
+
+.marker {
+  padding-right: 10px;
+}
+
+.title {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.category {
+  font-size: 13px;
+  font-weight: 400;
+  color: #848484;
+}
+
+.description {
+  font-size: 13px;
+}
