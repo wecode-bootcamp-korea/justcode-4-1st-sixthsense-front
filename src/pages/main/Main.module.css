@@ -19,6 +19,7 @@
   font-weight: bold;
   font-size: 30px;
   height: 600px;
+  background: gray;
   border: 1px solid black;
 }
 
@@ -61,15 +62,5 @@
   font-weight: bold;
   font-size: 30px;
   height: 500px;
-  border: 1px solid black;
-}
-
-.contact {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  font-size: 30px;
-  height: 250px;
   border: 1px solid black;
 }

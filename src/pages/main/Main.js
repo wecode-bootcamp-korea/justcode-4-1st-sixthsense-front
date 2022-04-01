@@ -1,5 +1,6 @@
 import React from 'react';
 import css from './Main.module.css';
+import MainContact from './MainContact';
 
 function Main() {
   return (
@@ -14,7 +15,7 @@ function Main() {
       <div className={css.hashtagList}>hashtag list</div>
       <div className={css.sliderSmall}>slider small 3</div>
       <div className={css.sliderSmall}>slider small 4</div>
-      <div className={css.contact}>contact</div>
+      <MainContact />
     </>
   );
 }
