@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import style from './Footer.module.css';
 import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
 
@@ -34,11 +34,10 @@ function Footer() {
         </div>
         <div className={style.list}>
           <Link to="/https://velog.io/@shorrysorry">김수빈</Link>
-          <a href="https://velog.io/@shorrysorry">김수빈</a> <br />
-          <a href="https://velog.io/@sonaki0811">유다송</a> <br />
-          <a href="https://velog.io/@xcc629">임근홍</a> <br />
-          <a href="https://velog.io/@hani2525">전하은</a> <br />
-          <a href="https://velog.io/@jml22">이정민</a> <br />
+          <Link to="/https://velog.io/@sonaki0811">유다송</Link>
+          <Link to="/https://velog.io/@xcc629">임근홍</Link>
+          <Link to="/https://velog.io/@hani2525">전하은</Link>
+          <Link to="/https://velog.io/@jml22">이정민</Link>
         </div>
       </div>
     </div>

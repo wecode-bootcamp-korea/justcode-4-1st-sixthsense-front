@@ -37,7 +37,15 @@ p {
 .list {
   font-size: 13px;
   line-height: 30px;
+  display: flex;
+  flex-direction: column;
 }
+
 a {
   text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: underline;
 }
