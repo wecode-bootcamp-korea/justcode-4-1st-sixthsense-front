@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './SignUp.module.css';
 import { IoIosArrowDown } from 'react-icons/io';
 import { GoCheck } from 'react-icons/go';
+
+function SignUpComponent() {
+  const [color, setColor] = useState();
+
+  const handleColor = () => {
+    passwordState.includes([a - z]) ? setColor('blue') : setColor();
+  };
+}
 
 function SignUp() {
   return (
@@ -37,22 +45,27 @@ function SignUp() {
             className={style.signupinput}
             type="password"
             name="Password"
+            value={passwordState}
             id="pw"
             placeholder="비밀번호를 입력하세요."
           />
           <div className={style.checkbox}>
-            <i class="fa-solid fa-check" />
-            <GoCheck />
-            영문
-            <i class="fa-solid fa-check" />
-            <GoCheck />
-            숫자
-            <i class="fa-solid fa-check" />
-            <GoCheck />
-            특수문자
-            <i class="fa-solid fa-check" />
-            <GoCheck />
-            8자 이상 20자 이하
+            <div value={color}>
+              <GoCheck />
+              영문
+            </div>
+            <div value={color}>
+              <GoCheck />
+              숫자
+            </div>
+            <div value={color}>
+              <GoCheck />
+              특수문자
+            </div>
+            <div value={color}>
+              <GoCheck />
+              8자 이상 20자 이하
+            </div>
           </div>
         </div>
         <div className={style.signupsmallinput}>
@@ -62,12 +75,12 @@ function SignUp() {
             name="Password"
             id="pw"
             placeholder="비밀번호를 확인해 주세요."
+            color={handleColor}
           />
         </div>
         <div className={style.signupsmallinput}>
           <span>휴대전화</span>
           <div className={style.selectcountry}>
-            {' '}
             <select name="countryCode" id="">
               <option data-countryCode="KR" value="82">
                 South Korea (+82)
