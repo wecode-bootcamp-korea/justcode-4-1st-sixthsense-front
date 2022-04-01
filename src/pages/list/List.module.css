@@ -83,6 +83,7 @@ button {
 }
 
 .listFilterNoneSearch {
+  position: relative;
   display: flex;
   border-bottom: 1px solid rgb(204, 204, 204);
 }
@@ -104,6 +105,44 @@ button {
   background-repeat: no-repeat;
   cursor: pointer;
   text-align: left;
+}
+
+.listFilterNoneSearch div.layout1 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 70px;
+  border: 1px solid silver;
+  border-radius: 4px;
+  padding: 30px 30px;
+  background-color: rgb(255, 255, 255);
+  z-index: 10;
+}
+
+.listFilterNoneSearch div.layout2 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 70px;
+  left: 220px;
+  border: 1px solid silver;
+  border-radius: 4px;
+  padding: 30px 30px;
+  background-color: rgb(255, 255, 255);
+  z-index: 10;
+}
+
+.listFilterNoneSearch div.layout3 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 70px;
+  left: 440px;
+  border: 1px solid silver;
+  border-radius: 4px;
+  padding: 30px 30px;
+  background-color: rgb(255, 255, 255);
+  z-index: 10;
 }
 
 .listSearchbutton {
