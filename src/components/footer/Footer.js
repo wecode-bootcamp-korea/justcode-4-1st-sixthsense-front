@@ -1,16 +1,17 @@
 import React from 'react';
-import footer from './Footer.module.scss';
+import Link from 'react-router-dom';
+import style from './Footer.module.css';
 import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
 
 function Footer() {
   return (
-    <div className={footer.footer}>
-      <div className={footer.footerLeft}>
-        <div className={footer.logo}>
+    <div className={style.footer}>
+      <div className={style.footerLeft}>
+        <div className={style.logo}>
           S T A Y <br />
           FOREST
         </div>
-        <div className={footer.footerDetail}>
+        <div className={style.footerDetail}>
           상호 : ㈜스테이포레스트 &nbsp;&nbsp; 대표자 : 홍길동
           <br />
           서울특별시 서울구 서울역로1길 12, 1층(서울동) &nbsp;&nbsp; TEL:
@@ -21,17 +22,18 @@ function Footer() {
           <br />
           관광사업자등록 : 일반여행업 1234-123456호(종로구청)
         </div>
-        <div className={footer.copyRight}>© STAYFOREST</div>
+        <div className={style.copyRight}>© STAYFOREST</div>
       </div>
-      <div className={footer.footerRight}>
-        <div className={footer.icon}>
+      <div className={style.footerRight}>
+        <div className={style.icon}>
           <FaFacebookF />
           &nbsp;
           <FaInstagram />
           &nbsp;
           <FaYoutube />
         </div>
-        <div className={footer.list}>
+        <div className={style.list}>
+          <Link to="/https://velog.io/@shorrysorry">김수빈</Link>
           <a href="https://velog.io/@shorrysorry">김수빈</a> <br />
           <a href="https://velog.io/@sonaki0811">유다송</a> <br />
           <a href="https://velog.io/@xcc629">임근홍</a> <br />
