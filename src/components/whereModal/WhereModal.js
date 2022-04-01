@@ -1,10 +1,6 @@
 import React from 'react';
 import style from './WhereModal.module.css';
-import {
-  AiOutlineSearch,
-  AiOutlineClose,
-  AiOutlineArrowRight,
-} from 'react-icons/ai';
+import { AiOutlineSearch, AiOutlineClose } from 'react-icons/ai';
 import BlackButton from '../BlackButton/BlackButton';
 
 function WhereModal({ modalRef, closeModal }) {
@@ -74,7 +70,7 @@ function WhereModal({ modalRef, closeModal }) {
         <div className={style.btnWrapper}>
           <BlackButton
             className={style.searchBtn}
-            content={`search ${(<AiOutlineArrowRight />)}`}
+            content="search &nbsp; &nbsp; →"
           />
         </div>
       </div>
