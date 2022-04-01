@@ -23,6 +23,9 @@ function SignUp() {
   const [checkPasswordState, setCheckPasswordState] = useState();
   const [checkPasswordError, setCheckPasswordError] = useState(false);
 
+  const [phoneNumberState, setPhoneNumberState] = useState();
+  const [phoneNumberError, setPhoneNumberError] = useState(false);
+
   const onChangeEmail = e => {
     const emailRegex =
       /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
@@ -46,6 +49,7 @@ function SignUp() {
     else setPasswordError(true);
     setPasswordState(e.target.value);
   };
+  // /^\d{3}-\d{3,4}-\d{4}$/;
 
   // const onChangeEngPassword = e => {
   //   const engPasswordRegex = /(?=.*[a-zA-Z]{2,20}).{8,20}$/;
@@ -76,6 +80,14 @@ function SignUp() {
       setCheckPasswordError(false);
     else setCheckPasswordError(true);
     setCheckPasswordState(e.target.value);
+  };
+
+  const onChangePhoneNumber = e => {
+    const phoneNumberRegex = /^(\d{2,3})(\d{3,4})(\d{4})$/;
+    if (!e.target.value || phoneNumberRegex.test(e.target.value))
+      setPhoneNumberError(false);
+    else setPhoneNumberError(true);
+    setPhoneNumberState(e.target.value);
   };
 
   return (
@@ -827,11 +839,17 @@ function SignUp() {
           </div>
           <input
             className={style.signupinput}
-            type="password"
-            name="Password"
-            id="pw"
+            type="tel"
+            name="phone"
+            id="phonenumber"
+            maxlength="13"
+            value={phoneNumberState}
             placeholder="휴대전화번호를 입력해 주세요."
+            onChange={onChangePhoneNumber}
           />
+          {phoneNumberError && (
+            <div class={style.checkvalid}>잘못된 양식입니다.</div>
+          )}
         </div>
       </div>
       <div className={style.signupbuttonbox}>
