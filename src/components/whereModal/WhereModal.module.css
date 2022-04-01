@@ -8,43 +8,86 @@
   background: rgba(0, 0, 0, 0.6);
   display: none;
 }
-
 .modal {
   padding: 20px;
   background: white;
-  width: 1100px;
-  border-radius: 5px;
+  width: 1200px;
+  border-radius: 10px;
   box-shadow: 0 0 6px 0 rgb(0 0 0 / 50%);
   height: 100%;
   overflow: auto;
   margin: auto;
 }
+
+/* title section */
 .titleWrapper {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .modalTitle {
-  width: 900px;
+  width: 1000px;
   display: flex;
   justify-content: space-between;
-  padding: 70px 0 20px 0;
+  padding: 90px 0 20px 0;
   border-bottom: 1px solid gray;
 }
-.inputLocation {
-  display: block;
-  margin: 20px auto;
+.whereText {
+  font-weight: bold;
+  font-size: 35px;
 }
+.closeModal {
+  cursor: pointer;
+}
+/* input section */
+.inputWrapper {
+  position: relative;
+  width: 600px;
+  margin: 80px auto;
+}
+.searchIcon {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  color: rgba(0, 0, 0, 0.3);
+}
+.inputShape {
+  border: none;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  width: 100%;
+  padding: 20px;
+}
+.inputText {
+  margin-left: 35px;
+  width: 400px;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+}
+.inputText:focus {
+  outline: none;
+}
+.inputText::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
 .location {
   display: flex;
-  justify-content: center;
+  width: 1000px;
+  margin: auto;
+  padding-bottom: 40px;
+  border-bottom: 1px solid gray;
 }
 .locationWrapper {
-  width: 400px;
+  width: 500px;
 }
 .domestic {
   padding-left: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 30px;
 }
 .cities {
   width: 100%;
@@ -56,4 +99,11 @@
 }
 .space {
   height: 1000px;
+}
+.btnWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.searchBtn {
 }
