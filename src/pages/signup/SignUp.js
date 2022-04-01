@@ -3,41 +3,79 @@ import style from './SignUp.module.css';
 import { IoIosArrowDown } from 'react-icons/io';
 import { GoCheck } from 'react-icons/go';
 
-let num = /^[0-9]*$/; //숫자
-let eng = /^[a-zA-Z]*$/; //영어
-let special = /[!?@#$%^&*():;+-=~{}<>\_\[\]\|\\\"\'\,\.\/\`\₩]/g;
-
 function SignUp() {
+  const [emailState, setEmailState] = useState('');
+  const [emailError, setEmailError] = useState(false);
+
+  const [nameState, setNameState] = useState('');
+  const [nameError, setNameError] = useState(false);
+
   const [passwordState, setPasswordState] = useState();
+  const [passwordError, setPasswordError] = useState(false);
 
-  const [engColor, setEngColor] = useState('black');
-  const [numColor, setNumColor] = useState('black');
-  const [specialColor, setSpecialColor] = useState('black');
-  const [overEightColor, setOverEightColor] = useState('black');
+  // const [engPasswordState, setEngPasswordState] = useState();
+  // const [engPasswordError, setEngPasswordError] = useState(false);
+  // const [specialPasswordState, setSpecialPasswordState] = useState();
+  // const [specialPasswordError, setSpecialPasswordError] = useState(false);
+  // const [numPasswordState, setNumPasswordState] = useState();
+  // const [numPasswordError, setNumPasswordError] = useState(false);
 
-  const handlePassword = e => {
+  const [checkPasswordState, setCheckPasswordState] = useState();
+  const [checkPasswordError, setCheckPasswordError] = useState(false);
+
+  const onChangeEmail = e => {
+    const emailRegex =
+      /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
+    if (!e.target.value || emailRegex.test(e.target.value))
+      setEmailError(false);
+    else setEmailError(true);
+    setEmailState(e.target.value);
+  };
+
+  const onChangeName = e => {
+    const nameRegex = /^[가-힣]{1,10}|[a-zA-Z]{1,10}\s[a-zA-Z]{1,10}$/;
+    if (!e.target.value || nameRegex.test(e.target.value)) setNameError(false);
+    else setNameError(true);
+    setNameState(e.target.value);
+  };
+
+  const onChangePassword = e => {
+    const passwordRegex = /(?=.*[a-zA-Z]{2,20}).{8,20}$/;
+    if (!e.target.value || passwordRegex.test(e.target.value))
+      setPasswordError(false);
+    else setPasswordError(true);
     setPasswordState(e.target.value);
   };
-  const handleEngColor = () => {
-    setEngColor('blue');
-  };
 
-  const handleNumColor = () => {
-    if (passwordState.includes(num)) {
-      setNumColor('blue');
-    }
-  };
+  // const onChangeEngPassword = e => {
+  //   const engPasswordRegex = /(?=.*[a-zA-Z]{2,20}).{8,20}$/;
+  //   if (!e.target.value || engPasswordRegex.test(e.target.value))
+  //     setEngPasswordError(false);
+  //   else setEngPasswordError(true);
+  //   setEngPasswordState(e.target.value);
+  // };
 
-  const handleSpecialColor = () => {
-    if (passwordState.includes(special)) {
-      setSpecialColor('blue');
-    }
-  };
+  // const onChangeSpecialPassword = e => {
+  //   const specialPasswordRegex = /(?=.*[~`!@#$%\^&*()-+=]{1,20}).{8,20}$/;
+  //   if (!e.target.value || specialPasswordRegex.test(e.target.value))
+  //     setSpecialPasswordError(false);
+  //   else setSpecialPasswordError(true);
+  //   setSpecialPasswordState(e.target.value);
+  // };
 
-  const handleOverEightColor = () => {
-    if (passwordState >= 8 && passwordState <= 20) {
-      setOverEightColor('blue');
-    }
+  // const onChangenumPassword = e => {
+  //   const numPasswordRegex = /(?=.*\d{1,20}).{8,20}$/;
+  //   if (!e.target.value || numPasswordRegex.test(e.target.value))
+  //     setNumPasswordError(false);
+  //   else setNumPasswordError(true);
+  //   setNumPasswordState(e.target.value);
+  // };
+
+  const onChangeCheckPassword = e => {
+    if (!e.target.value || onChangePassword.test(e.target.value))
+      setCheckPasswordError(false);
+    else setCheckPasswordError(true);
+    setCheckPasswordState(e.target.value);
   };
 
   return (
@@ -52,20 +90,30 @@ function SignUp() {
           <input
             className={style.signupinput}
             type="text"
-            name="ID"
-            id="id"
+            name="email"
+            id="email"
+            value={emailState}
             placeholder="이메일을 입력해주세요."
+            onChange={onChangeEmail}
           />
+          {emailError && <div class={style.checkvalid}>잘못된 양식입니다.</div>}
         </div>
         <div className={style.signupsmallinput}>
           <span>이름</span>
           <input
             className={style.signupinput}
-            type="password"
+            type="text"
             name="name"
             id="name"
+            value={nameState}
             placeholder="이름을 입력해주세요."
+            onChange={onChangeName}
           />
+          {nameError && (
+            <div class={style.checkvalid}>
+              1자 이상 10자 이하로 입력해 주세요.
+            </div>
+          )}
         </div>
         <div className={style.signupsmallinput}>
           <span>비밀번호</span>
@@ -74,26 +122,38 @@ function SignUp() {
             type="password"
             name="Password"
             id="pw"
-            placeholder="비밀번호를 입력하세요."
             value={passwordState}
-            onKeyUp={handleEngColor}
+            placeholder="비밀번호를 입력하세요."
+            onChange={onChangePassword}
           />
           <div className={style.checkbox}>
-            <span style={{ engColor }}>
-              <GoCheck />
-              영문
+            <span>
+              {passwordError && (
+                <div class={style.bluecheckvalid}>
+                  <GoCheck /> 영문
+                </div>
+              )}
             </span>
-            <span style={{ numColor }}>
-              <GoCheck />
-              숫자
+            <span>
+              {passwordError && (
+                <div class={style.bluecheckvalid}>
+                  <GoCheck /> 숫자
+                </div>
+              )}
             </span>
-            <span style={{ specialColor }}>
-              <GoCheck />
-              특수문자
+            <span>
+              {passwordError && (
+                <div class={style.bluecheckvalid}>
+                  <GoCheck /> 특수문자
+                </div>
+              )}
             </span>
-            <span style={{ overEightColor }}>
-              <GoCheck />
-              8자 이상 20자 이하
+            <span>
+              {passwordError && (
+                <div class={style.bluecheckvalid}>
+                  <GoCheck /> 8자 이상 20자 이하
+                </div>
+              )}
             </span>
           </div>
         </div>
@@ -102,9 +162,15 @@ function SignUp() {
             className={style.signupinput}
             type="password"
             name="Password"
-            id="pw"
+            id="checkpw"
+            value={checkPasswordState}
             placeholder="비밀번호를 확인해 주세요."
           />
+          {checkPasswordError && (
+            <div class={style.checkvalid}>
+              1자 이상 10자 이하로 입력해 주세요.
+            </div>
+          )}
         </div>
         <div className={style.signupsmallinput}>
           <span>휴대전화</span>
@@ -849,7 +915,7 @@ function SignUp() {
       </div>
       <div className={style.signupbtn}>
         <button className={style.signupbtnbox} id="signup-button">
-          인증번호 발송
+          인증 건너뛰고 가입
         </button>
       </div>
       <div className={style.snssignupbox}>

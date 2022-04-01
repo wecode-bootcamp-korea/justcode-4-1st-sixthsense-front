@@ -162,3 +162,13 @@
   padding-bottom: 6px;
   font-size: 13px;
 }
+
+.checkvalid {
+  margin-top: 8px;
+  font-size: 14px;
+  color: red;
+}
+
+.bluecheckvalid {
+  color: rgb(0, 0, 255);
+}
