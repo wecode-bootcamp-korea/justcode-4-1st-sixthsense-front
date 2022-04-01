@@ -1,16 +1,27 @@
 import React from 'react';
 import { useState } from 'react';
+import { useEffect } from 'react';
 
 import SmallModal from './SmallModal/SmallModal';
-import SmallModalFirstLayout from './SmallModalFirstLayout/SmallModalFirstLayout';
+import LayOutFirst from './LayOutFirst/LayOutFirst';
 import BlackButton from '../../components/BlackButton/BlackButton';
 
 import style from '../list/List.module.css';
+
+let totalpeople = 0;
 
 function List() {
   const [vis1, setVis1] = useState('hidden');
   const [vis2, setvis2] = useState('hidden');
   const [vis3, setVis3] = useState('hidden');
+  const [headCount, setHeadCount] = useState('인원');
+
+  //해야하는 것
+  //headcount을 스트링으로 바꾸고 형식에 맞게 해서 그 값을 화면에 띄우기
+  //총 인원 수 세어주기
+  // 그 값들 백으로 넘길 수 있도록 하기
+
+  useEffect(() => {}, [headCount]);
 
   const layoutVisibleHandler = e => {
     const index = Number(e.target.id);
@@ -78,7 +89,7 @@ function List() {
                 layoutVisibleHandler(e);
               }}
             >
-              인원
+              {headCount}
             </button>
           </div>
           <div
@@ -87,17 +98,7 @@ function List() {
               visibility: vis1,
             }}
           >
-            <SmallModal title="인원" />
-            <section className={style.contentLay}>
-              {firstLayoutArray.map(data => (
-                <SmallModalFirstLayout
-                  key={firstLayoutArray.indexOf(data)}
-                  content={data[0]}
-                  smallContent={data[1]}
-                />
-              ))}
-            </section>
-            <BlackButton content="적용하기" />
+            <LayOutFirst setHeadCount={setHeadCount} />
           </div>
           <div>
             <button
@@ -150,9 +151,3 @@ function List() {
 }
 
 export default List;
-
-const firstLayoutArray = [
-  ['성인', '청소년 포함'],
-  ['아동', '24개월~12세'],
-  ['영아', '24개월 미만'],
-];
