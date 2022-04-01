@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './Special.module.scss';
+import style from './Special.module.css';
 
 const Special = () => {
   return (

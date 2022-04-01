@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './DetailTop.module.sstyle';
+import style from './DetailTop.module.css';
 
 const DetailTop = () => {
   return (
@@ -7,7 +7,10 @@ const DetailTop = () => {
       {/* 숙소명 및 날짜 선택*/}
       <div className={style.calendar}>
         <div className={style.title_container}>
-          <span className={style.title}>어연스테이</span>
+          <div className={style.dormName}>
+            <span className={style.title}>어연스테이</span>
+            <i class="fa-regular fa-heart fa-xl" />
+          </div>
           <div className={style.date}>
             <div className={style.select_btn}>
               <span className={style.select_date}>날짜를 선택해주세요.</span>

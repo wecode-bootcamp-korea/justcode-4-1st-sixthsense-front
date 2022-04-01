@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './Rooms.module.sstyle';
+import style from './Rooms.module.css';
 const Rooms = () => {
   return (
     <div className={style.container}>
