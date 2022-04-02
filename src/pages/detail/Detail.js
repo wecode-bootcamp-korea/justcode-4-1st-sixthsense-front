@@ -10,14 +10,14 @@ import style from './Detail.module.scss';
 
 function Detail() {
   return (
-    <>
+    <div className={style.detailWrapper}>
       <DetailTop />
       <Rooms />
       <Info />
       <Special />
       <Places />
       <FAQ />
-    </>
+    </div>
   );
 }
 
