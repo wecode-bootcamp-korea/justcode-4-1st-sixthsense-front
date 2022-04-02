@@ -1,0 +1,58 @@
+.placesWrapper {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.placesList {
+  display: flex;
+  justify-content: center;
+}
+
+.place {
+  display: flex;
+  flex-wrap: wrap;
+  float: left;
+  margin: 20px;
+  padding: 15px 20px 0 15px;
+  border-top: 3.5px solid black;
+}
+
+.icon {
+  position: relative;
+}
+
+.number {
+  position: absolute;
+  font-size: 18px;
+  top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: white;
+}
+
+.descWrapper {
+  padding-left: 10px;
+}
+
+.marker {
+  padding-right: 10px;
+}
+
+.title {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.category {
+  font-size: 13px;
+  font-weight: 400;
+  color: #848484;
+}
+
+.description {
+  font-size: 13px;
+}
