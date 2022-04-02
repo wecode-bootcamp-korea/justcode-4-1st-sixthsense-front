@@ -3,7 +3,7 @@ import style from '../SmallModal/SmallModal.module.css';
 
 function SmallModal({ title }) {
   return (
-    <div className={style.SmallModal}>
+    <div className={style.SmallModal} style={{ marginRight: 0 }}>
       <div className={style.modalTop}>
         <span>{title}</span>
         <button
