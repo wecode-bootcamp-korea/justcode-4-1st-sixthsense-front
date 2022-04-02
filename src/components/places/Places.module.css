@@ -1,9 +1,11 @@
 .placesWrapper {
   width: 100%;
+  padding: 40px 0;
 }
 
 .placesList {
-  margin-top: 50px;
+  display: flex;
+  justify-content: center;
 }
 
 .place {
@@ -11,8 +13,28 @@
   flex-wrap: wrap;
   float: left;
   margin: 20px;
-  padding-top: 10px;
+  padding: 15px 20px 0 15px;
   border-top: 3.5px solid black;
+}
+
+.icon {
+  position: relative;
+}
+
+.number {
+  position: absolute;
+  font-size: 18px;
+  top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: white;
+}
+
+.descWrapper {
+  padding-left: 10px;
 }
 
 .marker {
