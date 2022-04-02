@@ -20,6 +20,10 @@
   position: absolute;
   top: 50%;
   left: 0;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  font-size: 16px;
   transform: translate(0, -50%);
 }
 
