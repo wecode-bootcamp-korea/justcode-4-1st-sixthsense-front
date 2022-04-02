@@ -42,7 +42,7 @@ function List() {
   // 그 값들 백으로 넘길 수 있도록 하기
 
   function sumPeople() {
-    headCountArr.map(data => {
+    headCountArr.forEach(data => {
       totalpeople += data[1];
     });
   }
@@ -57,7 +57,7 @@ function List() {
     if (headCountArr[0] === '인원') {
       firstword = '인원';
     }
-    headCountArr.map(data => {
+    headCountArr.forEach(data => {
       if (data[0] === '성인') {
         firstword = `성인: ${data[1]}`;
       }
@@ -72,7 +72,7 @@ function List() {
     });
     let stringarr = [firstword, secondword, lastword];
 
-    stringarr.map(data => {
+    stringarr.forEach(data => {
       if (data) {
         tempStirng += `${data} `;
       }
