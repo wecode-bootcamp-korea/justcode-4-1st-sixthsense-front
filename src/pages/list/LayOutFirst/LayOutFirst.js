@@ -5,7 +5,7 @@ import SmallModalFirstLayout from './Child/SubLayoutFirst';
 
 const peopleObj = {};
 
-function LayOutFirst({ setHeadCount }) {
+function LayOutFirst({ setHeadCountArr }) {
   const [people, setPeople] = useState({});
 
   useEffect(() => {
@@ -15,14 +15,26 @@ function LayOutFirst({ setHeadCount }) {
   function putObj(e) {
     e.preventDefault();
     const peopleArr = Object.entries(peopleObj);
-    setHeadCount(peopleArr);
+    setHeadCountArr(peopleArr);
+  }
+
+  function closeModal(e) {
+    const parentStyleVisible =
+      e.target.parentElement.parentElement.style.visibility;
+    let judge = false;
+    if (parentStyleVisible === 'visible') {
+      judge = true;
+    }
+    e.target.parentElement.parentElement.style.visibility = judge && 'hidden';
   }
 
   return (
     <>
       <SmallModal title="인원" />
       <section
-        className={{
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
           marginBottom: 10,
         }}
       >
@@ -38,6 +50,7 @@ function LayOutFirst({ setHeadCount }) {
           style={styles}
           onClick={e => {
             putObj(e);
+            closeModal(e);
           }}
         >
           적용하기

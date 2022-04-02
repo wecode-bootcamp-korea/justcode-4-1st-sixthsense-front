@@ -9,19 +9,16 @@ import BlackButton from '../../components/BlackButton/BlackButton';
 import style from '../list/List.module.css';
 
 let totalpeople = 0;
+let firstword = '';
+let secondword = '';
+let lastword = '';
 
 function List() {
   const [vis1, setVis1] = useState('hidden');
   const [vis2, setvis2] = useState('hidden');
   const [vis3, setVis3] = useState('hidden');
-  const [headCount, setHeadCount] = useState('인원');
-
-  //해야하는 것
-  //headcount을 스트링으로 바꾸고 형식에 맞게 해서 그 값을 화면에 띄우기
-  //총 인원 수 세어주기
-  // 그 값들 백으로 넘길 수 있도록 하기
-
-  useEffect(() => {}, [headCount]);
+  const [headCountArr, setHeadCountArr] = useState(['인원']);
+  const [headCountStr, setHeadCountStr] = useState('');
 
   const layoutVisibleHandler = e => {
     const index = Number(e.target.id);
@@ -40,6 +37,56 @@ function List() {
     setvis2('hidden');
     setVis3('hidden');
   };
+
+  //총 인원 수 세어주기
+  // 그 값들 백으로 넘길 수 있도록 하기
+
+  function sumPeople() {
+    headCountArr.map(data => {
+      totalpeople += data[1];
+    });
+  }
+
+  function stringArray() {
+    let tempStirng = '인원';
+    if (!totalpeople) {
+      firstword = '인원';
+      setHeadCountStr(tempStirng);
+      return;
+    }
+    if (headCountArr[0] === '인원') {
+      firstword = '인원';
+    }
+    headCountArr.map(data => {
+      if (data[0] === '성인') {
+        firstword = `성인: ${data[1]}`;
+      }
+
+      if (data[0] === '아동') {
+        secondword = `아동: ${data[1]}`;
+      }
+
+      if (data[0] === '영아') {
+        lastword = `영아: ${data[1]}`;
+      }
+    });
+    let stringarr = [firstword, secondword, lastword];
+
+    stringarr.map(data => {
+      if (data) {
+        tempStirng += `${data} `;
+      }
+    });
+
+    let resultString = tempStirng.slice(2);
+    setHeadCountStr(resultString);
+  }
+
+  useEffect(() => {
+    totalpeople = 0;
+    sumPeople();
+    stringArray();
+  });
 
   return (
     <div className={style.listWap}>
@@ -89,7 +136,7 @@ function List() {
                 layoutVisibleHandler(e);
               }}
             >
-              {headCount}
+              {headCountStr}
             </button>
           </div>
           <div
@@ -98,7 +145,7 @@ function List() {
               visibility: vis1,
             }}
           >
-            <LayOutFirst setHeadCount={setHeadCount} />
+            <LayOutFirst setHeadCountArr={setHeadCountArr} />
           </div>
           <div>
             <button
