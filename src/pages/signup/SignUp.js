@@ -3,13 +3,13 @@ import style from './SignUp.module.css';
 import { IoIosArrowDown } from 'react-icons/io';
 import { GoCheck } from 'react-icons/go';
 
-function SignUpComponent() {
-  const [color, setColor] = useState();
+// function SignUpComponent() {
+//   const [color, setColor] = useState();
 
-  const handleColor = () => {
-    passwordState.includes([a - z]) ? setColor('blue') : setColor();
-  };
-}
+//   const handleColor = () => {
+//     passwordState.includes([a - z]) ? setColor('blue') : setColor();
+//   };
+// }
 
 function SignUp() {
   return (

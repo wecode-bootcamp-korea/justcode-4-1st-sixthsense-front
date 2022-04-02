@@ -1,13 +1,15 @@
 import React from 'react';
 import style from './Places.module.css';
+import { FaCommentAlt } from 'react-icons/fa';
 
 const Places = () => {
   return (
     <div className={style.placesWrapper}>
       <ul className={style.placesList}>
         <li className={style.place}>
-          <div className={style.marker}>
-            <i class="fa-solid fa-message" />
+          <div className={style.icon}>
+            <FaCommentAlt size="30" />
+            <span className={style.number}>1</span>
           </div>
           <div className={style.descWrapper}>
             <div className={style.title}>
@@ -19,8 +21,9 @@ const Places = () => {
           </div>
         </li>
         <li className={style.place}>
-          <div className={style.marker}>
-            <i class="fa-solid fa-message" />
+          <div className={style.icon}>
+            <FaCommentAlt size="30" />
+            <span className={style.number}>2</span>
           </div>
           <div className={style.descWrapper}>
             <div className={style.title}>
@@ -32,8 +35,9 @@ const Places = () => {
           </div>
         </li>
         <li className={style.place}>
-          <div className={style.marker}>
-            <i class="fa-solid fa-message" />
+          <div className={style.icon}>
+            <FaCommentAlt size="30" />
+            <span className={style.number}>3</span>
           </div>
           <div className={style.descWrapper}>
             <div className={style.title}>
