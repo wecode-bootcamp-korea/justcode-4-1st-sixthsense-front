@@ -20,6 +20,7 @@
 }
 
 .BannerSlideSmall {
+  cursor: pointer;
   max-width: 440px;
   padding: 0px 120px 0px 0px;
   margin-right: 0px;
@@ -28,7 +29,8 @@
 .sliderList > .wrapper {
   /* display: flex; */
   /* justify-content: center; */
-  max-width: 840px;
+  transform: translateX(200px);
+  max-width: 1300px;
   overflow: hidden;
 }
 

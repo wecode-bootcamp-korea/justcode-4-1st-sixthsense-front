@@ -73,7 +73,7 @@ function BannerSlideSmall() {
               className={style.sliderTrack}
               style={{
                 transform: `translateX(calc(${
-                  (-100 / slides.length) * (0.5 + currentIndex)
+                  (-100 / slides.length) * currentIndex
                 }%))`,
                 transition: slideTransition,
               }}
