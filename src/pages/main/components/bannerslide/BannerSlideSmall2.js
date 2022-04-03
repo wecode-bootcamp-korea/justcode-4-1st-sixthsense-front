@@ -3,12 +3,11 @@ import React, { useState } from 'react';
 
 function BannerSlideSmall2() {
   const items = [
-    '/image/room01.jpg',
-    '/image/room02.jpg',
-    '/image/room03.jpg',
-    '/image/room04.jpg',
-    '/image/room05.jpg',
-    '/image/room06.jpg',
+    '/image/house01.jpg',
+    '/image/house02.jpg',
+    '/image/house03.jpg',
+    '/image/house04.jpg',
+    '/image/house05.jpg',
   ];
   const itemSize = items.length;
   const transitionTime = 400;
