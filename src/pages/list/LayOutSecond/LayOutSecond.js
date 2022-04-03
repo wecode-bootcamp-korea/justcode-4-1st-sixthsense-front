@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useEffect } from 'react';
 
 import SmallModal from '../SmallModal/SmallModal';
 import RangeSlider from './Child/RangeSlider';
