@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import style from './FAQ.module.css';
 import classNames from 'classnames/bind';
-import FAQButton from '../faqButtons/FAQButton';
+import FAQButton from './faqButtons/FAQButton';
 
 const FAQ = () => {
   const cx = classNames.bind(style);

@@ -21,7 +21,7 @@ const DetailTop = () => {
         </div>
       </div>
       {/* 숙소 사진 슬라이드 */}
-      <div className={style.dorm_img}>img slide</div>
+      <div className={style.dorm_img} />
     </div>
   );
 };
