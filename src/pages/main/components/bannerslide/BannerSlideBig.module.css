@@ -1,0 +1,69 @@
+.sliderArea {
+  position: relative;
+  overflow: hidden;
+  height: auto;
+}
+.slider {
+}
+
+.sliderList {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+}
+
+.sliderTrack {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+}
+
+.BannerSlideBig {
+  position: relative;
+  cursor: pointer;
+  width: 1503px;
+  margin: 0px 40px;
+}
+
+.sliderList > .wrapper {
+  /* display: flex; */
+  /* justify-content: center; */
+  /* max-width: 1300px; */
+  overflow: hidden;
+}
+
+.ButtonBackground {
+  display: inline-block;
+  /* position: absolute; */
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 926px;
+  left: 40px;
+  width: 100px;
+  height: 100px;
+  z-index: 900;
+}
+
+.PrevButton {
+  position: absolute;
+  top: 926px;
+  left: 140px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 0;
+  outline: 0;
+  font-size: 20px;
+  z-index: 999;
+}
+
+.NextButton {
+  position: absolute;
+  top: 926px;
+  left: 160px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 0;
+  outline: 0;
+  font-size: 20px;
+  z-index: 999;
+}
