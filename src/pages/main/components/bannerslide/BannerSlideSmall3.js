@@ -10,6 +10,9 @@ function BannerSlideSmall3() {
     '/image/town05.jpg',
     '/image/town06.jpg',
     '/image/town07.jpg',
+    '/image/town08.jpg',
+    '/image/town09.jpg',
+    '/image/town10.jpg',
   ];
   const itemSize = items.length;
   const transitionTime = 400;
@@ -69,8 +72,8 @@ function BannerSlideSmall3() {
     <div className={style.sliderArea}>
       <div className={style.slider}>
         <div className={style.bannerSlideSmallDescription}>
-          특별한 시간을 선물하는 <br />
-          <br /> High-end stay
+          자연 속에서 느끼는 <br />
+          <br /> 따스한 봄의 정취
         </div>
         <div className={style.sliderList}>
           <div className={style.wrapper}>

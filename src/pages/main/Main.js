@@ -4,6 +4,7 @@ import MainContact from './components/contact/MainContact';
 import BannerSlideSmall1 from './components/bannerslide/BannerSlideSmall1';
 import BannerSlideSmall2 from './components/bannerslide/BannerSlideSmall2';
 import BannerSlideSmall3 from './components/bannerslide/BannerSlideSmall3';
+import BannerSlideSmall4 from './components/bannerslide/BannerSlideSmall4';
 
 function Main() {
   const mainRef = useRef();
@@ -21,7 +22,7 @@ function Main() {
       <div className={style.travelList}>travel list</div>
       <div className={style.hashtagList}>hashtag list</div>
       <BannerSlideSmall3 />
-      <div className={style.sliderSmall}>slider small 4</div>
+      <BannerSlideSmall4 />
       <MainContact />
     </div>
   );
