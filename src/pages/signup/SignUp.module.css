@@ -172,3 +172,22 @@
 .bluecheckvalid {
   color: rgb(0, 0, 255);
 }
+
+.checkbtn {
+  display: flex;
+  flex-direction: column;
+}
+
+.smallcheckbtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.morescript {
+  display: none;
+  background-color: #fcfcfc;
+  line-height: 25px;
+  font-size: 12px;
+  opacity: 0.6;
+}
