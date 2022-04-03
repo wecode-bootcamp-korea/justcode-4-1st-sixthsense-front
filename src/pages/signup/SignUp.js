@@ -1613,16 +1613,16 @@ function SignUp() {
         <span className={style.snssignuplink}>SNS 계정으로 로그인하기</span>
         <div className={style.snsemoticonbox}>
           <span className={style.emoticonbox}>
-            <img src="./img/icon.png" />
+            <img src="" />
           </span>
           <span>
-            <img src="./img/icon.png" />
+            <img src="" />
           </span>
           <span>
-            <img src="./img/icon.png" />
+            <img src="" />
           </span>
           <span>
-            <img src="./img/icon.png" />
+            <img src="" />
           </span>
         </div>
       </div>
