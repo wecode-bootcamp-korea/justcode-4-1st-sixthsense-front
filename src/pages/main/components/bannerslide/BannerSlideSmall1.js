@@ -84,15 +84,29 @@ function BannerSlideSmall1() {
               {slides.map((slide, slideIndex) => {
                 const itemIndex = getItemIndex(slideIndex);
                 return (
-                  <img
-                    className={style.bannerSlideSmall}
-                    key={null}
-                    src={items[itemIndex]}
-                    alt={`banner${itemIndex}`}
-                  />
+                  <div key={null} className={style.slide}>
+                    <img
+                      className={style.bannerSlideSmall}
+                      key={null}
+                      src={items[itemIndex]}
+                      alt={`banner${itemIndex}`}
+                    />
+                    <section className={style.description}>
+                      <div className={style.name}>신돌집</div>
+                      <div className={style.location}>
+                        제주/서귀포시
+                        <span className={style.dot}>&nbsp;&#183;&nbsp;</span>
+                        <span className={style.price}>
+                          &#92;550,000 ~ &#92;650,000
+                        </span>
+                      </div>
+                      <div className={style.readMore}>read more</div>
+                    </section>
+                  </div>
                 );
               })}
             </div>
+
             <div className={style.buttons}>
               <div
                 className={style.prevButton}
