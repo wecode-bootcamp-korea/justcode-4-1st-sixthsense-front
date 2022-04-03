@@ -1,48 +1,21 @@
-.sliderBig {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 800px;
-}
-.mainFirst {
-  padding-top: 80px;
-  height: 880px;
-}
-
-.sliderMedium {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 600px;
-  background: gray;
-}
-
-.sliderSmall {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 400px;
-}
-
-.mianBanner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  background: url('https://cdn.pixabay.com/photo/2017/12/11/21/17/bridge-3013297_960_720.jpg');
-  background-size: cover;
-}
-
-.travelList {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 1500px;
-}
-
+.sliderBig,
+.sliderMedium,
+.sliderSmall,
+.travelList,
 .hashtagList {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 500px;
+  margin: 50px 0;
+}
+.mainFirst {
+  margin: 0;
+  padding-top: 80px;
+}
+.sliderMedium {
+  background: #f5f5f5;
+}
+
+.hashtagList {
+  background: #f5f5f5;
 }

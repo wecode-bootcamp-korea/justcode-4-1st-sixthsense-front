@@ -11,7 +11,6 @@ function Main() {
         slider big 1
       </div>
       <div className={style.sliderSmall}>slider small 1</div>
-      <div className={style.mainBanner}>banner</div>
       <div className={style.sliderMedium}>slider medium 1</div>
       <div className={style.sliderSmall}>slider small 2</div>
       <div className={style.sliderBig}>slider big 2</div>
@@ -23,9 +22,7 @@ function Main() {
       </div>
       <div className={style.sliderSmall}>slider small 3</div>
       <div className={style.sliderSmall}>slider small 4</div>
-      <div>
-        <MainContact />
-      </div>
+      <MainContact />
     </>
   );
 }
