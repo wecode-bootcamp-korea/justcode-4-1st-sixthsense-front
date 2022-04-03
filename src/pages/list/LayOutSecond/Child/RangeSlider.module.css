@@ -22,6 +22,7 @@ input[type='range'] {
   height: 0.5px;
   border: none;
   z-index: 2;
+  opacity: 0;
 }
 
 input::-webkit-slider-thumb {
@@ -64,17 +65,17 @@ input::-moz-range-thumb {
 .thumbRight {
   position: absolute;
   top: 0;
-  width: 1.5rem;
-  height: 1.4rem;
+  width: 1.6rem;
+  height: 1.6rem;
   background-color: rgb(255, 255, 255);
   border-radius: 50%;
   box-shadow: -1px 1px 4px -2px rgba(0, 0, 0, 0.67);
 }
 
 .thumbLeft {
-  transform: translate(-0.5rem, -0.4rem);
+  transform: translate(-0.5rem, -0.6rem);
 }
 
 .thumbRight {
-  transform: translate(0.7rem, -0.4rem);
+  transform: translate(0.7rem, -0.6rem);
 }

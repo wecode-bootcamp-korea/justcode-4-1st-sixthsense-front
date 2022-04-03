@@ -3,9 +3,12 @@ import { BsRecordCircleFill } from 'react-icons/bs';
 
 import style from './RangeSlider.module.css';
 
-function RangeSlider() {
+let leftPercent = '';
+let rightPercent = '';
+
+function RangeSlider({ setLeftPercent, setrightPercent }) {
   const [inputLeft, setInputLeft] = useState(0);
-  const [inputRight, setInputRight] = useState(0);
+  const [inputRight, setInputRight] = useState(50);
   const [left, setLeft] = useState('0%');
   const [right, setRight] = useState('50%');
 
@@ -36,13 +39,14 @@ function RangeSlider() {
     const { value, min, max } = target;
     setInputLeft(value);
 
-    if (inputRight - value < 10) {
-      setInputLeft(inputRight - 10);
+    if (inputRight - value < 5) {
+      setInputLeft(inputRight - 5);
       return;
     }
 
-    const percent = ((+value - +min) / (+max - +min)) * 100;
-    setLeft(`${percent}%`);
+    leftPercent = ((+value - +min) / (+max - +min)) * 100;
+    setLeft(`${leftPercent}%`);
+    setLeftPercent(leftPercent);
   }
 
   function setRightValue(e) {
@@ -50,14 +54,15 @@ function RangeSlider() {
     const { value, min, max } = target;
     setInputRight(value);
 
-    if (+value - inputLeft < 10) {
-      setInputRight(+inputLeft + 10);
+    if (+value - inputLeft < 5) {
+      setInputRight(+inputLeft + 5);
       return;
     }
 
-    const percent = ((+value - +min) / (+max - +min)) * 100;
+    rightPercent = ((+value - +min) / (+max - +min)) * 100;
 
-    setRight(`${100 - percent}%`);
+    setRight(`${100 - rightPercent}%`);
+    setrightPercent(rightPercent);
   }
 
   return (
