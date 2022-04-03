@@ -9,7 +9,8 @@
 .sliderList {
   position: relative;
   overflow: hidden;
-  display: block;
+  display: flex;
+  justify-content: center;
   margin: 0;
 }
 
@@ -29,7 +30,7 @@
 .sliderList > .wrapper {
   /* display: flex; */
   /* justify-content: center; */
-  transform: translateX(160px);
+  /* transform: translateX(160px); */
   max-width: 1300px;
   overflow: hidden;
 }
@@ -40,6 +41,7 @@
   border: 0;
   outline: 0;
   margin-top: 30px;
+  margin-bottom: 100px;
 }
 
 .prevButton,
