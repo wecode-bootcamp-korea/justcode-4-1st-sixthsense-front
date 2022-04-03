@@ -971,20 +971,20 @@ function SignUp() {
         </div>
         <div className={style.checkbtn}>
           <span className={style.smallcheckbtn}>
-            <input
-              type="checkbox"
-              id="check"
-              name="xxx"
-              value="yyy"
-              checked={serviceCheck}
-              onChange={serviceCheckBtnEvent}
-            />
-            <label for="check" />
-            서비스 이용 약관 동의 (필수){' '}
-            <span className={style.arrow}>
-              <span>
-                <IoIosArrowDown />
-              </span>
+            <div>
+              <input
+                type="checkbox"
+                id="check"
+                name="xxx"
+                value="yyy"
+                checked={serviceCheck}
+                onChange={serviceCheckBtnEvent}
+              />
+              <label for="check" />
+              서비스 이용 약관 동의 (필수)
+            </div>
+            <span>
+              <IoIosArrowDown />
             </span>
           </span>
 
@@ -1027,20 +1027,20 @@ function SignUp() {
         </div>
         <div className={style.checkbtn}>
           <span className={style.smallcheckbtn}>
-            <input
-              type="checkbox"
-              id="check"
-              name="xxx"
-              value="yyy"
-              checked={useCheck}
-              onChange={useBtnEvent}
-            />
-            <label for="check" />
-            개인정보 처리방침 동의 (필수){' '}
-            <span className={style.arrow}>
-              <span>
-                <IoIosArrowDown />
-              </span>
+            <div>
+              <input
+                type="checkbox"
+                id="check"
+                name="xxx"
+                value="yyy"
+                checked={useCheck}
+                onChange={useBtnEvent}
+              />
+              <label for="check" />
+              개인정보 처리방침 동의 (필수)
+            </div>
+            <span>
+              <IoIosArrowDown />
             </span>
           </span>
 
@@ -1490,19 +1490,19 @@ function SignUp() {
         </div>
         <div className={style.checkbtn}>
           <span className={style.smallcheckbtn}>
-            <input
-              type="checkbox"
-              id="check"
-              name="xxx"
-              value="yyy"
-              checked={ageCheck}
-              onChange={ageBtnEvent}
-            />
-            <label for="check" />만 14세 이상 확인 (필수){' '}
-            <span className={style.arrow}>
-              <span>
-                <IoIosArrowDown />
-              </span>
+            <div>
+              <input
+                type="checkbox"
+                id="check"
+                name="xxx"
+                value="yyy"
+                checked={ageCheck}
+                onChange={ageBtnEvent}
+              />
+              <label for="check" />만 14세 이상 확인 (필수)
+            </div>
+            <span>
+              <IoIosArrowDown />
             </span>
           </span>
 
@@ -1516,20 +1516,20 @@ function SignUp() {
         </div>
         <div className={style.checkbtn}>
           <span className={style.smallcheckbtn}>
-            <input
-              type="checkbox"
-              id="check"
-              name="xxx"
-              value="yyy"
-              checked={lifetimeCheck}
-              onChange={lifetimeBtnEvent}
-            />
-            <label for="check" />
-            평생회원제 동의 (선택){' '}
-            <span className={style.arrow}>
-              <span>
-                <IoIosArrowDown />
-              </span>
+            <div>
+              <input
+                type="checkbox"
+                id="check"
+                name="xxx"
+                value="yyy"
+                checked={lifetimeCheck}
+                onChange={lifetimeBtnEvent}
+              />
+              <label for="check" />
+              평생회원제 동의 (선택)
+            </div>
+            <span>
+              <IoIosArrowDown />
             </span>
           </span>
 
@@ -1541,20 +1541,20 @@ function SignUp() {
         </div>
         <div className={style.checkbtn}>
           <span className={style.smallcheckbtn}>
-            <input
-              type="checkbox"
-              id="check"
-              name="xxx"
-              value="yyy"
-              checked={marketingCheck}
-              onChange={marketingBtnEvent}
-            />
-            <label for="check" />
-            마케팅 정보 수신 동의 (선택){' '}
-            <span className={style.arrow}>
-              <span>
-                <IoIosArrowDown />
-              </span>
+            <div>
+              <input
+                type="checkbox"
+                id="check"
+                name="xxx"
+                value="yyy"
+                checked={marketingCheck}
+                onChange={marketingBtnEvent}
+              />
+              <label for="check" />
+              마케팅 정보 수신 동의 (선택)
+            </div>
+            <span>
+              <IoIosArrowDown />
             </span>
           </span>
 
@@ -1613,16 +1613,16 @@ function SignUp() {
         <span className={style.snssignuplink}>SNS 계정으로 로그인하기</span>
         <div className={style.snsemoticonbox}>
           <span className={style.emoticonbox}>
-            <img src="" />
+            <img src="a" />
           </span>
           <span>
-            <img src="" />
+            <img src="a" />
           </span>
           <span>
-            <img src="" />
+            <img src="a" />
           </span>
           <span>
-            <img src="" />
+            <img src="a" />
           </span>
         </div>
       </div>
