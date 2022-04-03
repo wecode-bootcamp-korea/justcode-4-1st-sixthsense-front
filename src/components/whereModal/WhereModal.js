@@ -22,6 +22,8 @@ function WhereModal({ modalRef, closeModal }) {
     setSelectCountry(e.currentTarget.innerText);
   };
 
+  const reset = () => setSelectCountry(null);
+
   return (
     <div className={style.modalWrapper} ref={modalRef}>
       <div className={style.modal}>
@@ -32,7 +34,10 @@ function WhereModal({ modalRef, closeModal }) {
               className={style.closeModal}
               size="50"
               id="modalClose1"
-              onClick={closeModal}
+              onClick={() => {
+                closeModal();
+                reset();
+              }}
             />
           </div>
         </div>
