@@ -29,7 +29,7 @@ function LayOutFirst({ setHeadCountArr }) {
   }
 
   return (
-    <>
+    <section>
       <SmallModal title="인원" />
       <section
         style={{
@@ -56,7 +56,7 @@ function LayOutFirst({ setHeadCountArr }) {
           적용하기
         </button>
       </section>
-    </>
+    </section>
   );
 }
 

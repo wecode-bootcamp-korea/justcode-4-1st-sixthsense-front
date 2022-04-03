@@ -1,6 +1,6 @@
 import style from './PriceRange.module.css';
 
-function PriceRange({ title, price }) {
+function PriceRange({ title, price, symbol }) {
   return (
     <section className={style.priceBoxWrap}>
       <div className={style.title} style={{ marginRight: 0 }}>
@@ -8,7 +8,7 @@ function PriceRange({ title, price }) {
       </div>
       <section className={style.numberBoxWrap}>
         <input type="number" value={price} readOnly />
-        <span>만원</span>
+        <span>{symbol}</span>
       </section>
     </section>
   );

@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
   margin-right: 0;
+  margin-bottom: 20px;
   padding: 0;
   font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
@@ -15,12 +16,11 @@
 .SmallModal .xButton {
   border: none;
   padding: 0;
-  width: max-content;
-  background-image: none;
-  color: rgb(105, 105, 105);
-  font-size: 35px;
-}
-
-.SmallModal .xButton svg {
-  margin-top: 5px;
+  width: 20px;
+  height: 20px;
+  background-image: url(https://user-images.githubusercontent.com/85507868/161416562-aafa9939-4844-4ca6-9a48-9a6b588b8606.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.7;
 }

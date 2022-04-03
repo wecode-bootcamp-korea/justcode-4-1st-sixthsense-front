@@ -20,6 +20,7 @@ function List() {
   const [vis3, setVis3] = useState('hidden');
   const [headCountArr, setHeadCountArr] = useState(['인원']);
   const [headCountStr, setHeadCountStr] = useState('');
+  const [title, setTitle] = useState('가격범위');
 
   const layoutVisibleHandler = e => {
     const index = Number(e.target.id);
@@ -156,7 +157,7 @@ function List() {
                 layoutVisibleHandler(e);
               }}
             >
-              가격 범위
+              {title}
             </button>
           </div>
           <div
@@ -165,7 +166,7 @@ function List() {
               visibility: vis2,
             }}
           >
-            <LayOutSecond />
+            <LayOutSecond setTitle={setTitle} />
           </div>
           <div>
             <button

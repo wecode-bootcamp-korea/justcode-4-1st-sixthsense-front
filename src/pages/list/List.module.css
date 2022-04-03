@@ -54,7 +54,7 @@
 .searchBar input[type='search'] {
   margin-top: 0;
   margin-right: 10px;
-  padding: 8px 3px 8px 10px;
+  padding: 8px 3px 8px 0;
   border: 1px solid silver;
   border-radius: 3px;
   font-size: 16px;
@@ -104,7 +104,7 @@
   border: 1px solid silver;
   border-radius: 4px;
   background-color: transparent;
-  width: 200px;
+  width: 225px;
   background-image: url(https://user-images.githubusercontent.com/85507868/160812110-52a487f9-7744-4979-86dc-b7a6385ba96f.png);
   background-position: 90% center;
   background-size: 13px;

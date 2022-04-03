@@ -7,17 +7,52 @@ import PriceRange from './Child/PriceRange';
 
 let lowPrice = 0;
 let upperPrice = 0;
+let symbol = '만원';
 
-function LayOutSecond() {
+function LayOutSecond({ setTitle }) {
   const [leftPercent, setLeftPercent] = useState();
   const [rightPercent, setrightPercent] = useState();
   lowPrice = leftPercent > -1 && Math.floor(leftPercent);
   upperPrice = rightPercent > -1 && Math.floor(rightPercent);
+
+  if (rightPercent === 100) {
+    symbol = '만원 ~';
+  }
+  if (rightPercent < 100) {
+    symbol = '만원';
+  }
+
+  function toLocalprice(num) {
+    return (num * 10000).toLocaleString('ko-KR', {
+      style: 'currency',
+      currency: 'KRW',
+      currencyDisplay: 'symbol',
+    });
+  }
+
+  function putTitle(e) {
+    if (lowPrice === 0 && upperPrice === 100) {
+      setTitle('가격범위');
+    }
+
+    setTitle(`${toLocalprice(lowPrice)} ~ ${toLocalprice(upperPrice)}`);
+  }
+
+  function closeModal(e) {
+    const parentStyleVisible =
+      e.target.parentElement.parentElement.style.visibility;
+    let judge = false;
+    if (parentStyleVisible === 'visible') {
+      judge = true;
+    }
+    e.target.parentElement.parentElement.style.visibility = judge && 'hidden';
+  }
+
   return (
     <section
       style={{ display: 'flex', flexDirection: 'column', marginBottom: 10 }}
     >
-      <SmallModal title="가격 범위" />
+      <SmallModal title="가격범위" />
       <RangeSlider
         setLeftPercent={setLeftPercent}
         setrightPercent={setrightPercent}
@@ -30,11 +65,19 @@ function LayOutSecond() {
           marginBottom: 20,
         }}
       >
-        <PriceRange title="최저요금" price={lowPrice} />
+        <PriceRange title="최저요금" price={lowPrice} symbol="만원" />
         <div style={{ marginRight: 0, padding: 5, paddingTop: 40 }}> - </div>
-        <PriceRange title="최고요금" price={upperPrice} />
+        <PriceRange title="최고요금" price={upperPrice} symbol={symbol} />
       </div>
-      <button style={styles}>적용하기</button>
+      <button
+        style={styles}
+        onClick={e => {
+          putTitle(e);
+          closeModal(e);
+        }}
+      >
+        적용하기
+      </button>
     </section>
   );
 }
