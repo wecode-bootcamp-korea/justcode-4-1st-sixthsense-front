@@ -1,12 +1,10 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import style from './Main.module.css';
 import MainContact from './components/contact/MainContact';
 
 function Main() {
-  const mainRef = useRef();
-
   return (
-    <div ref={mainRef}>
+    <>
       <div className={`${style.sliderBig} ${style.mainFirst}`}>
         slider big 1
       </div>
@@ -19,8 +17,10 @@ function Main() {
       <div className={style.hashtagList}>hashtag list</div>
       <div className={style.sliderSmall}>slider small 3</div>
       <div className={style.sliderSmall}>slider small 4</div>
-      <MainContact />
-    </div>
+      <div>
+        <MainContact />
+      </div>
+    </>
   );
 }
 
