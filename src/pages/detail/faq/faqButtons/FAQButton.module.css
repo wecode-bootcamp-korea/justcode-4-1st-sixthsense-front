@@ -1,0 +1,9 @@
+.info {
+  line-height: 50px;
+  color: #666666;
+}
+
+.infoActive {
+  line-height: 50px;
+  color: white;
+}

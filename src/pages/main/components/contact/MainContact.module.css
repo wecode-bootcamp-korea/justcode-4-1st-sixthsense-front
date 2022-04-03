@@ -1,0 +1,52 @@
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 30px;
+  height: 250px;
+  border: 1px solid black;
+}
+.contactWrapper {
+  border: 1px solid gray;
+  padding: 30px;
+  width: 600px;
+  display: flex;
+  justify-content: center;
+}
+
+.contactWrapper:last-child {
+  border-left: none;
+}
+
+.contactWrapper p {
+  width: 450px;
+  text-align: center;
+}
+
+.contactText1 {
+  font-size: 18px;
+  padding-bottom: 30px;
+}
+
+.contactText2 {
+  font-size: 14px;
+  padding-bottom: 30px;
+}
+
+.contactMore {
+  position: relative;
+  font-size: 13px;
+  padding: 5px;
+}
+
+.contactMore::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 0.1px;
+  background: black;
+}
