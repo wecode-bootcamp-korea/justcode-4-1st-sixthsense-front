@@ -2,9 +2,9 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-import LayOutFirst from './LayOutFirst/LayOutFirst';
-import LayOutSecond from './LayOutSecond/LayOutSecond';
-import LayOutThird from './LayOutThird/LayOutThird';
+import LayOutFirst from './Filter/LayOutFirst/LayOutFirst';
+import LayOutSecond from './Filter//LayOutSecond/LayOutSecond';
+import LayOutThird from './Filter//LayOutThird/LayOutThird';
 
 import style from '../list/List.module.css';
 

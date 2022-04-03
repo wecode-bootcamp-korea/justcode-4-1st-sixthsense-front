@@ -20,12 +20,13 @@ function LayOutFirst({ setHeadCountArr }) {
 
   function closeModal(e) {
     const parentStyleVisible =
-      e.target.parentElement.parentElement.style.visibility;
+      e.target.parentElement.parentElement.parentElement.style.visibility;
     let judge = false;
     if (parentStyleVisible === 'visible') {
       judge = true;
     }
-    e.target.parentElement.parentElement.style.visibility = judge && 'hidden';
+    e.target.parentElement.parentElement.parentElement.style.visibility =
+      judge && 'hidden';
   }
 
   return (

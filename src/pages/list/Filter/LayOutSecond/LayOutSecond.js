@@ -9,8 +9,8 @@ let upperPrice = 0;
 let symbol = '만원';
 
 function LayOutSecond({ setTitle }) {
-  const [leftPercent, setLeftPercent] = useState();
-  const [rightPercent, setrightPercent] = useState();
+  const [leftPercent, setLeftPercent] = useState(0);
+  const [rightPercent, setrightPercent] = useState(50);
   lowPrice = leftPercent > -1 && Math.floor(leftPercent);
   upperPrice = rightPercent > -1 && Math.floor(rightPercent);
 
@@ -31,6 +31,9 @@ function LayOutSecond({ setTitle }) {
 
   function putTitle(e) {
     if (lowPrice === 0 && upperPrice === 100) {
+      setTitle('가격범위');
+    }
+    if (lowPrice === 0 && upperPrice === 0) {
       setTitle('가격범위');
     }
 
