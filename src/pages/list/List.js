@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 
 import SmallModal from './SmallModal/SmallModal';
 import LayOutFirst from './LayOutFirst/LayOutFirst';
+import LayOutSecond from './LayOutSecond/LayOutSecond';
 import BlackButton from '../../components/BlackButton/BlackButton';
 
 import style from '../list/List.module.css';
@@ -164,8 +165,7 @@ function List() {
               visibility: vis2,
             }}
           >
-            <SmallModal title="가격 범위" />
-            <BlackButton content="적용하기" />
+            <LayOutSecond />
           </div>
           <div>
             <button

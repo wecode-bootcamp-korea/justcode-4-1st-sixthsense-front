@@ -9,6 +9,7 @@ function SmallModal({ title }) {
         <button
           className={style.xButton}
           onClick={e => {
+            console.log(e.target);
             const parentStyleVisible =
               e.target.parentElement.parentElement.parentElement.parentElement
                 .style.visibility;
