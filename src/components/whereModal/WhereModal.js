@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import style from './WhereModal.module.css';
 import { AiOutlineSearch, AiOutlineClose } from 'react-icons/ai';
 import BlackButton from '../BlackButton/BlackButton';
 
 function WhereModal({ modalRef, closeModal }) {
+  const [selectCountry, setSelectCountry] = useState(null);
+  const [countries, setCountries] = useState([
+    {
+      id: 1,
+      isDomestic: true,
+      city: '',
+    },
+  ]);
+  useEffect(() => {
+    fetch('/data/countries.json', { method: 'GET' })
+      .then(res => res.json())
+      .then(res => setCountries(res));
+  });
+
+  const clicked = e => {
+    setSelectCountry(e.currentTarget.innerText);
+  };
+
   return (
     <div className={style.modalWrapper} ref={modalRef}>
       <div className={style.modal}>
@@ -29,41 +47,75 @@ function WhereModal({ modalRef, closeModal }) {
         </div>
         <div className={style.location}>
           <div className={style.locationWrapper}>
-            <p className={style.domestic}>국내</p>
+            <p className={style.domOrAbr}>국내</p>
             <ul className={style.cities}>
-              <li className={style.city}>국내전체</li>
-              <li className={style.city}>제주</li>
-              <li className={style.city}>서울</li>
-              <li className={style.city}>강원</li>
-              <li className={style.city}>부산</li>
-              <li className={style.city}>경기</li>
-              <li className={style.city}>충청</li>
-              <li className={style.city}>경상</li>
-              <li className={style.city}>전라</li>
-              <li className={style.city}>인천</li>
-              <li className={style.city}>광주</li>
-              <li className={style.city}>대전</li>
-              <li className={style.city}>대구</li>
-              <li className={style.city}>울산</li>
+              {countries.map(country => {
+                if (country.isDomestic) {
+                  if (country.city === selectCountry) {
+                    return (
+                      <li
+                        className={style.city}
+                        key={country.id}
+                        onClick={clicked}
+                        style={{
+                          background: 'black',
+                          color: 'whitesmoke',
+                          borderRadius: '30px',
+                          boxShadow: '6px 7px 15px 0 rgb(0 0 0 / 30%)',
+                        }}
+                      >
+                        {country.city}
+                      </li>
+                    );
+                  } else {
+                    return (
+                      <li
+                        className={style.city}
+                        key={country.id}
+                        onClick={clicked}
+                      >
+                        {country.city}
+                      </li>
+                    );
+                  }
+                }
+              })}
             </ul>
           </div>
           <div className={style.locationWrapper}>
-            <p className={style.domestic}>국내</p>
+            <p className={style.domOrAbr}>해외</p>
             <ul className={style.cities}>
-              <li className={style.city}>국내전체</li>
-              <li className={style.city}>제주</li>
-              <li className={style.city}>서울</li>
-              <li className={style.city}>강원</li>
-              <li className={style.city}>부산</li>
-              <li className={style.city}>경기</li>
-              <li className={style.city}>충청</li>
-              <li className={style.city}>경상</li>
-              <li className={style.city}>전라</li>
-              <li className={style.city}>인천</li>
-              <li className={style.city}>광주</li>
-              <li className={style.city}>대전</li>
-              <li className={style.city}>대구</li>
-              <li className={style.city}>울산</li>
+              {countries.map(country => {
+                if (!country.isDomestic) {
+                  if (country.city === selectCountry) {
+                    return (
+                      <li
+                        className={style.city}
+                        key={country.id}
+                        onClick={clicked}
+                        style={{
+                          background: 'black',
+                          color: 'whitesmoke',
+                          borderRadius: '30px',
+                          boxShadow: '6px 7px 15px 0 rgb(0 0 0 / 30%)',
+                        }}
+                      >
+                        {country.city}
+                      </li>
+                    );
+                  } else {
+                    return (
+                      <li
+                        className={style.city}
+                        key={country.id}
+                        onClick={clicked}
+                      >
+                        {country.city}
+                      </li>
+                    );
+                  }
+                }
+              })}
             </ul>
           </div>
         </div>
