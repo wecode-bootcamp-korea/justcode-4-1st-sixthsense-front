@@ -99,12 +99,24 @@ function BannerSlideSmall2() {
               {slides.map((slide, slideIndex) => {
                 const itemIndex = getItemIndex(slideIndex);
                 return (
-                  <img
-                    className={style.bannerSlideSmall}
-                    key={null}
-                    src={items[itemIndex]}
-                    alt={`banner${itemIndex}`}
-                  />
+                  <div key={null} className={style.slide}>
+                    <img
+                      className={style.bannerSlideSmall}
+                      key={null}
+                      src={items[itemIndex]}
+                      alt={`banner${itemIndex}`}
+                    />
+                    <section className={style.description}>
+                      <div className={style.name}>온고</div>
+                      <div className={style.location}>강원/춘천시</div>
+                      <div className={style.secondDescription}>
+                        6.8일자 1박2인
+                        <br />
+                        숙박권 이벤트
+                      </div>
+                      <div className={style.readMore}>자세히 보기</div>
+                    </section>
+                  </div>
                 );
               })}
             </div>

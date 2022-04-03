@@ -70,10 +70,12 @@
   flex-direction: column;
   align-items: center;
   margin-top: 30px;
+  padding-right: 50px;
 }
 
 .name {
   font-size: 25px;
+  font-weight: 540;
 }
 
 .location {
