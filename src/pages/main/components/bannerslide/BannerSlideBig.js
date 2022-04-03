@@ -90,22 +90,22 @@ function BannerSlideBig() {
                 );
               })}
             </div>
-            <div className={style.ButtonBackground}>
-              <button
-                className={style.PrevButton}
-                direction="prev"
-                onClick={() => handleSwipe(-1)}
-              >
-                &lt;
-              </button>
-              <button
-                className={style.NextButton}
-                direction="next"
-                onClick={() => handleSwipe(1)}
-              >
-                &gt;
-              </button>
-            </div>
+
+            <button
+              className={style.PrevButton}
+              direction="prev"
+              onClick={() => handleSwipe(-1)}
+            >
+              &lt;
+            </button>
+            <button
+              className={style.NextButton}
+              direction="next"
+              onClick={() => handleSwipe(1)}
+            >
+              &gt;
+            </button>
+            <div className={style.ButtonBackground} />
           </div>
         </div>
       </div>

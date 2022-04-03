@@ -34,14 +34,14 @@
 }
 
 .ButtonBackground {
-  display: inline-block;
-  /* position: absolute; */
+  /* display: inline-block; */
+  position: absolute;
   background-color: rgba(0, 0, 0, 0.4);
   top: 926px;
   left: 40px;
   width: 100px;
   height: 100px;
-  z-index: 900;
+  z-index: 1;
 }
 
 .PrevButton {

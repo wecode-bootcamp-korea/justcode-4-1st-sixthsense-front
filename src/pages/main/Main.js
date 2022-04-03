@@ -1,12 +1,14 @@
 import React, { useRef } from 'react';
 import style from './Main.module.css';
 import MainContact from './components/contact/MainContact';
+import BannerSlideBig from './components/bannerslide/BannerSlideBig';
 
 function Main() {
   const mainRef = useRef();
 
   return (
     <div ref={mainRef}>
+      <BannerSlideBig />
       <div className={`${style.sliderBig} ${style.mainFirst}`}>
         slider big 1
       </div>
