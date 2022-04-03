@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import style from './Main.module.css';
 import MainContact from './components/contact/MainContact';
 import BannerSlideSmall1 from './components/bannerslide/BannerSlideSmall1';
+import BannerSlideSmall2 from './components/bannerslide/BannerSlideSmall2';
 
 function Main() {
   const mainRef = useRef();
@@ -14,7 +15,8 @@ function Main() {
       <BannerSlideSmall1 />
       <div className={style.mainBanner}>banner</div>
       <div className={style.sliderMedium}>slider medium 1</div>
-      <div className={style.sliderSmall}>slider small 2</div>
+      <BannerSlideSmall2 />
+      {/* <div className={style.sliderSmall}>slider small 2</div> */}
       <div className={style.sliderBig}>slider big 2</div>
       <div className={style.travelList}>travel list</div>
       <div className={style.hashtagList}>hashtag list</div>

@@ -1,7 +1,7 @@
-import style from './BannerSlideSmall1.module.css';
+import style from './BannerSlideSmall2.module.css';
 import React, { useState } from 'react';
 
-function BannerSlideSmall1() {
+function BannerSlideSmall2() {
   const items = [
     '/image/room01.jpg',
     '/image/room02.jpg',
@@ -67,8 +67,24 @@ function BannerSlideSmall1() {
   return (
     <div className={style.sliderArea}>
       <div className={style.slider}>
-        <div className={style.bannerSlideSmallDescription}>
-          오직 스테이 포레스트에서만
+        <div className={style.eventAndArrows}>
+          <span>EVENT</span>
+          <span className={style.buttons}>
+            <span
+              className={style.prevButton}
+              direction="prev"
+              onClick={() => handleSwipe(-1)}
+            >
+              &lt;
+            </span>
+            <span
+              className={style.nextButton}
+              direction="next"
+              onClick={() => handleSwipe(1)}
+            >
+              &gt;
+            </span>
+          </span>
         </div>
         <div className={style.sliderList}>
           <div className={style.wrapper}>
@@ -93,22 +109,6 @@ function BannerSlideSmall1() {
                 );
               })}
             </div>
-            <div className={style.buttons}>
-              <div
-                className={style.prevButton}
-                direction="prev"
-                onClick={() => handleSwipe(-1)}
-              >
-                &lt;
-              </div>
-              <div
-                className={style.nextButton}
-                direction="next"
-                onClick={() => handleSwipe(1)}
-              >
-                &gt;
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -116,4 +116,4 @@ function BannerSlideSmall1() {
   );
 }
 
-export default BannerSlideSmall1;
+export default BannerSlideSmall2;
