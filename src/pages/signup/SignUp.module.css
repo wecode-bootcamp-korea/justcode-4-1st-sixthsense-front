@@ -4,7 +4,6 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
-  margin-top: 80px;
 }
 
 .signuptitlebox {
@@ -15,6 +14,7 @@
   width: 350px;
   height: 170px;
   border-bottom: 1px solid black;
+  margin-top: 80px;
 }
 
 .signuptitle {
@@ -161,4 +161,14 @@
   margin: 3px 0px;
   padding-bottom: 6px;
   font-size: 13px;
+}
+
+.checkvalid {
+  margin-top: 8px;
+  font-size: 14px;
+  color: red;
+}
+
+.bluecheckvalid {
+  color: rgb(0, 0, 255);
 }
