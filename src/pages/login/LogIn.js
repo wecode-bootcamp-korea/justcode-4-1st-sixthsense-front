@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './LogIn.module.css';
+import { Link } from 'react-router-dom';
 
 function LogIn() {
   return (
@@ -27,9 +28,11 @@ function LogIn() {
       </div>
 
       <div className={style.loginbuttonbox}>
-        <button className={style.loginbutton} id="login-button">
-          L O G I N
-        </button>
+        <Link to="/main" className={style.loginbutton} id="login-button">
+          <button className={style.loginbuttonstyle} id="login-button">
+            L O G I N
+          </button>
+        </Link>
         <button
           className={style.loginbutton}
           id="non-member-reservation-button"
@@ -39,7 +42,9 @@ function LogIn() {
       </div>
 
       <div className={style.linkbox}>
-        <span className={style.loginfindlink}>회원가입</span>
+        <Link to="/signup" className={style.loginfindlink}>
+          회원가입
+        </Link>
         <span className={style.loginfindlink}>비밀번호 찾기</span>
       </div>
 
