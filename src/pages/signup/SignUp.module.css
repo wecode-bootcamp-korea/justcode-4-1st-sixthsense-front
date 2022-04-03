@@ -185,10 +185,16 @@
   justify-content: space-between;
 }
 
-.morescript {
+.hidemenu {
   display: none;
+}
+
+.showmenu {
   background-color: #fcfcfc;
+  height: 300px;
+  overflow: scroll;
   line-height: 25px;
   font-size: 12px;
   opacity: 0.6;
+  padding: 20px;
 }
