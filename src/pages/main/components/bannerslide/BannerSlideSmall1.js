@@ -1,4 +1,4 @@
-import style from './BannerSlideSmall.module.css';
+import style from './BannerSlideSmall1.module.css';
 import React, { useState } from 'react';
 
 function BannerSlideSmall() {
@@ -12,7 +12,7 @@ function BannerSlideSmall() {
   ];
   const itemSize = items.length;
   const transitionTime = 400;
-  const transitionStyle = `transform ${transitionTime}ms ease 0s`;
+  const transitionStyle = `transform ${transitionTime}ms ease 0.15s`;
   const remain = 3; // 슬라이드가 끝나기 전 남아있는 슬라이드 개수
   const [currentIndex, setCurrentIndex] = useState(remain);
   const [slideTransition, setTransition] = useState(transitionStyle);
@@ -67,6 +67,9 @@ function BannerSlideSmall() {
   return (
     <div className={style.sliderArea}>
       <div className={style.slider}>
+        <div className={style.bannerSlideSmallDescription}>
+          오직 스테이 포레스트에서만
+        </div>
         <div className={style.sliderList}>
           <div className={style.wrapper}>
             <div
@@ -82,7 +85,7 @@ function BannerSlideSmall() {
                 const itemIndex = getItemIndex(slideIndex);
                 return (
                   <img
-                    className={style.BannerSlideSmall}
+                    className={style.bannerSlideSmall}
                     key={null}
                     src={items[itemIndex]}
                     alt={`banner${itemIndex}`}
@@ -90,12 +93,22 @@ function BannerSlideSmall() {
                 );
               })}
             </div>
-            <button direction="prev" onClick={() => handleSwipe(-1)}>
-              prev
-            </button>
-            <button direction="next" onClick={() => handleSwipe(1)}>
-              next
-            </button>
+            <div className={style.buttons}>
+              <div
+                className={style.prevButton}
+                direction="prev"
+                onClick={() => handleSwipe(-1)}
+              >
+                &lt;
+              </div>
+              <div
+                className={style.nextButton}
+                direction="next"
+                onClick={() => handleSwipe(1)}
+              >
+                &gt;
+              </div>
+            </div>
           </div>
         </div>
       </div>
