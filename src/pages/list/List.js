@@ -2,11 +2,10 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-
 import LayOutFirst from './Filter/LayOutFirst/LayOutFirst';
 import LayOutSecond from './Filter//LayOutSecond/LayOutSecond';
 import LayOutThird from './Filter//LayOutThird/LayOutThird';
-
+import Products from './Products/Products';
 
 import style from '../list/List.module.css';
 
@@ -199,6 +198,10 @@ function List() {
       <center className={style.listSearchbutton}>
         <button>SEARCH →</button>
       </center>
+
+      <section className={style.product}>
+        <Products />
+      </section>
     </div>
   );
 }
