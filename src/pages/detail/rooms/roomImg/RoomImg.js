@@ -1,14 +1,10 @@
 import React from 'react';
 import style from './RoomImg.module.css';
 
-const RoomImg = () => {
+const RoomImg = ({ url, id }) => {
   return (
     <div className={style.card}>
-      <img
-        src="https://images.unsplash.com/photo-1564078516393-cf04bd966897?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cm9vbXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60"
-        alt="room image"
-        className={style.roomImage}
-      />
+      <img src={url} alt={id} className={style.roomImage} />
       <div className={style.infoLayer}>
         <div className={style.roomCondition}>
           <span className={style.roomName}>THE LAKE</span>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import style from './DetailTop.module.css';
 import { FiHeart } from 'react-icons/fi';
 import { FaHeart } from 'react-icons/fa';
+import DormSlide from './DormSlide';
 
 const DetailTop = () => {
   const [isLike, setIsLike] = useState(false);
@@ -39,7 +40,7 @@ const DetailTop = () => {
         </div>
       </div>
       {/* 숙소 사진 슬라이드 */}
-      <div className={style.dorm_img} />
+      <DormSlide />
     </div>
   );
 };
