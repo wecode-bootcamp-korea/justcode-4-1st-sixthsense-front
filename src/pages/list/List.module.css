@@ -21,7 +21,8 @@
   letter-spacing: 15px;
 }
 
-.listFilter {
+.listFilter,
+.product {
   display: flex;
   flex-direction: column;
   margin: auto;

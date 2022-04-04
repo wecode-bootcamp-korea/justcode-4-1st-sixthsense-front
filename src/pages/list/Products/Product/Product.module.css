@@ -1,0 +1,8 @@
+.wapper {
+  display: flex;
+}
+
+.content {
+  width: 700px;
+  flex-flow: row wrap;
+}

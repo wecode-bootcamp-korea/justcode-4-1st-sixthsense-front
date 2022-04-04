@@ -30,23 +30,25 @@ function TravelList() {
     },
   ];
   return (
-    <div>
-      <div className={style.travelText}>TRAVEL</div>
-      <div className={style.gridWrapper}>
-        {contents.map(con => {
-          return (
-            <div key={con.id} className={style.contentsWrapper}>
-              <img className={style.img} src={con.url} alt={con.id} />
-              <div className={style.textSection}>
-                <p className={style.textTitle}>
-                  리스트 <br /> 한줄 설명
-                </p>
-                <p className={style.textPlace}>도시/시구군 · 이름</p>
-                <p className={style.readMore}>read more</p>
+    <div className={style.travelList}>
+      <div className={style.tarvelWrapper}>
+        <div className={style.travelText}>TRAVEL</div>
+        <div className={style.gridWrapper}>
+          {contents.map(con => {
+            return (
+              <div key={con.id} className={style.contentsWrapper}>
+                <img className={style.img} src={con.url} alt={con.id} />
+                <div className={style.textSection}>
+                  <p className={style.textTitle}>
+                    리스트 <br /> 한줄 설명
+                  </p>
+                  <p className={style.textPlace}>도시/시구군 · 이름</p>
+                  <p className={style.readMore}>read more</p>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </div>
   );

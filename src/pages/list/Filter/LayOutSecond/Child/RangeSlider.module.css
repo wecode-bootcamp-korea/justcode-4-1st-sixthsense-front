@@ -22,7 +22,6 @@ input[type='range'] {
   height: 0.5px;
   border: none;
   z-index: 2;
-  opacity: 0;
 }
 
 input::-webkit-slider-thumb {
@@ -32,7 +31,6 @@ input::-webkit-slider-thumb {
   border-radius: 0;
   border: 0 none;
   background-color: rgb(0, 0, 0);
-  opacity: 0;
 }
 
 input::-moz-range-thumb {
