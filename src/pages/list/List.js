@@ -10,26 +10,24 @@ import Products from './Products/Products';
 
 import style from '../list/List.module.css';
 
-let totalpeople = 0;
-let firstword = '';
-let secondword = '';
-let lastword = '';
-
 function List() {
+  //하위 창 open & close 관리 state
   const [vis1, setVis1] = useState('hidden');
-  const [vis2, setvis2] = useState('hidden');
+  const [vis2, setVis2] = useState('hidden');
   const [vis3, setVis3] = useState('hidden');
-  const [headCountArr, setHeadCountArr] = useState(['인원']);
-  const [headCountStr, setHeadCountStr] = useState('');
 
+  //창 1 state
+  const [headCountStr, setHeadCountStr] = useState('인원');
+  //창 2 state
   const [title, setTitle] = useState('가격범위');
+  //창 3 state
   const [checkBoxTitle, setCheckBoxTitle] = useState('스테이 유형');
 
   const layoutVisibleHandler = e => {
     const index = Number(e.target.id);
     const arr = [
       [vis1, setVis1],
-      [vis2, setvis2],
+      [vis2, setVis2],
       [vis3, setVis3],
     ];
     arr[index][0] === 'hidden'
@@ -39,59 +37,9 @@ function List() {
 
   const totalLayourHandler = () => {
     setVis1('hidden');
-    setvis2('hidden');
+    setVis2('hidden');
     setVis3('hidden');
   };
-
-  //총 인원 수 세어주기
-  // 그 값들 백으로 넘길 수 있도록 하기
-
-  function sumPeople() {
-    headCountArr.forEach(data => {
-      totalpeople += data[1];
-    });
-  }
-
-  function stringArray() {
-    let tempStirng = '인원';
-    if (!totalpeople) {
-      firstword = '인원';
-      setHeadCountStr(tempStirng);
-      return;
-    }
-    if (headCountArr[0] === '인원') {
-      firstword = '인원';
-    }
-    headCountArr.forEach(data => {
-      if (data[0] === '성인') {
-        firstword = `성인: ${data[1]}`;
-      }
-
-      if (data[0] === '아동') {
-        secondword = `아동: ${data[1]}`;
-      }
-
-      if (data[0] === '영아') {
-        lastword = `영아: ${data[1]}`;
-      }
-    });
-    let stringarr = [firstword, secondword, lastword];
-
-    stringarr.forEach(data => {
-      if (data) {
-        tempStirng += `${data} `;
-      }
-    });
-
-    let resultString = tempStirng.slice(2);
-    setHeadCountStr(resultString);
-  }
-
-  useEffect(() => {
-    totalpeople = 0;
-    sumPeople();
-    stringArray();
-  });
 
   return (
     <div className={style.listWap}>
@@ -150,7 +98,7 @@ function List() {
               visibility: vis1,
             }}
           >
-            <LayOutFirst setHeadCountArr={setHeadCountArr} />
+            <LayOutFirst setHeadCountStr={setHeadCountStr} />
           </div>
           <div>
             <button
