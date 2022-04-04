@@ -28,9 +28,11 @@ function LogIn() {
       </div>
 
       <div className={style.loginbuttonbox}>
-        <button className={style.loginbutton} id="login-button">
-          L O G I N
-        </button>
+        <Link to="/main" className={style.loginbutton} id="login-button">
+          <button className={style.loginbuttonstyle} id="login-button">
+            L O G I N
+          </button>
+        </Link>
         <button
           className={style.loginbutton}
           id="non-member-reservation-button"
