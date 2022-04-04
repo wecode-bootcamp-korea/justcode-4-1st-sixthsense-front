@@ -43,6 +43,7 @@ function WhenModal({ modalRef, closeModal }) {
   const reset = () => {
     setCheckIn(null);
     setCheckOut(null);
+    setStateMoment(moment());
   };
 
   const onHover = day => {
