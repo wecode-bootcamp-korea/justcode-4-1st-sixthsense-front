@@ -1,6 +1,10 @@
-.info {
+.infoBtn {
   line-height: 50px;
   color: #666666;
+}
+
+.infoBtn:hover {
+  cursor: pointer;
 }
 
 .infoActive {
