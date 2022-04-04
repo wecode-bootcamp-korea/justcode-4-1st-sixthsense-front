@@ -1,5 +1,8 @@
+.travelList {
+  display: flex;
+  justify-content: center;
+}
 .travelText {
-  width: 100%;
   text-align: center;
   letter-spacing: 8px;
   font-size: 14px;
