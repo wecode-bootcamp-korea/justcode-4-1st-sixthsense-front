@@ -1626,7 +1626,7 @@ function SignUp() {
         <button
           className={style.signupbtnbox}
           id="signup-button"
-          onClick={() => navigate('/main')}
+          onClick={() => navigate('/login')}
         >
           회원가입
         </button>
@@ -1635,7 +1635,7 @@ function SignUp() {
         <button
           className={style.signupbtnbox}
           id="signup-button"
-          onClick={() => navigate('/main')}
+          onClick={() => navigate('/login')}
         >
           인증 건너뛰고 가입
         </button>
