@@ -4,6 +4,7 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
+  margin-bottom: 100px;
 }
 
 .signuptitlebox {
@@ -171,4 +172,29 @@
 
 .bluecheckvalid {
   color: rgb(0, 0, 255);
+}
+
+.checkbtn {
+  display: flex;
+  flex-direction: column;
+}
+
+.smallcheckbtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hidemenu {
+  display: none;
+}
+
+.showmenu {
+  background-color: #fcfcfc;
+  height: 300px;
+  overflow: scroll;
+  line-height: 25px;
+  font-size: 12px;
+  opacity: 0.6;
+  padding: 20px;
 }
