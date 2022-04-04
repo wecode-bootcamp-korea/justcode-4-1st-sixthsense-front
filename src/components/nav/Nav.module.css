@@ -26,6 +26,9 @@
   font-size: 17px;
   transform: translate(0, -50%);
 }
+.logo:hover {
+  text-decoration: none;
+}
 
 .centerMenu {
   display: flex;
@@ -65,6 +68,10 @@
   color: black;
   text-decoration: none;
 }
+.menuList:hover {
+  text-decoration: none;
+}
+
 .menuList:nth-child(5) {
   padding-left: 30px;
   border-left: 1px solid black;
