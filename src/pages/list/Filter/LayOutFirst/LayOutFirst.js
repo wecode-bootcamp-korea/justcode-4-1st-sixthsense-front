@@ -40,23 +40,24 @@ function LayOutFirst({ setHeadCountStr }) {
     }
     headCountArr.forEach(data => {
       if (data[0] === '성인') {
-        firstword = `성인: ${data[1]}`;
+        firstword = `성인: ${data[1]},`;
       }
 
       if (data[0] === '아동') {
-        secondword = `아동: ${data[1]}`;
+        firstword = `성인: 0,`;
+        secondword = `아동: ${data[1]},`;
       }
 
       if (data[0] === '영아') {
+        firstword = `성인: 0,`;
+        secondword = `아동: 0,`;
         lastword = `영아: ${data[1]}`;
       }
     });
     let stringarr = [firstword, secondword, lastword];
 
     stringarr.forEach(data => {
-      if (data !== '인원' && stringarr.length !== 1) {
-        tempStirng += `${data} `;
-      }
+      tempStirng += `${data} `;
     });
 
     setHeadCountStr(tempStirng);
