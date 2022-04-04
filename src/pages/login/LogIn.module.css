@@ -92,6 +92,7 @@
   flex-direction: column;
   height: 170px;
 }
+
 .snsloginlink {
   margin: 30px 0px;
   width: 100%;
@@ -102,7 +103,4 @@
   align-items: center;
   justify-content: space-around;
   width: 100%;
-}
-
-.emoticonbox {
 }
