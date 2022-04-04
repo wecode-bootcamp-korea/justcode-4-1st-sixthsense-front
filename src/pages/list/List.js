@@ -2,9 +2,11 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-import SmallModal from './SmallModal/SmallModal';
-import LayOutFirst from './LayOutFirst/LayOutFirst';
-import BlackButton from '../../components/BlackButton/BlackButton';
+
+import LayOutFirst from './Filter/LayOutFirst/LayOutFirst';
+import LayOutSecond from './Filter//LayOutSecond/LayOutSecond';
+import LayOutThird from './Filter//LayOutThird/LayOutThird';
+
 
 import style from '../list/List.module.css';
 
@@ -19,6 +21,9 @@ function List() {
   const [vis3, setVis3] = useState('hidden');
   const [headCountArr, setHeadCountArr] = useState(['인원']);
   const [headCountStr, setHeadCountStr] = useState('');
+
+  const [title, setTitle] = useState('가격범위');
+  const [checkBoxTitle, setCheckBoxTitle] = useState('스테이 유형');
 
   const layoutVisibleHandler = e => {
     const index = Number(e.target.id);
@@ -155,7 +160,7 @@ function List() {
                 layoutVisibleHandler(e);
               }}
             >
-              가격 범위
+              {title}
             </button>
           </div>
           <div
@@ -164,8 +169,7 @@ function List() {
               visibility: vis2,
             }}
           >
-            <SmallModal title="가격 범위" />
-            <BlackButton content="적용하기" />
+            <LayOutSecond setTitle={setTitle} />
           </div>
           <div>
             <button
@@ -175,7 +179,7 @@ function List() {
                 layoutVisibleHandler(e);
               }}
             >
-              스테이 유형
+              {checkBoxTitle}
             </button>
           </div>
           <div
@@ -184,8 +188,10 @@ function List() {
               visibility: vis3,
             }}
           >
-            <SmallModal title="스테이 유형" />
-            <BlackButton content="적용하기" />
+            <LayOutThird
+              checkBoxTitle={checkBoxTitle}
+              setCheckBoxTitle={setCheckBoxTitle}
+            />
           </div>
         </div>
       </section>

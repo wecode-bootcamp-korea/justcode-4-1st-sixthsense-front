@@ -12,6 +12,7 @@ function SmallModal({ title }) {
             const parentStyleVisible =
               e.target.parentElement.parentElement.parentElement.parentElement
                 .style.visibility;
+            console.log(e.target.parentElement.parentElement.parentElement);
             let judge = false;
 
             if (parentStyleVisible === 'visible') {
@@ -20,9 +21,7 @@ function SmallModal({ title }) {
             e.target.parentElement.parentElement.parentElement.parentElement.style.visibility =
               judge && 'hidden';
           }}
-        >
-          <IoMdClose />
-        </button>
+        />
       </div>
     </div>
   );

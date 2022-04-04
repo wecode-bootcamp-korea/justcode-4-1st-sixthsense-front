@@ -1,0 +1,34 @@
+.checkBoxWap .content {
+  margin: auto;
+}
+
+.checkBoxWap input[type='checkbox'] {
+  display: none;
+}
+
+.checkBoxWap input[type='checkbox'] + label {
+  display: flex;
+  align-items: center;
+}
+
+.checkBoxWap input[type='checkbox'] + label span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(https://user-images.githubusercontent.com/85507868/161420879-c81ca991-6746-4a73-ada4-2a7447155c27.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+}
+
+.checkBoxWap input[type='checkbox']:checked + label span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(https://user-images.githubusercontent.com/85507868/161420897-345a93f1-0ebe-4535-951f-4a6e5db35aad.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 1;
+}
