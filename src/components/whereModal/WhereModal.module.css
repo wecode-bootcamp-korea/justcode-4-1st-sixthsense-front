@@ -83,7 +83,7 @@
 .locationWrapper {
   width: 500px;
 }
-.domestic {
+.domOrAbr {
   padding-left: 20px;
   font-weight: bold;
   font-size: 20px;
@@ -96,6 +96,7 @@
 }
 .city {
   padding: 20px;
+  cursor: pointer;
 }
 .space {
   height: 1000px;

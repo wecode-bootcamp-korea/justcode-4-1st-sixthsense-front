@@ -22,20 +22,29 @@
 .BannerSlideBig {
   position: relative;
   cursor: pointer;
-  width: 1503px;
-  margin: 0px 40px;
+  width: auto;
+  height: auto;
+  /* width: 100%; */
+  width: 1700px;
+  /* max-height: 800px; */
+  /* margin: 0px 40px; */
 }
 
-.sliderList > .wrapper {
-  /* display: flex; */
-  /* justify-content: center; */
-  /* max-width: 1300px; */
+.wrapper {
+  /* display: flex;
+  justify-content: center; */
+  width: auto;
+  height: auto;
+  transform: translateX(100px);
+  max-width: 1700px;
   overflow: hidden;
 }
 
+/*
+
 .ButtonBackground {
   /* display: inline-block; */
-  position: absolute;
+/* position: relative; 
   background-color: rgba(0, 0, 0, 0.4);
   top: 926px;
   left: 40px;
@@ -45,7 +54,7 @@
 }
 
 .PrevButton {
-  position: absolute;
+  /* position: absolute; 
   top: 926px;
   left: 140px;
   color: rgba(255, 255, 255, 0.5);
@@ -57,7 +66,7 @@
 }
 
 .NextButton {
-  position: absolute;
+  /* position: absolute; 
   top: 926px;
   left: 160px;
   color: rgba(255, 255, 255, 0.5);
@@ -66,4 +75,4 @@
   outline: 0;
   font-size: 20px;
   z-index: 999;
-}
+} */

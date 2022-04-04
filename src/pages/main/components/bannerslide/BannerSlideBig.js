@@ -90,7 +90,7 @@ function BannerSlideBig() {
                 );
               })}
             </div>
-
+            <div className={style.ButtonBackground} />
             <button
               className={style.PrevButton}
               direction="prev"
@@ -105,7 +105,6 @@ function BannerSlideBig() {
             >
               &gt;
             </button>
-            <div className={style.ButtonBackground} />
           </div>
         </div>
       </div>

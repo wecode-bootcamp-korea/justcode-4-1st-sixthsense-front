@@ -1,0 +1,27 @@
+.hastagList {
+  display: flex;
+  justify-content: center;
+  padding: 80px 0;
+  background: #f5f5f5;
+}
+.hashtagTopic {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+}
+.gridWrapper {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+.contentsWrapper {
+  margin: 30px 10px 50px;
+}
+.img {
+  width: 190px;
+  height: 120px;
+  object-fit: cover;
+}
+.hashtagText {
+  margin-top: 20px;
+  text-align: center;
+}
