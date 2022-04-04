@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
+import ListWhereButton from './Filter/ListWhereButton/ListWhereButton';
 import LayOutFirst from './Filter/LayOutFirst/LayOutFirst';
 import LayOutSecond from './Filter//LayOutSecond/LayOutSecond';
 import LayOutThird from './Filter//LayOutThird/LayOutThird';
@@ -105,7 +106,7 @@ function List() {
             <div className={style.searchBar}>
               <p>여행지/숙소</p>
               <input type="search" />
-              <button>국내전체</button>
+              <ListWhereButton />
             </div>
 
             <div className="checkIn">

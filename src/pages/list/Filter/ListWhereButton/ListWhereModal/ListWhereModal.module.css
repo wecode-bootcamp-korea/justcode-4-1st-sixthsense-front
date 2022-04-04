@@ -1,0 +1,73 @@
+.modalWrapper {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 50%;
+  right: 0;
+  bottom: 0;
+  transform: translate(-50%, 0);
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 100px;
+  padding: 20px 100px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 6px 0 rgb(0 0 0 / 50%);
+  overflow: auto;
+  margin: auto;
+}
+
+.titleWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.modalTitle {
+  display: inline-block;
+  justify-content: space-between;
+  padding: 90px 0 20px 0;
+  border-bottom: 1px solid gray;
+}
+.whereText {
+  font-weight: bold;
+  font-size: 35px;
+}
+.closeModal {
+  cursor: pointer;
+}
+.location {
+  display: flex;
+  width: 1000px;
+  margin: auto;
+  padding-bottom: 40px;
+}
+.locationWrapper {
+  width: 500px;
+}
+.domOrAbr {
+  padding-left: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+.cities {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.city {
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+}
+.space {
+  height: 1000px;
+}
