@@ -125,10 +125,6 @@
   z-index: 10;
 }
 
-.contentLay {
-  margin-bottom: 10px;
-}
-
 .listFilterNoneSearch div.layout2 {
   position: absolute;
   display: flex;
