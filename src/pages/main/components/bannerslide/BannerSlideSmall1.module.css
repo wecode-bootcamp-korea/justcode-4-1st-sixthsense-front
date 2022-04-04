@@ -65,6 +65,14 @@
   margin: 90px 0 50px 0;
 }
 
+.bannerSlideSmallDescription2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  padding-bottom: 50px;
+}
+
 .description {
   display: flex;
   flex-direction: column;

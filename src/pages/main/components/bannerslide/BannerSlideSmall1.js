@@ -1,7 +1,7 @@
 import style from './BannerSlideSmall1.module.css';
 import React, { useState } from 'react';
 
-function BannerSlideSmall1() {
+function BannerSlideSmall1(props) {
   const items = [
     '/image/room01.jpg',
     '/image/room02.jpg',
@@ -67,8 +67,14 @@ function BannerSlideSmall1() {
   return (
     <div className={style.sliderArea}>
       <div className={style.slider}>
-        <div className={style.bannerSlideSmallDescription}>
-          오직 스테이 포레스트에서만
+        <div
+          className={
+            props.description.css === 1
+              ? style.bannerSlideSmallDescription
+              : style.bannerSlideSmallDescription2
+          }
+        >
+          {props.description.text}
         </div>
         <div className={style.sliderList}>
           <div className={style.wrapper}>
