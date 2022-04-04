@@ -4,6 +4,7 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
+  margin-bottom: 100px;
 }
 
 .logintitlebox {
@@ -70,6 +71,15 @@
   font-weight: 100;
 }
 
+.loginbuttonstyle {
+  border: none;
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  color: white;
+  font-weight: 100;
+}
+
 .loginbutton:last-child {
   height: 40px;
   background-color: #d8d8d8;
@@ -92,6 +102,7 @@
   flex-direction: column;
   height: 170px;
 }
+
 .snsloginlink {
   margin: 30px 0px;
   width: 100%;
@@ -102,7 +113,4 @@
   align-items: center;
   justify-content: space-around;
   width: 100%;
-}
-
-.emoticonbox {
 }
