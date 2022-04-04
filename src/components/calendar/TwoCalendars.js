@@ -138,15 +138,15 @@ function TwoCalendars({
       <div className={style.calendar}>
         <div className={style.month}>{stateMoment.format('M월')}</div>
         <table className={style.calendarTable}>
-          <thead>
-            <tr className={style.week}>
-              <td>일</td>
-              <td>월</td>
-              <td>화</td>
-              <td>수</td>
-              <td>목</td>
-              <td>금</td>
-              <td>토</td>
+          <thead className={style.week}>
+            <tr>
+              {['일', '월', '화', '수', '목', '금', '토'].map((week, idx) => {
+                return (
+                  <td className={style.week} key={idx}>
+                    {week}
+                  </td>
+                );
+              })}
             </tr>
           </thead>
           <tbody>{calendarArr(thisMonth, thisFirstWeek, thisLastWeek)}</tbody>
@@ -157,13 +157,13 @@ function TwoCalendars({
         <table className={style.calendarTable}>
           <thead>
             <tr className={style.week}>
-              <td>일</td>
-              <td>월</td>
-              <td>화</td>
-              <td>수</td>
-              <td>목</td>
-              <td>금</td>
-              <td>토</td>
+              {['일', '월', '화', '수', '목', '금', '토'].map((week, idx) => {
+                return (
+                  <td className={style.week} key={idx}>
+                    {week}
+                  </td>
+                );
+              })}
             </tr>
           </thead>
           <tbody>{calendarArr(nextMonth, nextFirstWeek, nextLlastWeek)}</tbody>
