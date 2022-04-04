@@ -33,11 +33,11 @@ function Footer() {
           <FaYoutube />
         </div>
         <div className={style.list}>
-          <Link to="/https://velog.io/@shorrysorry">김수빈</Link>
-          <Link to="/https://velog.io/@sonaki0811">유다송</Link>
-          <Link to="/https://velog.io/@xcc629">임근홍</Link>
-          <Link to="/https://velog.io/@hani2525">전하은</Link>
-          <Link to="/https://velog.io/@jml22">이정민</Link>
+          <Link to="https://velog.io/@shorrysorry">김수빈</Link>
+          <Link to="https://velog.io/@sonaki0811">유다송</Link>
+          <Link to="https://velog.io/@xcc629">임근홍</Link>
+          <Link to="https://velog.io/@hani2525">전하은</Link>
+          <Link to="https://velog.io/@jml22">이정민</Link>
         </div>
       </div>
     </div>

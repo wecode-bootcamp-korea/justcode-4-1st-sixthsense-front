@@ -91,6 +91,9 @@ function BannerSlideBig() {
               })}
             </div>
             <div className={style.ButtonBackground} />
+            <div className={style.pageCurrentNumber}>01</div>
+            <div className={style.slash}>&#47;</div>
+            <div className={style.pageTotalNumber}>10</div>
             <button
               className={style.PrevButton}
               direction="prev"
@@ -98,6 +101,7 @@ function BannerSlideBig() {
             >
               &lt;
             </button>
+            <div className={style.verticalLine}>&#124;</div>
             <button
               className={style.NextButton}
               direction="next"

@@ -3,6 +3,7 @@ import MainContact from './components/contact/MainContact';
 import TravelList from './components/list/TravelList';
 import HashtagList from './components/list/HashtagList';
 import BannerSlideBig from './components/bannerslide/BannerSlideBig';
+import BannerSlideBig2 from './components/bannerslide/BannerSlideBig2';
 import BannerSliderMedium from './components/bannerslide/BannerSlideMedium';
 import BannerSlideSmall1 from './components/bannerslide/BannerSlideSmall1';
 import BannerSlideSmall2 from './components/bannerslide/BannerSlideSmall2';
@@ -30,6 +31,7 @@ function Main() {
       <BannerSlideSmall1 />
       <BannerSliderMedium />
       <BannerSlideSmall2 />
+      <BannerSlideBig2 />
       <TravelList />
       <HashtagList />
       <BannerSlideSmall3 />
