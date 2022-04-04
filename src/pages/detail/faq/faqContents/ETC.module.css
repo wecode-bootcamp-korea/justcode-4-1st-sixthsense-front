@@ -8,7 +8,6 @@
 
 .contentWrapper {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .subHeading {

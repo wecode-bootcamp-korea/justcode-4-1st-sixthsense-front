@@ -4,7 +4,7 @@ import DetailTop from './detailTop/DetailTop';
 import Rooms from './rooms/Rooms';
 import Info from './info/Info';
 import Special from './special/Special';
-// import Location from './location/Location';
+import Location from './location/Location';
 import Places from './places/Places';
 import FAQ from './faq/FAQ';
 
@@ -15,7 +15,7 @@ function Detail() {
       <Rooms />
       <Info />
       <Special />
-      {/* <Location /> */}
+      <Location name="수화림" />
       <Places />
       <FAQ />
     </div>
