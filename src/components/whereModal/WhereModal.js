@@ -125,10 +125,7 @@ function WhereModal({ modalRef, closeModal }) {
           </div>
         </div>
         <div className={style.btnWrapper}>
-          <BlackButton
-            className={style.searchBtn}
-            content="search &nbsp; &nbsp; →"
-          />
+          <button className={style.searchBtn}>search &nbsp; &nbsp; →</button>
         </div>
       </div>
     </div>
