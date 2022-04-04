@@ -1,0 +1,79 @@
+div.wap {
+  display: flex;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+
+.wap .title {
+  width: 90px;
+  height: min-content;
+}
+
+.wap .title div {
+  padding: 0;
+}
+
+.wap .title div + div {
+  padding-top: 5px;
+  font-size: 12px;
+  color: rgb(148, 148, 148);
+}
+
+.buttonWap {
+  display: flex;
+  align-items: center;
+
+  border: 1px solid silver;
+  height: min-content;
+}
+
+.buttonWap input[type='number'] {
+  margin: 0;
+  border: none;
+  width: 50px;
+  font-size: 16px;
+  text-align: right;
+}
+
+.buttonWap span {
+  padding-right: 5px;
+}
+
+.buttonWap input[type='number']:focus {
+  outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.buttonWap .plus,
+.buttonWap .minus {
+  width: 100%;
+  background-image: none;
+  background-color: #f9fafb;
+  border-radius: 0;
+  padding: 4px 7px;
+}
+
+.buttonWap .plus svg,
+.buttonWap .minus svg {
+  margin-top: 5px;
+}
+
+.buttonWap .plus {
+  border-top: 0;
+  border-left: 0;
+  border-bottom: 0;
+}
+
+.buttonWap .minus {
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 0;
+}

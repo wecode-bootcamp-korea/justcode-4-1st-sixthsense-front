@@ -2,9 +2,11 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
+
 import LayOutFirst from './Filter/LayOutFirst/LayOutFirst';
 import LayOutSecond from './Filter//LayOutSecond/LayOutSecond';
 import LayOutThird from './Filter//LayOutThird/LayOutThird';
+
 
 import style from '../list/List.module.css';
 
@@ -19,6 +21,7 @@ function List() {
   const [vis3, setVis3] = useState('hidden');
   const [headCountArr, setHeadCountArr] = useState(['인원']);
   const [headCountStr, setHeadCountStr] = useState('');
+
   const [title, setTitle] = useState('가격범위');
   const [checkBoxTitle, setCheckBoxTitle] = useState('스테이 유형');
 
