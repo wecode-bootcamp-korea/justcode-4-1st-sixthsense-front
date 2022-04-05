@@ -48,7 +48,7 @@ function Nav() {
     <>
       <div className={style.navWrapper}>
         <nav className={style.nav}>
-          <Link to="/main" className={style.logo}>
+          <Link to="/" className={style.logo}>
             S T A Y <br />
             FOREST
           </Link>
@@ -72,19 +72,19 @@ function Nav() {
             <Link to="/list" className={style.menuList}>
               FIND STAY
             </Link>
-            <Link to="/main" className={style.menuList}>
+            <Link to="/" className={style.menuList}>
               PROMOTION
             </Link>
-            <Link to="/main" className={style.menuList}>
+            <Link to="/" className={style.menuList}>
               JOURNAL
             </Link>
-            <Link to="/main" className={style.menuList}>
+            <Link to="/" className={style.menuList}>
               PRE-ORDER
             </Link>
             <Link to="/login" className={style.menuList}>
               LOGIN
             </Link>
-            <Link to="/main" className={style.menuList}>
+            <Link to="/" className={style.menuList}>
               <IoLanguageOutline size="24" />
             </Link>
           </div>
