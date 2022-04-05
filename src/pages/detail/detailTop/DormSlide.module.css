@@ -1,0 +1,102 @@
+.container {
+  position: relative;
+}
+
+.slideActive {
+  opacity: 1;
+  transition-duration: 2s;
+  width: 100%;
+}
+
+.slideInactive {
+  opacity: 0;
+  transition-duration: 4s;
+}
+
+.slideImg {
+  min-width: 1600px;
+  max-height: 650px;
+  height: auto;
+  width: auto;
+}
+
+.btnWrapper {
+  width: 1px;
+  padding: 15px 25px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.btnWrapper:hover {
+  width: 1px;
+  padding: 15px 25px;
+  background-color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+
+.prevBtn {
+  position: absolute;
+  left: 0;
+  top: 40%;
+}
+
+.nextBtn {
+  position: absolute;
+  right: 0;
+  top: 40%;
+}
+
+.description {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  margin-left: 20%;
+  bottom: 4px;
+  width: 60%;
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.quote {
+  margin: 0 180px 0 30px;
+  font-size: 20px;
+  color: white;
+}
+
+.category {
+  display: flex;
+  flex-wrap: wrap;
+  color: gray;
+}
+
+.pick {
+  color: white;
+}
+
+.categoryName {
+  font-size: 15px;
+  font-weight: 700;
+  margin-right: 25px;
+}
+
+.dormInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 80px;
+  height: 100%;
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  text-align: center;
+  line-height: 20px;
+}
+
+.dormName {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.location {
+  font-size: 11px;
+  font-weight: 300px;
+  color: gray;
+}

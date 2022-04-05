@@ -50,6 +50,18 @@
   cursor: pointer;
 }
 
-.whiteBox {
+.whiteCard {
   width: 50%;
+}
+
+.hiddenCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  gap: 30px;
+  right: 0px;
+  height: 500px;
+  width: 65%;
+  overflow: hidden;
 }

@@ -1,7 +1,7 @@
 import style from './BannerSlideBig.module.css';
 import React, { useState } from 'react';
 
-function BannerSlideBig() {
+function BannerSlideBig(props) {
   const items = [
     '/image/room01.jpg',
     '/image/room02.jpg',
@@ -67,8 +67,14 @@ function BannerSlideBig() {
   return (
     <div className={style.sliderArea}>
       <div className={style.slider}>
-        <div className={style.sliderList}>
-          <div className={style.wrapper}>
+        <div
+          className={
+            props.css.cssBig === 1 ? style.sliderList : style.sliderList2
+          }
+        >
+          <div
+            className={props.css.cssBig === 1 ? style.wrapper : style.wrapper2}
+          >
             <div
               className={style.sliderTrack}
               style={{
@@ -90,25 +96,32 @@ function BannerSlideBig() {
                 );
               })}
             </div>
-            <div className={style.ButtonBackground} />
-            <div className={style.pageCurrentNumber}>01</div>
-            <div className={style.slash}>&#47;</div>
-            <div className={style.pageTotalNumber}>10</div>
-            <button
-              className={style.PrevButton}
-              direction="prev"
-              onClick={() => handleSwipe(-1)}
+            <div
+              className={
+                props.css.cssBig === 1
+                  ? style.pageAndArrows
+                  : style.pageAndArrows2
+              }
             >
-              &lt;
-            </button>
-            <div className={style.verticalLine}>&#124;</div>
-            <button
-              className={style.NextButton}
-              direction="next"
-              onClick={() => handleSwipe(1)}
-            >
-              &gt;
-            </button>
+              <div className={style.pageCurrentNumber}>01</div>
+              <div className={style.slash}>&#47;</div>
+              <div className={style.pageTotalNumber}>10</div>
+              <button
+                className={style.PrevButton}
+                direction="prev"
+                onClick={() => handleSwipe(-1)}
+              >
+                &lt;
+              </button>
+              <div className={style.verticalLine}>&#124;</div>
+              <button
+                className={style.NextButton}
+                direction="next"
+                onClick={() => handleSwipe(1)}
+              >
+                &gt;
+              </button>
+            </div>
           </div>
         </div>
       </div>

@@ -3,8 +3,6 @@
   overflow: hidden;
   height: auto;
 }
-.slider {
-}
 
 .sliderList {
   position: relative;
@@ -63,6 +61,14 @@
   justify-content: center;
   letter-spacing: 1rem;
   margin: 90px 0 50px 0;
+}
+
+.bannerSlideSmallDescription2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  padding-bottom: 50px;
 }
 
 .description {

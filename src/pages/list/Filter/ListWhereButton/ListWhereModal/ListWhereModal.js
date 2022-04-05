@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import style from './WhereModal.module.css';
-import { AiOutlineSearch, AiOutlineClose } from 'react-icons/ai';
-import BlackButton from '../BlackButton/BlackButton';
+import { AiOutlineClose } from 'react-icons/ai';
 
-function WhereModal({ modalRef, closeModal }) {
+import style from './ListWhereModal.module.css';
+
+function ListWhereModal({ setTitle, modalRef, closeModal }) {
   const [selectCountry, setSelectCountry] = useState(null);
   const [countries, setCountries] = useState([
     {
@@ -20,20 +20,46 @@ function WhereModal({ modalRef, closeModal }) {
 
   const clicked = e => {
     setSelectCountry(e.currentTarget.innerText);
+    setTitle(e.currentTarget.innerText);
+    closeModal();
   };
-
   const reset = () => setSelectCountry(null);
 
   return (
-    <div className={style.modalWrapper} ref={modalRef}>
-      <div className={style.modal}>
-        <div className={style.titleWrapper}>
-          <div className={style.modalTitle}>
-            <p className={style.whereText}>어디로떠날까요?</p>
+    <section
+      className={style.modalWrapper}
+      ref={modalRef}
+      style={{
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        paddingRight: 0,
+      }}
+    >
+      <div
+        className={style.modal}
+        style={{
+          width: 1200,
+          height: 500,
+          marginTop: '10%',
+          paddingRight: 100,
+        }}
+      >
+        <div className={style.titleWrapper} style={{ margin: 'auto' }}>
+          <div
+            className={style.modalTitle}
+            style={{
+              display: 'flex',
+              width: 1000,
+              paddingRight: 0,
+            }}
+          >
+            <p className={style.whereText}>어디로 떠날까요?</p>
             <AiOutlineClose
               className={style.closeModal}
               size="50"
               id="modalClose1"
+              style={{ paddingRight: 0, marginLeft: 50 }}
               onClick={() => {
                 closeModal();
                 reset();
@@ -41,17 +67,11 @@ function WhereModal({ modalRef, closeModal }) {
             />
           </div>
         </div>
-        <div className={style.inputWrapper}>
-          <AiOutlineSearch size="24" className={style.searchIcon} />
-          <div className={style.inputShape}>
-            <input
-              className={style.inputText}
-              placeholder="원하는 스테이/지역을 검색해 보세요."
-            />
-          </div>
-        </div>
-        <div className={style.location}>
-          <div className={style.locationWrapper}>
+        <div className={style.location} style={{ paddingTop: 30 }}>
+          <div
+            className={style.locationWrapper}
+            style={{ width: 500, flexWrap: 'wrap' }}
+          >
             <p className={style.domOrAbr}>국내</p>
             <ul className={style.cities}>
               {countries.map(country => {
@@ -63,6 +83,8 @@ function WhereModal({ modalRef, closeModal }) {
                         key={country.id}
                         onClick={clicked}
                         style={{
+                          marginBottom: 0,
+                          paddingRight: 20,
                           background: 'black',
                           color: 'whitesmoke',
                           borderRadius: '30px',
@@ -87,9 +109,12 @@ function WhereModal({ modalRef, closeModal }) {
               })}
             </ul>
           </div>
-          <div className={style.locationWrapper}>
+          <div
+            className={style.locationWrapper}
+            style={{ width: 500, flexWrap: 'wrap' }}
+          >
             <p className={style.domOrAbr}>해외</p>
-            <ul className={style.cities}>
+            <ul className={style.cities} style={{ marginBottom: 0 }}>
               {countries.map(country => {
                 if (!country.isDomestic) {
                   if (country.city === selectCountry) {
@@ -99,6 +124,8 @@ function WhereModal({ modalRef, closeModal }) {
                         key={country.id}
                         onClick={clicked}
                         style={{
+                          marginBottom: 0,
+                          paddingRight: 20,
                           background: 'black',
                           color: 'whitesmoke',
                           borderRadius: '30px',
@@ -124,12 +151,9 @@ function WhereModal({ modalRef, closeModal }) {
             </ul>
           </div>
         </div>
-        <div className={style.btnWrapper}>
-          <button className={style.searchBtn}>search &nbsp; &nbsp; →</button>
-        </div>
       </div>
-    </div>
+    </section>
   );
 }
 
-export default WhereModal;
+export default ListWhereModal;

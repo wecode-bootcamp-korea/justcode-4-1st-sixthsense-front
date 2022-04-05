@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import SmallModal from '../SmallModal/SmallModal';
 import CheckBox from './Child/CheckBox';
-
 function LayOutThird({ checkBoxTitle, setCheckBoxTitle }) {
   const [totalCheck, setTotalCheck] = useState(false);
   const [eachCheck, setEachCheck] = useState(false);
@@ -34,13 +33,22 @@ function LayOutThird({ checkBoxTitle, setCheckBoxTitle }) {
       setCheckBoxTitle('전체');
       setNames(mokDataCategorie.map(data => data.name));
       return;
-    } else {
+    }
+
+    if (!totalCheck) {
       setCheckBoxTitle('-');
       setNames([]);
     }
   }
 
+  function resetNames() {
+    if (!totalCheck && checkBoxTitle === '-') {
+      setNames([]);
+    }
+  }
+
   useEffect(() => {
+    resetNames();
     resetTitle();
   }, [totalCheck]);
 
@@ -64,7 +72,7 @@ function LayOutThird({ checkBoxTitle, setCheckBoxTitle }) {
       <button
         style={styles}
         onClick={e => {
-          resetTitle();
+          resetNames();
           changetitle();
           closeModal(e);
         }}
