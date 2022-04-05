@@ -200,7 +200,9 @@ function List() {
       </center>
 
       <section className={style.product}>
+        <div className={style.productBorder} />
         <Products />
+        <div className={style.productBottomBorder} />
       </section>
     </div>
   );
