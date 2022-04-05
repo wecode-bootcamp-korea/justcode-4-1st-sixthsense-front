@@ -1,4 +1,3 @@
-import { IoMdClose } from 'react-icons/io';
 import style from '../SmallModal/SmallModal.module.css';
 
 function SmallModal({ title }) {
@@ -12,7 +11,6 @@ function SmallModal({ title }) {
             const parentStyleVisible =
               e.target.parentElement.parentElement.parentElement.parentElement
                 .style.visibility;
-            console.log(e.target.parentElement.parentElement.parentElement);
             let judge = false;
 
             if (parentStyleVisible === 'visible') {

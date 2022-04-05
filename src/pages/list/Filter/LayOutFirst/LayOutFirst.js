@@ -4,13 +4,64 @@ import SmallModal from '../SmallModal/SmallModal';
 import SmallModalFirstLayout from './Child/SubLayoutFirst';
 
 const peopleObj = {};
+let totalpeople = 0;
+let firstword = '';
+let secondword = '';
+let lastword = '';
 
-function LayOutFirst({ setHeadCountArr }) {
+function LayOutFirst({ setHeadCountStr }) {
   const [people, setPeople] = useState({});
+  const [headCountArr, setHeadCountArr] = useState([]);
 
   useEffect(() => {
     Object.assign(peopleObj, people);
   }, [people]);
+
+  useEffect(() => {
+    totalpeople = 0;
+    sumPeople();
+    stringArray();
+  });
+
+  function sumPeople() {
+    headCountArr.forEach(data => {
+      totalpeople += data[1];
+    });
+  }
+
+  function stringArray() {
+    let tempStirng = '';
+    if (!totalpeople) {
+      setHeadCountStr('인원');
+      return;
+    }
+    if (headCountArr[0] === '인원') {
+      firstword = '인원';
+    }
+    headCountArr.forEach(data => {
+      if (data[0] === '성인') {
+        firstword = `성인: ${data[1]},`;
+      }
+
+      if (data[0] === '아동') {
+        firstword = `성인: 0,`;
+        secondword = `아동: ${data[1]},`;
+      }
+
+      if (data[0] === '영아') {
+        firstword = `성인: 0,`;
+        secondword = `아동: 0,`;
+        lastword = `영아: ${data[1]}`;
+      }
+    });
+    let stringarr = [firstword, secondword, lastword];
+
+    stringarr.forEach(data => {
+      tempStirng += `${data} `;
+    });
+
+    setHeadCountStr(tempStirng);
+  }
 
   function putObj(e) {
     e.preventDefault();
@@ -51,6 +102,7 @@ function LayOutFirst({ setHeadCountArr }) {
           style={styles}
           onClick={e => {
             putObj(e);
+            stringArray();
             closeModal(e);
           }}
         >
