@@ -2,6 +2,7 @@ import React from 'react';
 import MainContact from './components/contact/MainContact';
 import TravelList from './components/list/TravelList';
 import HashtagList from './components/list/HashtagList';
+import BannerSlideBig from './components/bannerslide/BannerSlideBig';
 import BannerSliderMedium from './components/bannerslide/BannerSlideMedium';
 import BannerSlideSmall1 from './components/bannerslide/BannerSlideSmall1';
 import BannerSlideSmall2 from './components/bannerslide/BannerSlideSmall2';
@@ -25,11 +26,22 @@ function Main() {
     },
   ];
 
+  const BannerSlideBig_css = [
+    {
+      cssBig: 1,
+    },
+    {
+      cssBig: 2,
+    },
+  ];
+
   return (
     <>
+      <BannerSlideBig css={BannerSlideBig_css[0]} />
       <BannerSlideSmall1 description={description[0]} />
       <BannerSliderMedium />
       <BannerSlideSmall2 />
+      <BannerSlideBig css={BannerSlideBig_css[1]} />
       <TravelList />
       <HashtagList />
       <BannerSlideSmall1 description={description[1]} />
