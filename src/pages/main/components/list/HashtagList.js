@@ -31,31 +31,37 @@ function HashtagList() {
   ];
   return (
     <div className={style.hastagList}>
-      <div>
-        <div className={style.hashtagTopic}>머무르며 즐기는 다채로운 경험</div>
-        <ul className={style.gridWrapper}>
-          {contents.map(con => {
-            return (
-              <li className={style.contentsWrapper} key={con.id}>
-                <img className={style.img} src={con.url} alt={con.id} />
-                <p className={style.hashtagText}>#{con.id}</p>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-      <div>
-        <div className={style.hashtagTopic}>머무르며 즐기는 다채로운 경험</div>
-        <ul className={style.gridWrapper}>
-          {contents.map(con => {
-            return (
-              <li className={style.contentsWrapper} key={con.id}>
-                <img className={style.img} src={con.url} alt={con.id} />
-                <p className={style.hashtagText}>#{con.id}</p>
-              </li>
-            );
-          })}
-        </ul>
+      <div className={style.hastagWrapper}>
+        <div className={style.hastagSection}>
+          <div className={style.hashtagTopic}>
+            머무르며 즐기는 다채로운 경험
+          </div>
+          <ul className={style.gridWrapper}>
+            {contents.map(con => {
+              return (
+                <li className={style.contentsWrapper} key={con.id}>
+                  <img className={style.img} src={con.url} alt={con.id} />
+                  <p className={style.hashtagText}>#{con.id}</p>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <div className={style.hastagSection}>
+          <div className={style.hashtagTopic}>
+            머무르며 즐기는 다채로운 경험
+          </div>
+          <ul className={style.gridWrapper}>
+            {contents.map(con => {
+              return (
+                <li className={style.contentsWrapper} key={con.id}>
+                  <img className={style.img} src={con.url} alt={con.id} />
+                  <p className={style.hashtagText}>#{con.id}</p>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </div>
   );

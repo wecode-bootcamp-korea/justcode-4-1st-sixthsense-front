@@ -1,0 +1,114 @@
+.sliderArea {
+  position: relative;
+  overflow: hidden;
+  height: auto;
+}
+.slider {
+  /* border: 1px red solid; */
+}
+
+.sliderList {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  /* justify-content: center; */
+  align-self: center;
+  margin: 0;
+  /* border: 1px solid violet; */
+}
+
+.sliderTrack {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  /* margin-bottom: 100px; */
+}
+
+.BannerSlideBig2 {
+  position: relative;
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  /* width: 100%; */
+  width: 1700px;
+  /* max-height: 800px; */
+  /* margin: 0px 40px; */
+}
+
+.wrapper {
+  transform: translate(100px, -400px);
+  /* transform: translateY(-200px); */
+  max-width: 1700px;
+  /* border: 1px solid blue; */
+  overflow: hidden;
+}
+
+.pageCurrentNumber {
+  position: absolute;
+  top: 1048px;
+  left: 0px;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px 5px 40px 22px;
+  font-size: 16px;
+}
+
+.slash {
+  position: absolute;
+  top: 1048px;
+  left: 45px;
+  color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 15px;
+  z-index: 999;
+  padding: 40px 0;
+}
+
+.pageTotalNumber {
+  position: absolute;
+  top: 1048px;
+  left: 51px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 38px 23.7px 38px 4.9px;
+  font-size: 18px;
+}
+
+.PrevButton {
+  position: absolute;
+  cursor: pointer;
+  top: 1048px;
+  left: 100px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 0;
+  outline: 0;
+  font-size: 25px;
+  z-index: 999;
+  padding: 30px 15px 30px 35px;
+}
+
+.verticalLine {
+  position: absolute;
+  top: 1048px;
+  left: 163px;
+  color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 15px;
+  z-index: 999;
+  padding: 40px 0;
+}
+
+.NextButton {
+  position: absolute;
+  cursor: pointer;
+  top: 1048px;
+  left: 167px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 0;
+  outline: 0;
+  font-size: 25px;
+  z-index: 999;
+  padding: 30px 35px 30px 15px;
+}

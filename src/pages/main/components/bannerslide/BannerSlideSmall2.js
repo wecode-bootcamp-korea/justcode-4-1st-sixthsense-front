@@ -11,7 +11,7 @@ function BannerSlideSmall2() {
   ];
   const itemSize = items.length;
   const transitionTime = 400;
-  const transitionStyle = `transform ${transitionTime}ms ease 0.15s`;
+  const transitionStyle = `transform ${transitionTime}ms ease 0s`;
   const remain = 3; // 슬라이드가 끝나기 전 남아있는 슬라이드 개수
   const [currentIndex, setCurrentIndex] = useState(remain);
   const [slideTransition, setTransition] = useState(transitionStyle);
