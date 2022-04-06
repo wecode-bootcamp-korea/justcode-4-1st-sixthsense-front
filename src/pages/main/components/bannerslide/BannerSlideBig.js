@@ -1,15 +1,19 @@
 import style from './BannerSlideBig.module.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function BannerSlideBig(props) {
-  const items = [
-    '/image/room01.jpg',
-    '/image/room02.jpg',
-    '/image/room03.jpg',
-    '/image/room04.jpg',
-    '/image/room05.jpg',
-    '/image/room06.jpg',
-  ];
+  const [items, setItems] = useState([]);
+  useEffect(() => {
+    fetch('/dormitories/images', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(result => {
+        items.push(Object.entries(result)[0][1].map(data => data.imageUrl));
+        setItems(items[0]);
+      });
+  }, []);
+
   const itemSize = items.length;
   const transitionTime = 400;
   const transitionStyle = `transform ${transitionTime}ms ease 0s`;

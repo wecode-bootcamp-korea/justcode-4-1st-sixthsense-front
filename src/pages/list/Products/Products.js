@@ -1,8 +1,20 @@
+import { useEffect } from 'react';
 import Product from './Product/Product';
 
 import style from './Products.module.css';
 
 function Products() {
+  useEffect(() => {
+    fetch('/dormitories/slide', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(res => res.json())
+      .then(result => console.log(result));
+  }, []);
+
   return (
     <section className={style.componentWap}>
       <div className={style.productWap}>
