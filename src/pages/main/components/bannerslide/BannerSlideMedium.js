@@ -1,28 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import style from './BannerSlideMedium.module.css';
 
 function BannerSliderMedium() {
   const [current, setCurrent] = useState(0);
-  const slide = [
+  const [slide, setSlide] = useState([
     {
       id: 1,
-      url: 'https://cdn.pixabay.com/photo/2017/09/09/18/25/living-room-2732939__340.jpg',
+      category: '펜션',
+      comment: '안녕안녕안녕',
+      imageUrl: [
+        'https://cdn.pixabay.com/photo/2017/09/09/18/25/living-room-2732939__340.jpg',
+        'https://cdn.pixabay.com/photo/2017/09/09/18/25/living-room-2732939__340.jpg',
+      ],
+      headCount: [1, 2],
+      price: [1, 2],
     },
-    {
-      id: 2,
-      url: 'https://cdn.pixabay.com/photo/2015/10/20/18/57/furniture-998265__480.jpg',
-    },
-    {
-      id: 3,
-      url: 'https://cdn.pixabay.com/photo/2014/08/11/21/39/wall-416060__340.jpg',
-    },
+  ]);
 
-    {
-      id: 4,
-      url: 'https://cdn.pixabay.com/photo/2017/07/09/03/19/home-2486092__340.jpg',
-    },
-  ];
+  useEffect(() => {
+    fetch('/dormitories', { method: 'GET' })
+      .then(res => res.json())
+      .then(result => {
+        setSlide(result.data);
+      });
+  }, []);
 
   const next = () => {
     setCurrent(() => (current === slide.length - 1 ? 0 : current + 1));
@@ -46,26 +48,36 @@ function BannerSliderMedium() {
             >
               {idx === current && (
                 <div className={style.contentsSection}>
-                  <div className={style.textSection}>
-                    <p className={style.slideMainDesc}>
-                      숙소메인설명
-                      <br />
-                      변수지정{el.id}
+                  <div
+                    className={style.textSection}
+                    style={{ paddingRight: 50 }}
+                  >
+                    <p className={style.slideMainDesc}>{el.comment}</p>
+                    <p className={style.slideSubDesc}>
+                      위코드 커뮤니티 가입 인증시 10% 할인
                     </p>
-                    <p className={style.slideSubDesc}>숙소 1줄 설명{el.id}</p>
                     <div className={style.infoSection}>
-                      <h3 className={style.slideTitle}>숙소 이름 {el.id}</h3>
+                      <h3 className={style.slideTitle}>{el.name}</h3>
                       <p className={style.slidePlace}>
-                        도시{el.id} / 시구군{el.id}· 숙소유형{el.id}
+                        {el.city} / {el.district} · {el.category}
                       </p>
-                      <p className={style.slidePeople}>인원{el.id}</p>
-                      <p className={style.slidePrice}>가격{el.id}</p>
+                      <p className={style.slidePeople}>
+                        기준 인원 {el.headCount[0]}명
+                      </p>
+                      <p className={style.slidePrice}>
+                        최저가{' '}
+                        {el.price[0].toLocaleString('ko-KR', {
+                          style: 'currency',
+                          currency: 'KRW',
+                          currencyDisplay: 'symbol',
+                        })}
+                      </p>
                     </div>
                   </div>
                   <Link to="/detail">
                     <img
                       className={style.slideImage}
-                      src={el.url}
+                      src={el.imageUrl[1]}
                       alt={el.id}
                     />
                   </Link>

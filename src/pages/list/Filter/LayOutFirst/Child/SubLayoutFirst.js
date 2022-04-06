@@ -6,15 +6,14 @@ import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 
 function SubLayoutFirst({ content, smallContent, setPeople }) {
   const [count, setCount] = useState(0);
-
   const persen = {};
 
   const minusHandler = () => {
-    count > 0 && setCount(count - 1);
+    count > 0 && setCount(prevCount => prevCount - 1);
   };
 
   const plusHandler = () => {
-    setCount(count + 1);
+    setCount(prevCount => prevCount + 1);
   };
 
   useEffect(() => {
