@@ -12,10 +12,8 @@ function Product({
   islike,
   city,
   district,
-  lowpeople,
-  upperpeople,
-  lowprice,
-  upperprice,
+  people,
+  price,
   image,
 }) {
   const navigate = useNavigate();
@@ -33,11 +31,14 @@ function Product({
           <div>
             {city}/{district}
           </div>
+          <div>기준 {people}명</div>
           <div>
-            기준 {lowpeople}명 (최대 {upperpeople}명)
-          </div>
-          <div>
-            {lowprice} ~ {upperprice}
+            {price.toLocaleString('ko-KR', {
+              style: 'currency',
+              currency: 'KRW',
+              currencyDisplay: 'symbol',
+            })}{' '}
+            ~
           </div>
           <div className={style.reservation} onClick={goToDetail}>
             예약하기

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import ListWhereButton from './Filter/ListWhereButton/ListWhereButton';
 import LayOutFirst from './Filter/LayOutFirst/LayOutFirst';
@@ -11,17 +11,21 @@ import Products from './Products/Products';
 import style from '../list/List.module.css';
 
 function List() {
+  const navigate = useNavigate();
   //하위 창 open & close 관리 state
   const [vis1, setVis1] = useState('hidden');
   const [vis2, setVis2] = useState('hidden');
   const [vis3, setVis3] = useState('hidden');
-
   //창 1 state
   const [headCountStr, setHeadCountStr] = useState('인원');
   //창 2 state
   const [title, setTitle] = useState('가격범위');
   //창 3 state
   const [checkBoxTitle, setCheckBoxTitle] = useState('스테이 유형');
+
+  const gotoListpage = () => {
+    navigate('/list');
+  };
 
   const layoutVisibleHandler = e => {
     const index = Number(e.target.id);
@@ -71,7 +75,7 @@ function List() {
             </div>
           </div>
           <div className={style.reButton}>
-            <button>
+            <button onClick={gotoListpage}>
               <img
                 className={style.reButtonImg}
                 src="https://user-images.githubusercontent.com/85507868/160820139-6ec16112-30c2-4ec3-b28e-9c9a95f63a06.png"
