@@ -1,8 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './LogIn.module.css';
 import { Link } from 'react-router-dom';
 
 function LogIn() {
+  const [email, setEmail] = useState(null);
+  const [pw, setPw] = useState(null);
+
+  const onChangeEmail = e => {
+    setEmail(e.target.value);
+  };
+
+  const onChangePw = e => {
+    setPw(e.target.value);
+  };
+
+  const onLogin = () => {
+    fetch('http://localhost:8000/users/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: email,
+        password: pw,
+      }),
+    })
+      .then(res => res.json())
+      .then(res => {
+        if (res.token) {
+          console.log(res.token);
+          sessionStorage.setItem('login-token', res.token);
+        }
+      });
+  };
+
+  const checkAuthorization = () => {
+    let token = sessionStorage.getItem('login-token') || '';
+    fetch('http://localhost:8000/users/test', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: token,
+      },
+    })
+      .then(res => res.json())
+      .then(res => console.log(res));
+  };
+
   return (
     <div className={style.loginbox}>
       <div className={style.logintitlebox}>
@@ -16,6 +60,8 @@ function LogIn() {
           type="text"
           name="ID"
           id="id"
+          value={email}
+          onChange={onChangeEmail}
           placeholder="이메일 아이디"
         />
         <input
@@ -23,19 +69,24 @@ function LogIn() {
           type="password"
           name="Password"
           id="pw"
+          value={pw}
+          onChange={onChangePw}
           placeholder="비밀번호"
         />
       </div>
 
       <div className={style.loginbuttonbox}>
-        <Link to="/main" className={style.loginbutton} id="login-button">
-          <button className={style.loginbuttonstyle} id="login-button">
-            L O G I N
-          </button>
-        </Link>
+        <button
+          className={style.loginbuttonstyle}
+          onClick={onLogin}
+          id="login-button"
+        >
+          L O G I N
+        </button>
         <button
           className={style.loginbutton}
           id="non-member-reservation-button"
+          onClick={checkAuthorization}
         >
           비회원 예약 조회
         </button>

@@ -50,7 +50,7 @@ function BannerSlideSmall2() {
   let slides = setSlides();
 
   useEffect(() => {
-    fetch('/dormitories', { method: 'GET' })
+    fetch('http://localhost:8000/dormitories', { method: 'GET' })
       .then(res => res.json())
       .then(result => setItems(result.data));
   }, []);

@@ -24,7 +24,7 @@ function Products() {
     },
   ]);
   useEffect(() => {
-    fetch('/dormitories/', {
+    fetch('http://localhost:8000/dormitories/', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ function Products() {
     console.log(location);
     console.log(location.search);
 
-    fetch(`/dormitories/${location.search}`, { method: 'GET' })
+    fetch(`/dormitories/search/${location.search}`, { method: 'GET' })
       .then(res => res.json())
       .then(result => {
         setProducts(result.data);

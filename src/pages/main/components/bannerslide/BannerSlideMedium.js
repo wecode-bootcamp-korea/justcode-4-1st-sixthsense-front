@@ -19,7 +19,7 @@ function BannerSliderMedium() {
   ]);
 
   useEffect(() => {
-    fetch('/dormitories', { method: 'GET' })
+    fetch('http://localhost:8000/dormitories', { method: 'GET' })
       .then(res => res.json())
       .then(result => {
         setSlide(result.data);
@@ -93,7 +93,7 @@ function BannerSliderMedium() {
         </div>
         <div className={style.order}>
           {order}
-          <span className={style.total}> / 4</span>
+          <span className={style.total}> / {slide.length}</span>
         </div>
       </div>
     </div>
