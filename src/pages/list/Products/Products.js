@@ -37,13 +37,12 @@ function Products() {
   }, []);
 
   useEffect(() => {
-    console.log(location);
-    console.log(location.search);
-
-    fetch(`/dormitories/search/${location.search}`, { method: 'GET' })
+    fetch(`http://localhost:8000/dormitories/search/${location.search}`, {
+      method: 'GET',
+    })
       .then(res => res.json())
       .then(result => {
-        setProducts(result.data);
+        result.searchedDormitories && setProducts(result.searchedDormitories);
       });
   }, [location]);
 

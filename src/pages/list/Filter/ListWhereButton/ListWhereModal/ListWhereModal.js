@@ -20,9 +20,9 @@ function ListWhereModal({ setTitle, modalRef, closeModal }) {
   ]);
 
   useEffect(() => {
-    fetch('http://locahost:8000/dormitories/cities', { method: 'GET' })
+    fetch('http://localhost:8000/dormitories/cities', { method: 'GET' })
       .then(res => res.json())
-      .then(res => setDomestic(res.data));
+      .then(result => setDomestic(result.data));
   }, []);
 
   const clicked = e => {

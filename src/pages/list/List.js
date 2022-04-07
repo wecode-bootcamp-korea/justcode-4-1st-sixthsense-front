@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 import ListWhereButton from './Filter/ListWhereButton/ListWhereButton';
 import LayOutFirst from './Filter/LayOutFirst/LayOutFirst';
@@ -12,6 +12,7 @@ import style from '../list/List.module.css';
 
 function List() {
   const navigate = useNavigate();
+  // const location = useLocation();
   //하위 창 open & close 관리 state
   const [vis1, setVis1] = useState('hidden');
   const [vis2, setVis2] = useState('hidden');
@@ -22,10 +23,38 @@ function List() {
   const [title, setTitle] = useState('가격범위');
   //창 3 state
   const [checkBoxTitle, setCheckBoxTitle] = useState('스테이 유형');
+  //검색(추가구현)
+  // const [searchValue, setSearchValue] = useState('');
 
   const gotoListpage = () => {
     navigate('/list');
   };
+
+  // const searchValueHandler = e => {
+  //   setSearchValue(e.target.value);
+  // };
+
+  // const enterHandler = e => {
+  //   if (e.keyCode === 13) {
+  //     historyHandler();
+  //   }
+  // };
+
+  // const searchButtonHandler = () => {
+  //   historyHandler();
+  // };
+
+  // const historyHandler = () => {
+  //   let beforeQuery = `${location.search}`.slice(1);
+  //   console.log(beforeQuery.length);
+  //   let query = `keyword=${searchValue}`;
+  //   console.log(query);
+  //   if (beforeQuery.length === 0) {
+  //     console.log('야기');
+  //     navigate(`/list?${query}`);
+  //   }
+  //   navigate(`/list?${beforeQuery}&${query}`);
+  // };
 
   const layoutVisibleHandler = e => {
     const index = Number(e.target.id);
@@ -57,7 +86,7 @@ function List() {
           <div>
             <div className={style.searchBar}>
               <p>여행지/숙소</p>
-              <input type="search" />
+              <input type="search" style={{ paddingLeft: 10 }} />
               <ListWhereButton />
             </div>
 
