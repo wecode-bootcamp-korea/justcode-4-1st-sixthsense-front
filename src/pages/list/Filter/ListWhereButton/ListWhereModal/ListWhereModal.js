@@ -23,7 +23,7 @@ function ListWhereModal({ setTitle, modalRef, closeModal }) {
     fetch('/dormitories/cities', { method: 'GET' })
       .then(res => res.json())
       .then(res => setDomestic(res.data));
-  });
+  }, []);
 
   const clicked = e => {
     setSelectCountry(e.currentTarget.innerText);

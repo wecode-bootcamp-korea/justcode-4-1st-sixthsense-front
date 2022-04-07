@@ -37,9 +37,7 @@
 
 .wapper .image {
   padding-left: 40px;
-
-  max-width: auto;
-  min-width: 360px;
+  width: 430px;
   height: 220px;
 }
 
