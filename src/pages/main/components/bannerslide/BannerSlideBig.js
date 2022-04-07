@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 function BannerSlideBig(props) {
   const [items, setItems] = useState([]);
   useEffect(() => {
-    fetch('/dormitories/images', {
+    fetch('http://localhost:8000/dormitories/images', {
       method: 'GET',
     })
       .then(res => res.json())
