@@ -37,7 +37,7 @@ function HashtagList() {
   ]);
 
   useEffect(() => {
-    fetch('/rooms/images', { method: 'GET' })
+    fetch('http://localhost:8000/rooms/images', { method: 'GET' })
       .then(res => res.json())
       .then(result => setContents(result.data));
   }, []);

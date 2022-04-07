@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import RoomImg from './roomImg/RoomImg';
 import style from './Rooms.module.css';
 import { IoCaretBackCircle, IoCaretForwardCircle } from 'react-icons/io5';
 
 const Rooms = () => {
+  const slideRef = useRef();
   const slide = [
     {
       id: 1,
@@ -20,17 +21,22 @@ const Rooms = () => {
   ];
 
   const [currentRoom, setCurrentRoom] = useState(0);
+  const state = (100 / slide.length) * currentRoom;
 
   const next = () => {
     setCurrentRoom(() =>
-      currentRoom === slide.length - 1 ? slide.length - 1 : currentRoom + 1
+      currentRoom === slide.length - 1 ? currentRoom : currentRoom + 1
     );
   };
 
   const prev = () => {
-    setCurrentRoom(() => (currentRoom === 0 ? 0 : currentRoom - 1));
+    setCurrentRoom(() => (currentRoom === 0 ? currentRoom : currentRoom - 1));
   };
 
+  useEffect(() => {
+    slideRef.current.style.transform = `translate(-${state}%)`;
+    slideRef.current.style.transition = '.5s';
+  }, [state]);
   return (
     <div className={style.container}>
       <div className={style.gray_box}>
@@ -48,18 +54,20 @@ const Rooms = () => {
           </div>
         </div>
       </div>
-      <div className={style.whiteCard} />
-      <div className={style.hiddenCard}>
-        {slide.map((el, idx) => {
-          return (
-            <RoomImg
-              className={style.cards}
-              url={el.url}
-              id={el.id}
-              key={el.id}
-            />
-          );
-        })}
+      <div className={style.white_box}>
+        <div className={style.hiddenCard} ref={slideRef}>
+          {slide.map((el, idx) => {
+            return (
+              <RoomImg
+                className={style.cards}
+                url={el.url}
+                id={el.id}
+                key={el.id}
+                currentRoom={currentRoom}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );
