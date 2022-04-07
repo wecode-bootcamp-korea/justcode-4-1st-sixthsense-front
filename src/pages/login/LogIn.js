@@ -29,9 +29,22 @@ function LogIn() {
       .then(res => {
         if (res.token) {
           console.log(res.token);
-          localStorage.setItem('login-token', res.token);
+          sessionStorage.setItem('login-token', res.token);
         }
       });
+  };
+
+  const checkAuthorization = () => {
+    let token = sessionStorage.getItem('login-token') || '';
+    fetch('http://localhost:8000/users/test', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: token,
+      },
+    })
+      .then(res => res.json())
+      .then(res => console.log(res));
   };
 
   return (
@@ -73,6 +86,7 @@ function LogIn() {
         <button
           className={style.loginbutton}
           id="non-member-reservation-button"
+          onClick={checkAuthorization}
         >
           비회원 예약 조회
         </button>
