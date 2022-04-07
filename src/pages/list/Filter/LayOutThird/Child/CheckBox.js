@@ -3,9 +3,10 @@ import style from './CheckBox.module.css';
 
 const arr = [];
 
-function CheckBox({ setNames, content, checked, total }) {
+function CheckBox({ setNames, content, checked, total, setCount }) {
   function check(e) {
     checked(e.target.checked);
+    setCount(prev => prev + 1);
 
     if (!arr.includes(content) && content !== '전체' && e.target.checked) {
       arr.push(content);
