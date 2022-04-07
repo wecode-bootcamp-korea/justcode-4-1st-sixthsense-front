@@ -1,56 +1,39 @@
 import { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import SmallModal from '../SmallModal/SmallModal';
 import CheckBox from './Child/CheckBox';
 
 function LayOutThird({ checkBoxTitle, setCheckBoxTitle }) {
-  const location = useLocation();
   const navigate = useNavigate();
-  const [count, setCount] = useState(0);
   const [totalCheck, setTotalCheck] = useState(false);
   const [eachCheck, setEachCheck] = useState(false);
   const [names, setNames] = useState([]);
-  const [requestBody, setRequestBody] = useState({
-    모두: false,
-    펜션: false,
-    게스트하우스: false,
-    호텔: false,
-    '렌탈 하우스': false,
-  });
 
   function historyHandler() {
-    const query = `${names}`;
-    navigate(`?keyword=${names}`);
-  }
-
-  function clickSendRequset() {
-    if (totalCheck) {
-      setRequestBody({
-        모두: totalCheck,
-        펜션: totalCheck,
-        게스트하우스: totalCheck,
-        호텔: totalCheck,
-        '렌탈 하우스': totalCheck,
-      });
-      return;
-    }
-    setRequestBody({
-      모두: totalCheck,
-      펜션: names.includes('펜션'),
-      게스트하우스: names.includes('게스트하우스'),
-      호텔: names.includes('호텔'),
-      '렌탈 하우스': names.includes('렌탈 하우스'),
+    const temptArr = [];
+    let query = `category=`;
+    names.forEach(name => {
+      if (name === '펜션') {
+        temptArr.push('pention');
+      }
+      if (name === '게스트하우스') {
+        temptArr.push('guest');
+      }
+      if (name === '호텔') {
+        temptArr.push('hotel');
+      }
+      if (name === '렌탈 하우스') {
+        temptArr.push('rental');
+      }
     });
-  }
 
-  // function search() {
-  //   fetch('', {
-  //     method: 'GET',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //   });
-  // }
+    let subquery = '';
+    temptArr.forEach(data => {
+      subquery += `${data},`;
+    });
+    query += subquery;
+    navigate(`/list?${query}`);
+  }
 
   function changetitle() {
     if (names.length === 0) {
@@ -83,11 +66,6 @@ function LayOutThird({ checkBoxTitle, setCheckBoxTitle }) {
       setNames([]);
     }
   }
-
-  useEffect(() => {
-    clickSendRequset();
-  }, [count]);
-
   useEffect(() => {
     resetNames();
     resetTitle();
@@ -113,7 +91,7 @@ function LayOutThird({ checkBoxTitle, setCheckBoxTitle }) {
       <button
         style={styles}
         onClick={e => {
-          clickSendRequset();
+          // clickSendRequset();
           // search();
           resetNames();
           changetitle();
@@ -124,12 +102,7 @@ function LayOutThird({ checkBoxTitle, setCheckBoxTitle }) {
         적용하기
       </button>
       <section style={{ marginTop: 20 }}>
-        <CheckBox
-          content="전체"
-          checked={setTotalCheck}
-          total={totalCheck}
-          setCount={setCount}
-        />
+        <CheckBox content="전체" checked={setTotalCheck} total={totalCheck} />
         {mokDataCategorie.map(data => (
           <CheckBox
             key={data.id}
@@ -137,7 +110,6 @@ function LayOutThird({ checkBoxTitle, setCheckBoxTitle }) {
             content={data.name}
             checked={setEachCheck}
             total={totalCheck}
-            setCount={setCount}
           />
         ))}
       </section>
