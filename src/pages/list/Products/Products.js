@@ -22,7 +22,7 @@ function Products() {
     },
   ]);
   useEffect(() => {
-    fetch('/dormitories/', {
+    fetch('http://localhost:8000/dormitories/', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

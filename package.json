@@ -46,6 +46,5 @@
   },
   "devDependencies": {
     "http-proxy-middleware": "^2.0.4"
-  },
-  "proxy": "http://localhost:8000/"
+  }
 }

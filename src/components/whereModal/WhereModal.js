@@ -21,7 +21,7 @@ function WhereModal({ modalRef, closeModal }) {
   ]);
 
   useEffect(() => {
-    fetch('/dormitories/cities', { method: 'GET' })
+    fetch('http://localhost:8000/dormitories/cities', { method: 'GET' })
       .then(res => res.json())
       .then(res => setDomestic(res.data));
   }, []);
