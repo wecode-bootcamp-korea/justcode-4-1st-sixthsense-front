@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './SignUp.module.css';
+import style from './PrivateAgree.module.css';
 
 function PrivateAgree2({ isOpen2 }) {
   return (
