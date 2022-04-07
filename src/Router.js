@@ -22,7 +22,10 @@ function Router() {
         <Route path="/login" element={<LogIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/mypage" element={<MyPage />} />
-        <Route path="/list?keyword" element={<List />} />
+        <Route
+          path="/list?catergory=/:category&search=/:search"
+          element={<List />}
+        />
       </Routes>
       <Footer />
     </BrowserRouter>
