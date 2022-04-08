@@ -47,12 +47,12 @@ const DormSlide = ({ dormitoryName, images, comment, city, district }) => {
           <p className={cx('categoryName', 'magazine')}>MAGAZINE</p>
           <p className={cx('categoryName', 'pick')}>PICK</p>
           <p className={cx('categoryName', 'promotion')}>PROMOTION</p>
-        </div>
-        <div className={cx('dormInfo')}>
-          <p className={cx('dormName')}>{dormitoryName}</p>
-          <p className={cx('location')}>
-            {city}/ {district}
-          </p>
+          <div className={cx('dormInfo')}>
+            <p className={cx('dormName')}>{dormitoryName}</p>
+            <p className={cx('location')}>
+              {city}/ {district}
+            </p>
+          </div>
         </div>
       </div>
     </div>

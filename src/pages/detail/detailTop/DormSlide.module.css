@@ -61,8 +61,8 @@
   align-items: center;
   position: absolute;
   margin-left: 20%;
-  bottom: 4px;
-  width: 60%;
+  bottom: 0px;
+  width: 50%;
   height: 80px;
   background-color: rgba(0, 0, 0, 0.9);
 }
@@ -86,6 +86,7 @@
 .categoryName {
   font-size: 15px;
   font-weight: 700;
+  padding-top: 12px;
   margin-right: 25px;
 }
 
@@ -95,6 +96,7 @@
   justify-content: center;
   height: 100%;
   border-left: 1px solid rgba(255, 255, 255, 0.4);
+  padding-left: 50px;
   color: white;
   text-align: center;
   line-height: 20px;
