@@ -381,7 +381,10 @@ function SignUp() {
         <button
           className={style.signupbtnbox}
           id="signup-button"
-          onClick={onSignup}
+          onClick={() => {
+            onSignup();
+            navigate('/login');
+          }}
         >
           회원가입
         </button>
