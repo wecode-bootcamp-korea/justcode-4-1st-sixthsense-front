@@ -23,7 +23,7 @@ function Router() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/mypage" element={<MyPage />} />
         <Route
-          path="/list?catergory=/:category&search=/:search"
+          path="/list?catergory=category&search=search"
           element={<List />}
         />
       </Routes>

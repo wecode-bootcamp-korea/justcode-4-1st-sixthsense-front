@@ -42,7 +42,7 @@ function Products() {
     })
       .then(res => res.json())
       .then(result => {
-        setProducts(result.data);
+        result.searchedDormitories && setProducts(result.searchedDormitories);
       });
   }, [location]);
 

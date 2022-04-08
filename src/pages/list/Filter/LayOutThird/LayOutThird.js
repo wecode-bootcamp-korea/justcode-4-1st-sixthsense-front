@@ -26,7 +26,6 @@ function LayOutThird({ checkBoxTitle, setCheckBoxTitle }) {
         temptArr.push('rental');
       }
     });
-
     let subquery = '';
     temptArr.forEach(data => {
       subquery += `${data},`;
@@ -91,8 +90,6 @@ function LayOutThird({ checkBoxTitle, setCheckBoxTitle }) {
       <button
         style={styles}
         onClick={e => {
-          // clickSendRequset();
-          // search();
           resetNames();
           changetitle();
           closeModal(e);
