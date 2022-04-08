@@ -1,7 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
-import { useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
+import ListWhereButton from './Filter/ListWhereButton/ListWhereButton';
 import LayOutFirst from './Filter/LayOutFirst/LayOutFirst';
 import LayOutSecond from './Filter//LayOutSecond/LayOutSecond';
 import LayOutThird from './Filter//LayOutThird/LayOutThird';
@@ -9,26 +10,57 @@ import Products from './Products/Products';
 
 import style from '../list/List.module.css';
 
-let totalpeople = 0;
-let firstword = '';
-let secondword = '';
-let lastword = '';
-
 function List() {
+  const navigate = useNavigate();
+  // const location = useLocation();
+  //하위 창 open & close 관리 state
   const [vis1, setVis1] = useState('hidden');
-  const [vis2, setvis2] = useState('hidden');
+  const [vis2, setVis2] = useState('hidden');
   const [vis3, setVis3] = useState('hidden');
-  const [headCountArr, setHeadCountArr] = useState(['인원']);
-  const [headCountStr, setHeadCountStr] = useState('');
-
+  //창 1 state
+  const [headCountStr, setHeadCountStr] = useState('인원');
+  //창 2 state
   const [title, setTitle] = useState('가격범위');
+  //창 3 state
   const [checkBoxTitle, setCheckBoxTitle] = useState('스테이 유형');
+  //검색(추가구현)
+  // const [searchValue, setSearchValue] = useState('');
+
+  const gotoListpage = () => {
+    navigate('/list');
+  };
+
+  // const searchValueHandler = e => {
+  //   setSearchValue(e.target.value);
+  // };
+
+  // const enterHandler = e => {
+  //   if (e.keyCode === 13) {
+  //     historyHandler();
+  //   }
+  // };
+
+  // const searchButtonHandler = () => {
+  //   historyHandler();
+  // };
+
+  // const historyHandler = () => {
+  //   let beforeQuery = `${location.search}`.slice(1);
+  //   console.log(beforeQuery.length);
+  //   let query = `keyword=${searchValue}`;
+  //   console.log(query);
+  //   if (beforeQuery.length === 0) {
+  //     console.log('야기');
+  //     navigate(`/list?${query}`);
+  //   }
+  //   navigate(`/list?${beforeQuery}&${query}`);
+  // };
 
   const layoutVisibleHandler = e => {
     const index = Number(e.target.id);
     const arr = [
       [vis1, setVis1],
-      [vis2, setvis2],
+      [vis2, setVis2],
       [vis3, setVis3],
     ];
     arr[index][0] === 'hidden'
@@ -38,59 +70,9 @@ function List() {
 
   const totalLayourHandler = () => {
     setVis1('hidden');
-    setvis2('hidden');
+    setVis2('hidden');
     setVis3('hidden');
   };
-
-  //총 인원 수 세어주기
-  // 그 값들 백으로 넘길 수 있도록 하기
-
-  function sumPeople() {
-    headCountArr.forEach(data => {
-      totalpeople += data[1];
-    });
-  }
-
-  function stringArray() {
-    let tempStirng = '인원';
-    if (!totalpeople) {
-      firstword = '인원';
-      setHeadCountStr(tempStirng);
-      return;
-    }
-    if (headCountArr[0] === '인원') {
-      firstword = '인원';
-    }
-    headCountArr.forEach(data => {
-      if (data[0] === '성인') {
-        firstword = `성인: ${data[1]}`;
-      }
-
-      if (data[0] === '아동') {
-        secondword = `아동: ${data[1]}`;
-      }
-
-      if (data[0] === '영아') {
-        lastword = `영아: ${data[1]}`;
-      }
-    });
-    let stringarr = [firstword, secondword, lastword];
-
-    stringarr.forEach(data => {
-      if (data) {
-        tempStirng += `${data} `;
-      }
-    });
-
-    let resultString = tempStirng.slice(2);
-    setHeadCountStr(resultString);
-  }
-
-  useEffect(() => {
-    totalpeople = 0;
-    sumPeople();
-    stringArray();
-  });
 
   return (
     <div className={style.listWap}>
@@ -104,8 +86,8 @@ function List() {
           <div>
             <div className={style.searchBar}>
               <p>여행지/숙소</p>
-              <input type="search" />
-              <button>국내전체</button>
+              <input type="search" style={{ paddingLeft: 10 }} />
+              <ListWhereButton />
             </div>
 
             <div className="checkIn">
@@ -122,7 +104,7 @@ function List() {
             </div>
           </div>
           <div className={style.reButton}>
-            <button>
+            <button onClick={gotoListpage}>
               <img
                 className={style.reButtonImg}
                 src="https://user-images.githubusercontent.com/85507868/160820139-6ec16112-30c2-4ec3-b28e-9c9a95f63a06.png"
@@ -149,7 +131,7 @@ function List() {
               visibility: vis1,
             }}
           >
-            <LayOutFirst setHeadCountArr={setHeadCountArr} />
+            <LayOutFirst setHeadCountStr={setHeadCountStr} />
           </div>
           <div>
             <button
@@ -200,7 +182,9 @@ function List() {
       </center>
 
       <section className={style.product}>
+        <div className={style.productBorder} />
         <Products />
+        <div className={style.productBottomBorder} />
       </section>
     </div>
   );

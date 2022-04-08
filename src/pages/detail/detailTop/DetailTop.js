@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import style from './DetailTop.module.css';
 import { FiHeart } from 'react-icons/fi';
 import { FaHeart } from 'react-icons/fa';
+import DormSlide from './DormSlide';
 
-const DetailTop = () => {
+const DetailTop = ({ detail }) => {
   const [isLike, setIsLike] = useState(false);
 
   return (
@@ -12,7 +13,7 @@ const DetailTop = () => {
       <div className={style.calendar}>
         <div className={style.title_container}>
           <div className={style.dormName}>
-            <span className={style.title}>어연스테이</span>
+            <span className={style.title}>{detail.dormitoryName}</span>
             {isLike ? (
               <FiHeart
                 size="20"
@@ -39,7 +40,13 @@ const DetailTop = () => {
         </div>
       </div>
       {/* 숙소 사진 슬라이드 */}
-      <div className={style.dorm_img} />
+      <DormSlide
+        dormitoryName={detail.dormitoryName}
+        images={detail.dormitoryImageUrl}
+        comment={detail.comment}
+        city={detail.city}
+        district={detail.district}
+      />
     </div>
   );
 };

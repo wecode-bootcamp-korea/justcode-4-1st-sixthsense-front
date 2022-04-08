@@ -1,13 +1,9 @@
-.componentWap .productWap {
-  display: flex;
-  margin-top: 100px;
+.componentWap {
   margin-bottom: 40px;
-  border-top: 3px solid black;
-  border-bottom: 1px solid rgb(204, 204, 204);
-  padding-top: 80px;
   padding-bottom: 30px;
 }
 
 .productWap {
-  flex-flow: row wrap;
+  margin: 10px 0 0 -80px;
+  min-width: 1300px;
 }

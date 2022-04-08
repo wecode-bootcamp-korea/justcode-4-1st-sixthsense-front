@@ -16,12 +16,16 @@ function Router() {
     <BrowserRouter>
       <Nav />
       <Routes>
-        <Route path="/main" element={<Main />} />
+        <Route path="/" element={<Main />} />
         <Route path="/list" element={<List />} />
         <Route path="/detail" element={<Detail />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/mypage" element={<MyPage />} />
+        <Route
+          path="/list?catergory=category&search=search"
+          element={<List />}
+        />
       </Routes>
       <Footer />
     </BrowserRouter>

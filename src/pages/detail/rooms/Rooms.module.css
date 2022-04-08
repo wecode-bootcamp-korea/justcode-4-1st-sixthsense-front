@@ -50,6 +50,17 @@
   cursor: pointer;
 }
 
-.whiteBox {
-  width: 50%;
+.white_box {
+  position: absolute;
+  left: 30%;
+  overflow: hidden;
+}
+
+.hiddenCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  height: 500px;
+  width: 100%;
 }

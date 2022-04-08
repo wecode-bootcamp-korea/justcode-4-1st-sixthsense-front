@@ -1,22 +1,59 @@
 import style from './BannerSlideSmall2.module.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function BannerSlideSmall2() {
-  const items = [
-    '/image/house01.jpg',
-    '/image/house02.jpg',
-    '/image/house03.jpg',
-    '/image/house04.jpg',
-    '/image/house05.jpg',
-  ];
-  const itemSize = items.length;
   const transitionTime = 400;
-  const transitionStyle = `transform ${transitionTime}ms ease 0.15s`;
+  const transitionStyle = `transform ${transitionTime}ms ease 0s`;
   const remain = 3; // 슬라이드가 끝나기 전 남아있는 슬라이드 개수
   const [currentIndex, setCurrentIndex] = useState(remain);
   const [slideTransition, setTransition] = useState(transitionStyle);
+  const [items, setItems] = useState([
+    {
+      id: 1,
+      name: '냠냠',
+      imageUrl: ['/image/room01.jpg', '/image/room01.jpg', '/image/room01.jpg'],
+      price: [1, 2],
+    },
+    {
+      id: 1,
+      name: '냠냠',
+      imageUrl: ['/image/room01.jpg', '/image/room01.jpg', '/image/room01.jpg'],
+      price: [1, 2],
+    },
+    {
+      id: 1,
+      name: '냠냠',
+      imageUrl: ['/image/room01.jpg', '/image/room01.jpg', '/image/room01.jpg'],
+      price: [1, 2],
+    },
+    {
+      id: 1,
+      name: '냠냠',
+      imageUrl: ['/image/room01.jpg', '/image/room01.jpg', '/image/room01.jpg'],
+      price: [1, 2],
+    },
+    {
+      id: 1,
+      name: '냠냠',
+      imageUrl: ['/image/room01.jpg', '/image/room01.jpg', '/image/room01.jpg'],
+      price: [1, 2],
+    },
+    {
+      id: 1,
+      name: '냠냠',
+      imageUrl: ['/image/room01.jpg', '/image/room01.jpg', '/image/room01.jpg'],
+      price: [1, 2],
+    },
+  ]);
 
+  const itemSize = items.length;
   let slides = setSlides();
+
+  useEffect(() => {
+    fetch('http://localhost:8000/dormitories', { method: 'GET' })
+      .then(res => res.json())
+      .then(result => setItems(result.data));
+  }, []);
 
   function setSlides() {
     let addedFront = [];
@@ -27,7 +64,14 @@ function BannerSlideSmall2() {
       addedFront.unshift(items[remain]);
       index++;
     }
-    return [...addedFront, ...items, ...addedLast];
+    const temptArr = [...addedFront, ...items, ...addedLast];
+    return replaceIdx(temptArr);
+  }
+
+  function replaceIdx(arr) {
+    arr.splice(0, 3, arr[6], arr[7], arr[8]);
+    arr.splice(9, 3, arr[3], arr[4], arr[5]);
+    return arr;
   }
 
   function replaceSlide(index) {
@@ -99,16 +143,35 @@ function BannerSlideSmall2() {
               {slides.map((slide, slideIndex) => {
                 const itemIndex = getItemIndex(slideIndex);
                 return (
-                  <div key={null} className={style.slide}>
-                    <img
-                      className={style.bannerSlideSmall}
-                      key={null}
-                      src={items[itemIndex]}
-                      alt={`banner${itemIndex}`}
-                    />
+                  <div
+                    key={`${slide.name}+${slideIndex}small2`}
+                    className={style.slide}
+                  >
+                    <div
+                      style={{
+                        width: 390,
+                        height: 280.5,
+                        marginRight: 60,
+                      }}
+                    >
+                      <img
+                        className={style.bannerSlideSmall}
+                        key={`${slide.id}+${slideIndex}small2`}
+                        src={slide.imageUrl[1]}
+                        alt={`banner${itemIndex}`}
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                        }}
+                      />
+                    </div>
                     <section className={style.description}>
-                      <div className={style.name}>온고</div>
-                      <div className={style.location}>강원/춘천시</div>
+                      <div className={style.name}>{slide.name}</div>
+                      <div className={style.location}>
+                        {' '}
+                        {`${slide.city}/${slide.district}`}
+                      </div>
                       <div className={style.secondDescription}>
                         6.8일자 1박2인
                         <br />

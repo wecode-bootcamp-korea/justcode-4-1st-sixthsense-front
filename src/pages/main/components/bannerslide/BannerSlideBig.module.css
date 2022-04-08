@@ -1,0 +1,268 @@
+.sliderArea {
+  position: relative;
+  overflow: hidden;
+  height: auto;
+}
+
+.sliderList {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: -260px;
+}
+
+.sliderList2 {
+  position: relative;
+  overflow: hidden;
+  margin-top: -400px;
+  display: flex;
+  justify-content: center;
+}
+
+.sliderTrack {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+}
+
+.BannerSlideBig {
+  position: relative;
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  /* width: 100%; */
+  width: 1800px;
+  /* max-height: 800px; */
+  /* margin: 0px 40px; */
+}
+
+.wrapper {
+  /* display: flex;
+  justify-content: center; */
+  width: auto;
+  height: auto;
+  /* visibility: translateX(100px); */
+  /* transform: translateX(100px); */
+  /* transform: translate(100px, -210px); */
+  max-width: 1800px;
+  overflow: hidden;
+}
+
+.wrapper2 {
+  /* transform: translateX(100px); */
+  /* transform: translate(100px, -400px); */
+  /* transform: translateY(-200px); */
+  /* height: auto; */
+  padding-bottom: 100px;
+  max-width: 1800px;
+  /* border: 1px solid blue; */
+  overflow: hidden;
+}
+
+.pageCurrentNumber {
+  /* position: absolute; */
+  top: 1048px;
+  left: 103px;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px 5px 31px 22px;
+  font-size: 16px;
+  z-index: 999;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+}
+
+.slash {
+  /* position: absolute; */
+  top: 1048px;
+  left: 148px;
+  color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 15px;
+  z-index: 999;
+  padding: 40px 0 32px 0;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+}
+
+.pageTotalNumber {
+  /* position: absolute; */
+  top: 1048px;
+  left: 154px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 38px 23.7px 31px 4.9px;
+  font-size: 18px;
+  z-index: 999;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+}
+
+.PrevButton {
+  /* position: absolute; */
+  cursor: pointer;
+  top: 1048px;
+  left: 203px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 0;
+  outline: 0;
+  font-size: 25px;
+  z-index: 999;
+  padding: 30px 15px 21px 35px;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+}
+
+.verticalLine {
+  /* position: absolute; */
+  top: 1048px;
+  left: 266px;
+  color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 15px;
+  z-index: 999;
+  padding: 40px 0 32px 0;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+}
+
+.NextButton {
+  /* position: absolute; */
+  cursor: pointer;
+  top: 1048px;
+  left: 270px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 0;
+  outline: 0;
+  font-size: 25px;
+  z-index: 999;
+  padding: 30px 35px 21px 15px;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+}
+
+.pageCurrentNumber2 {
+  /* position: absolute; */
+  top: 798px;
+  left: 103px;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px 5px 40px 22px;
+  font-size: 16px;
+  z-index: 999;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+}
+
+.slash2 {
+  /* position: absolute; */
+  top: 798px;
+  left: 148px;
+  color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 15px;
+  z-index: 999;
+  padding: 40px 0;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+}
+
+.pageTotalNumber2 {
+  /* position: absolute; */
+  top: 798px;
+  left: 154px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 38px 23.7px 38px 4.9px;
+  font-size: 18px;
+  z-index: 999;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+}
+
+.PrevButton2 {
+  /* position: absolute; */
+  cursor: pointer;
+  top: 798px;
+  left: 203px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 0;
+  outline: 0;
+  font-size: 25px;
+  z-index: 999;
+  padding: 30px 15px 30px 35px;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+}
+
+.verticalLine2 {
+  /* position: absolute; */
+  top: 798px;
+  left: 266px;
+  color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 15px;
+  z-index: 999;
+  padding: 40px 0;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+}
+
+.NextButton2 {
+  /* position: absolute; */
+  cursor: pointer;
+  top: 798px;
+  left: 270px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 0;
+  outline: 0;
+  font-size: 25px;
+  z-index: 999;
+  padding: 30px 35px 30px 15px;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+}
+
+.pageAndArrows {
+  margin-left: 0px;
+  display: flex;
+  justify-content: left;
+  margin-top: -100px;
+  /* background-color: rgba(0, 0, 0, 0.6); */
+}
+
+.pageAndArrows2 {
+  margin-left: 0px;
+  display: flex;
+  justify-content: left;
+  margin-top: -87px;
+  /* background-color: rgba(0, 0, 0, 0.6); */
+}

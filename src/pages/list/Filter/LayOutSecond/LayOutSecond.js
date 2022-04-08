@@ -32,9 +32,11 @@ function LayOutSecond({ setTitle }) {
   function putTitle(e) {
     if (lowPrice === 0 && upperPrice === 100) {
       setTitle('가격범위');
+      return;
     }
     if (lowPrice === 0 && upperPrice === 0) {
       setTitle('가격범위');
+      return;
     }
 
     setTitle(`${toLocalprice(lowPrice)} ~ ${toLocalprice(upperPrice)}`);

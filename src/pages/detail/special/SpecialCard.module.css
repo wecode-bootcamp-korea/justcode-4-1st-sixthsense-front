@@ -1,0 +1,27 @@
+.card {
+  width: 23%;
+  padding: 50px 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.contents {
+  padding: 5px;
+}
+
+.card .title {
+  padding: 10px 0;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+}
+
+.description {
+  margin: 10px auto 0px;
+  width: 80%;
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 2px;
+  line-height: 20px;
+  opacity: 80%;
+}

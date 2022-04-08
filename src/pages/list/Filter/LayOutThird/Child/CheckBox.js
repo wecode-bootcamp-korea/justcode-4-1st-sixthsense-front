@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import style from './CheckBox.module.css';
 
 const arr = [];
@@ -5,8 +6,7 @@ const arr = [];
 function CheckBox({ setNames, content, checked, total }) {
   function check(e) {
     checked(e.target.checked);
-
-    if (content !== '전체' && e.target.checked) {
+    if (!arr.includes(content) && content !== '전체' && e.target.checked) {
       arr.push(content);
       setNames(arr);
     }
@@ -16,6 +16,13 @@ function CheckBox({ setNames, content, checked, total }) {
       setNames(arr);
     }
   }
+
+  useEffect(() => {
+    if (!total && arr.length !== 0) {
+      arr.length = 0;
+    }
+  }, [total]);
+
   return total ? (
     <section className={style.checkBoxWap}>
       <input

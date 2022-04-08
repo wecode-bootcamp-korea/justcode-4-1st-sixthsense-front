@@ -12,11 +12,19 @@ function WhereModal({ modalRef, closeModal }) {
       city: '',
     },
   ]);
+
+  const [domestic, setDomestic] = useState([
+    {
+      id: 1,
+      name: '경기',
+    },
+  ]);
+
   useEffect(() => {
-    fetch('/data/countries.json', { method: 'GET' })
+    fetch('http://localhost:8000/dormitories/cities', { method: 'GET' })
       .then(res => res.json())
-      .then(res => setCountries(res));
-  });
+      .then(res => setDomestic(res.data));
+  }, []);
 
   const clicked = e => {
     setSelectCountry(e.currentTarget.innerText);
@@ -54,35 +62,29 @@ function WhereModal({ modalRef, closeModal }) {
           <div className={style.locationWrapper}>
             <p className={style.domOrAbr}>국내</p>
             <ul className={style.cities}>
-              {countries.map(country => {
-                if (country.isDomestic) {
-                  if (country.city === selectCountry) {
-                    return (
-                      <li
-                        className={style.city}
-                        key={country.id}
-                        onClick={clicked}
-                        style={{
-                          background: 'black',
-                          color: 'whitesmoke',
-                          borderRadius: '30px',
-                          boxShadow: '6px 7px 15px 0 rgb(0 0 0 / 30%)',
-                        }}
-                      >
-                        {country.city}
-                      </li>
-                    );
-                  } else {
-                    return (
-                      <li
-                        className={style.city}
-                        key={country.id}
-                        onClick={clicked}
-                      >
-                        {country.city}
-                      </li>
-                    );
-                  }
+              {domestic.map(city => {
+                if (city.name === selectCountry) {
+                  return (
+                    <li
+                      className={style.city}
+                      key={city.id}
+                      onClick={clicked}
+                      style={{
+                        background: 'black',
+                        color: 'whitesmoke',
+                        borderRadius: '30px',
+                        boxShadow: '6px 7px 15px 0 rgb(0 0 0 / 30%)',
+                      }}
+                    >
+                      {city.name}
+                    </li>
+                  );
+                } else {
+                  return (
+                    <li className={style.city} key={city.id} onClick={clicked}>
+                      {city.name}
+                    </li>
+                  );
                 }
               })}
             </ul>
@@ -125,10 +127,7 @@ function WhereModal({ modalRef, closeModal }) {
           </div>
         </div>
         <div className={style.btnWrapper}>
-          <BlackButton
-            className={style.searchBtn}
-            content="search &nbsp; &nbsp; →"
-          />
+          <button className={style.searchBtn}>search &nbsp; &nbsp; →</button>
         </div>
       </div>
     </div>
