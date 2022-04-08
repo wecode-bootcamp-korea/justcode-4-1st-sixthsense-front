@@ -32,7 +32,7 @@
 
 .roomName {
   margin: 20px 0 0 0;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .roomType {
@@ -44,7 +44,8 @@
 
 .capacity {
   margin-top: 20px;
-  font-size: 13px;
+  font-size: 20px;
+  letter-spacing: 2px;
   opacity: 80%;
 }
 
@@ -60,7 +61,7 @@
 
 .button {
   margin-top: 40px;
-  margin-left: 40px;
+  margin-left: 35px;
   padding-bottom: 3px;
   width: 40%;
   font-size: 13px;
