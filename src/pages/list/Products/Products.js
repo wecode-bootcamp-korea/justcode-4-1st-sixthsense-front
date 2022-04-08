@@ -49,6 +49,8 @@ function Products() {
             people={data.headCount[0]}
             price={data.price[0]}
             image={data.imageUrl[1]}
+            dormId={data.id}
+            id={data.id}
           />
         ))}
       </div>

@@ -22,6 +22,23 @@ function Product({
   function goToDetail() {
     navigate('/detail');
   }
+
+  const changeHeartData = id => {
+    let token = sessionStorage.getItem('login-token') || '';
+    fetch('http://localhost:8000/users/heart', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: token,
+      },
+      body: JSON.stringify({
+        dormId: id,
+      }),
+    })
+      .then(res => res.json())
+      .then(res => console.log(res));
+  };
+
   return (
     <section className={style.wapper}>
       <div className={style.name}>{name}</div>
@@ -50,14 +67,20 @@ function Product({
             <FiHeart
               size="20"
               color="lightgray"
-              onClick={() => setIsLike(prev => !prev)}
+              onClick={() => {
+                setIsLike(prev => !prev);
+                changeHeartData(id);
+              }}
               className={style.heart}
             />
           ) : (
             <FaHeart
               size="20"
               color="pink"
-              onClick={() => setIsLike(prev => !prev)}
+              onClick={() => {
+                setIsLike(prev => !prev);
+                changeHeartData(id);
+              }}
               className={style.heart}
             />
           )}
