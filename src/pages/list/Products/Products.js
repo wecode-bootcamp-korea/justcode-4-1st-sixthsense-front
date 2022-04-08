@@ -35,15 +35,29 @@ function Products() {
         setProducts(result.data);
       });
   }, []);
-
   useEffect(() => {
-    fetch(`http://localhost:8000/dormitories/search/${location.search}`, {
-      method: 'GET',
-    })
-      .then(res => res.json())
-      .then(result => {
-        result.searchedDormitories && setProducts(result.searchedDormitories);
-      });
+    if (location.search === '') {
+      fetch('http://localhost:8000/dormitories/', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+        .then(res => res.json())
+        .then(result => {
+          setProducts(result.data);
+        });
+    }
+
+    if (location.search !== '') {
+      fetch(`http://localhost:8000/dormitories/search/${location.search}`, {
+        method: 'GET',
+      })
+        .then(res => res.json())
+        .then(result => {
+          result.searchedDormitories && setProducts(result.searchedDormitories);
+        });
+    }
   }, [location]);
 
   return (

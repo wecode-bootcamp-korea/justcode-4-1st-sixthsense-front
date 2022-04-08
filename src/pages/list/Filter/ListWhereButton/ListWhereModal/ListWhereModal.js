@@ -8,8 +8,8 @@ function ListWhereModal({ setTitle, modalRef, closeModal }) {
   const [countries, setCountries] = useState([
     {
       id: 1,
-      isDomestic: true,
-      city: '',
+      isDomestic: false,
+      city: '베트남',
     },
   ]);
   const [domestic, setDomestic] = useState([
@@ -20,6 +20,7 @@ function ListWhereModal({ setTitle, modalRef, closeModal }) {
   ]);
 
   useEffect(() => {
+    setCountries(mockCountry);
     fetch('http://localhost:8000/dormitories/cities', { method: 'GET' })
       .then(res => res.json())
       .then(result => setDomestic(result.data));
@@ -46,7 +47,7 @@ function ListWhereModal({ setTitle, modalRef, closeModal }) {
       <div
         className={style.modal}
         style={{
-          width: 1200,
+          width: 1300,
           height: 500,
           marginTop: '10%',
           paddingRight: 100,
@@ -158,3 +159,56 @@ function ListWhereModal({ setTitle, modalRef, closeModal }) {
 }
 
 export default ListWhereModal;
+
+const mockCountry = [
+  {
+    id: 1,
+    isDomestic: false,
+    city: '베트남',
+  },
+  {
+    id: 2,
+    isDomestic: false,
+    city: '태국',
+  },
+  {
+    id: 3,
+    isDomestic: false,
+    city: '대만',
+  },
+  {
+    id: 4,
+    isDomestic: false,
+    city: '싱가폴',
+  },
+  {
+    id: 5,
+    isDomestic: false,
+    city: '인도네시아',
+  },
+  {
+    id: 6,
+    isDomestic: false,
+    city: '말레이시아',
+  },
+  {
+    id: 7,
+    isDomestic: false,
+    city: '필리핀',
+  },
+  {
+    id: 8,
+    isDomestic: false,
+    city: '라오스',
+  },
+  {
+    id: 9,
+    isDomestic: false,
+    city: '캄보디아',
+  },
+  {
+    id: 10,
+    isDomestic: false,
+    city: '몰디브',
+  },
+];
