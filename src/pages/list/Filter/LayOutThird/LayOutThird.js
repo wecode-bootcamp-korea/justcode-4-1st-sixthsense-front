@@ -14,7 +14,7 @@ function LayOutThird({ checkBoxTitle, setCheckBoxTitle }) {
     let query = `category=`;
     names.forEach(name => {
       if (name === '펜션') {
-        temptArr.push('pention');
+        temptArr.push('pension');
       }
       if (name === '게스트하우스') {
         temptArr.push('guest');

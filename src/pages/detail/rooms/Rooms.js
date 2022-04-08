@@ -5,20 +5,26 @@ import { IoCaretBackCircle, IoCaretForwardCircle } from 'react-icons/io5';
 
 const Rooms = () => {
   const slideRef = useRef();
-  const slide = [
+  const [slide, setSlide] = useState([
     {
       id: 1,
-      url: 'https://images.unsplash.com/photo-1564078516393-cf04bd966897?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cm9vbXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60',
+      imageUrl:
+        'https://images.unsplash.com/photo-1564078516393-cf04bd966897?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cm9vbXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60',
     },
-    {
-      id: 2,
-      url: 'https://images.unsplash.com/photo-1564078516393-cf04bd966897?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cm9vbXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60',
-    },
-    {
-      id: 3,
-      url: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHJvb218ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60',
-    },
-  ];
+  ]);
+
+  useEffect(() => {
+    fetch('http://localhost:8000/rooms/images', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(res => res.json())
+      .then(result => {
+        setSlide(result.data.splice(0, 3));
+      });
+  }, []);
 
   const [currentRoom, setCurrentRoom] = useState(0);
   const state = (100 / slide.length) * currentRoom;
@@ -60,7 +66,7 @@ const Rooms = () => {
             return (
               <RoomImg
                 className={style.cards}
-                url={el.url}
+                url={el.imageUrl}
                 id={el.id}
                 key={el.id}
                 currentRoom={currentRoom}

@@ -21,6 +21,7 @@
 }
 
 .btnWrapper {
+  position: relative;
   width: 1px;
   padding: 15px 25px;
   background-color: rgba(0, 0, 0, 0.5);
@@ -31,6 +32,16 @@
   padding: 15px 25px;
   background-color: rgba(0, 0, 0, 0.8);
   cursor: pointer;
+}
+
+.back {
+  position: relative;
+  right: 12px;
+}
+
+.forward {
+  position: relative;
+  right: 5px;
 }
 
 .prevBtn {
@@ -58,7 +69,7 @@
 
 .quote {
   margin: 0 180px 0 30px;
-  font-size: 20px;
+  font-size: 15px;
   color: white;
 }
 
@@ -82,7 +93,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 80px;
   height: 100%;
   border-left: 1px solid rgba(255, 255, 255, 0.4);
   color: white;
@@ -96,7 +106,8 @@
 }
 
 .location {
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 300px;
+  margin-left: 1px;
   color: gray;
 }
