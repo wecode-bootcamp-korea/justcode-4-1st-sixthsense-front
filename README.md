@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# 스테이 포레스트
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduce
 
-## Available Scripts
+- 스테이폴리오 클론코딩 프로젝트
 
-In the project directory, you can run:
+> 클론코딩: 개발에만 집중할 수 있도록 기존 웹의 기획과 디자인을 참고하여 하나의 사이트를 완성해보는 프로젝트
 
-### `npm start`
+- [프론트 깃헙](https://github.com/wecode-bootcamp-korea/justcode-4-1st-sixthsense-front)
+- [백 깃헙](https://github.com/wecode-bootcamp-korea/justcode-4-1st-sixthsense-back)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 개발 기간 및 인원
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- 개발 기간: 2022/03/28 ~ 2022/04/08 (2주)
+- 개발 인원: Fullstack 5명( [김수빈](https://velog.io/@shorrysorry), [유다송](https://velog.io/@sonaki0811), [이정민](https://velog.io/@jml22), [임근홍](https://velog.io/@xcc629), [전하은](https://velog.io/@hani2525))
 
-### `npm test`
+## DEMO
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<<갑자기 서버가 안열려서 혹시 열리시는 분이 메인화면 캡쳐 한번만 부탁드립니당>>
 
-### `npm run build`
+## TECH
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Front-End: React, React hook, React-Router-Dom, Sass,
+- Back-End: Express, Prisma, Mysql
+- 라이브러리: React-icons, moment.js
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 구현 기능
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<<각자 하신거 써주세용>>
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- useState로 버튼 title 관리 및 query parameter로 사용자의 선택에 부합하는 숙소 List GET 해오기.
