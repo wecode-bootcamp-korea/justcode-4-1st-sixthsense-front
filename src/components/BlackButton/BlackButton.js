@@ -1,4 +1,4 @@
-function BlackButton({ content }) {
+function BlackButton({ content, onClick }) {
   const styles = {
     margin: 'auto',
     border: 'none',
@@ -12,6 +12,10 @@ function BlackButton({ content }) {
     color: 'whitesmoke',
   };
 
-  return <button style={styles}>{content}</button>;
+  return (
+    <button style={styles} onClick={onClick}>
+      {content}
+    </button>
+  );
 }
 export default BlackButton;

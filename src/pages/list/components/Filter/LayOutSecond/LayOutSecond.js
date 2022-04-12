@@ -1,18 +1,15 @@
 import { useState } from 'react';
-
 import SmallModal from '../SmallModal/SmallModal';
 import RangeSlider from './Child/RangeSlider';
 import PriceRange from './Child/PriceRange';
-
-let lowPrice = 0;
-let upperPrice = 0;
-let symbol = '만원';
+import BlackButton from '../../../../../components/BlackButton/BlackButton';
 
 function LayOutSecond({ setTitle }) {
   const [leftPercent, setLeftPercent] = useState(0);
   const [rightPercent, setrightPercent] = useState(50);
-  lowPrice = leftPercent > -1 && Math.floor(leftPercent);
-  upperPrice = rightPercent > -1 && Math.floor(rightPercent);
+  const lowPrice = leftPercent > -1 && Math.floor(leftPercent);
+  const upperPrice = rightPercent > -1 && Math.floor(rightPercent);
+  let symbol = '만원';
 
   if (rightPercent === 100) {
     symbol = '만원 ~';
@@ -34,11 +31,10 @@ function LayOutSecond({ setTitle }) {
       setTitle('가격범위');
       return;
     }
-    if (lowPrice === 0 && upperPrice === 0) {
-      setTitle('가격범위');
+    if (upperPrice === 100) {
+      setTitle(`${toLocalprice(lowPrice)} ~`);
       return;
     }
-
     setTitle(`${toLocalprice(lowPrice)} ~ ${toLocalprice(upperPrice)}`);
   }
 
@@ -73,30 +69,16 @@ function LayOutSecond({ setTitle }) {
         <div style={{ marginRight: 0, padding: 5, paddingTop: 40 }}> - </div>
         <PriceRange title="최고요금" price={upperPrice} symbol={symbol} />
       </div>
-      <button
-        style={styles}
+
+      <BlackButton
+        content="적용하기"
         onClick={e => {
           putTitle(e);
           closeModal(e);
         }}
-      >
-        적용하기
-      </button>
+      />
     </section>
   );
 }
 
 export default LayOutSecond;
-
-const styles = {
-  margin: 'auto',
-  border: 'none',
-  borderRadius: 50,
-  paddingTop: 10,
-  paddingRight: 53,
-  paddingBottom: 10,
-  paddingLeft: 53,
-  width: 'max-content',
-  backgroundColor: 'black',
-  color: 'whitesmoke',
-};

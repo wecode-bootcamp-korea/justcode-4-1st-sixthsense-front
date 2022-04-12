@@ -2,11 +2,11 @@ import React from 'react';
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-import ListWhereButton from './Filter/ListWhereButton/ListWhereButton';
-import LayOutFirst from './Filter/LayOutFirst/LayOutFirst';
-import LayOutSecond from './Filter//LayOutSecond/LayOutSecond';
-import LayOutThird from './Filter//LayOutThird/LayOutThird';
-import Products from './Products/Products';
+import ListWhereButton from './components/Filter/ListWhereButton/ListWhereButton';
+import LayOutFirst from './components/Filter/LayOutFirst/LayOutFirst';
+import LayOutSecond from './components/Filter/LayOutSecond/LayOutSecond';
+import LayOutThird from './components/Filter/LayOutThird/LayOutThird';
+import Products from './components/Products/Products';
 
 import style from '../list/List.module.css';
 

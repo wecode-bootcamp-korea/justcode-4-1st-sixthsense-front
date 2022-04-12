@@ -1,69 +1,36 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import SmallModal from '../SmallModal/SmallModal';
 import SmallModalFirstLayout from './Child/SubLayoutFirst';
+import BlackButton from '../../../../../components/BlackButton/BlackButton';
 
-const peopleObj = {};
+const peopleObj = { 성인: 0, 아동: 0, 영아: 0 };
 let totalpeople = 0;
-let firstword = '';
-let secondword = '';
-let lastword = '';
 
 function LayOutFirst({ setHeadCountStr }) {
   const [people, setPeople] = useState({});
-  const [headCountArr, setHeadCountArr] = useState([]);
 
   useEffect(() => {
     Object.assign(peopleObj, people);
   }, [people]);
 
-  useEffect(() => {
+  function onClickHandler() {
     totalpeople = 0;
     sumPeople();
     stringArray();
-  });
+  }
 
   function sumPeople() {
-    headCountArr.forEach(data => {
-      totalpeople += data[1];
-    });
+    totalpeople += peopleObj['성인'] + peopleObj['아동'] + peopleObj['영아'];
   }
 
   function stringArray() {
-    let tempStirng = '';
     if (!totalpeople) {
       setHeadCountStr('인원');
       return;
     }
-
-    headCountArr.forEach(data => {
-      if (data[0] === '성인') {
-        firstword = `성인: ${data[1]},`;
-      }
-      if (data[0] === '아동') {
-        secondword = `아동: ${data[1]},`;
-      }
-      if (data[0] === '영아') {
-        lastword = `영아: ${data[1]}`;
-      }
-    });
-    let stringarr = [firstword, secondword, lastword];
-    if (stringarr[0] === '') {
-      firstword = `성인: 0,`;
-    }
-    if (stringarr[1] === '') {
-      secondword = `아동: 0,`;
-    }
-    stringarr.forEach(data => {
-      tempStirng += `${data} `;
-    });
-    setHeadCountStr(tempStirng);
-  }
-
-  function putObj(e) {
-    e.preventDefault();
-    const peopleArr = Object.entries(peopleObj);
-    setHeadCountArr(peopleArr);
+    setHeadCountStr(
+      `성인: ${peopleObj['성인']}, 아동: ${peopleObj['아동']}, 영아: ${peopleObj['영아']}`
+    );
   }
 
   function closeModal(e) {
@@ -95,16 +62,13 @@ function LayOutFirst({ setHeadCountStr }) {
             setPeople={setPeople}
           />
         ))}
-        <button
-          style={styles}
+        <BlackButton
+          content="적용하기"
           onClick={e => {
-            putObj(e);
-            stringArray();
+            onClickHandler();
             closeModal(e);
           }}
-        >
-          적용하기
-        </button>
+        />
       </section>
     </section>
   );
