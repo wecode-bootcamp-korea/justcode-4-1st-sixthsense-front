@@ -4,14 +4,10 @@ import SmallModal from '../SmallModal/SmallModal';
 import CheckBox from './Child/CheckBox';
 import BlackButton from '../../../../../components/BlackButton/BlackButton';
 
-function LayOutThird({ checkBoxTitle, setCheckBoxTitle }) {
+function LayOutThird({ setCheckBoxTitle, onHidden }) {
   const navigate = useNavigate();
   const [totalCheck, setTotalCheck] = useState(false);
-  const [names, setNames] = useState(
-    Array(mokDataCategorie.length).fill(
-      mokDataCategori)
-    )
-  );
+  const [checkedCategoriesArr, setcheckedCategoriesArr] = useState([]);
   const [checks, setChecks] = useState(
     Array(mokDataCategorie.length).fill(false)
   );
@@ -29,17 +25,18 @@ function LayOutThird({ checkBoxTitle, setCheckBoxTitle }) {
     });
   };
 
-  console.log(names);
-  // const showChecks = () => {
-  //   checks.forEach((data, index) => {
-  //     console.log(index, data);
-  //     data && setNames(prev => {[mokDataCategorie[index].name]);
-  //   });
-  // };
+  const checkedCatogories = () => {
+    const temptArr = [];
+    !totalCheck &&
+      checks.forEach((data, index) => {
+        data && temptArr.push(mokDataCategorie[index].name);
+      });
+    setcheckedCategoriesArr(temptArr);
+  };
 
   function historyHandler() {
     let query = `category=`;
-    names.forEach(name => {
+    checkedCategoriesArr.forEach(name => {
       if (name === '펜션') {
         query += 'pension,';
       }
@@ -47,60 +44,35 @@ function LayOutThird({ checkBoxTitle, setCheckBoxTitle }) {
         query += 'guest,';
       }
       if (name === '호텔') {
-        query += 'hotel, ';
+        query += 'hotel,';
       }
       if (name === '렌탈 하우스') {
-        query += 'rental, ';
+        query += 'rental,';
       }
     });
-
-    console.log(query);
     navigate(`/list?${query}`);
   }
 
-  // function changetitle() {
-  //   if (names.length === 0) {
-  //     setCheckBoxTitle('스테이 유형');
-  //   }
-  //   if (names.length > 1) {
-  //     setCheckBoxTitle(`${names[0]}외 ${names.length - 1}`);
-  //   }
-  //   if (names.length === 1) {
-  //     setCheckBoxTitle(`${names[0]}`);
-  //   }
-  // }
-
-  // function resetTitle() {
-  //   if (totalCheck) {
-  //     setCheckBoxTitle('전체');
-  //     return;
-  //   }
-
-  //   if (!totalCheck) {
-  //     setCheckBoxTitle('-');
-  //   }
-  // }
-
-  // function resetNames() {
-  //   setNames([]);
-  // }
-  // useEffect(() => {
-  //   resetNames();
-  // }, [totalCheck]);
-
-  // useEffect(() => {
-  //   setCheckBoxTitle('스테이 유형');
-  // }, []);
-
-  function closeModal(e) {
-    const parentStyleVisible =
-      e.target.parentElement.parentElement.style.visibility;
-    let judge = false;
-    if (parentStyleVisible === 'visible') {
-      judge = true;
+  function changetitle() {
+    if (checkedCategoriesArr.length === 0) {
+      setCheckBoxTitle('스테이 유형');
     }
-    e.target.parentElement.parentElement.style.visibility = judge && 'hidden';
+    if (checkedCategoriesArr.length > 1) {
+      setCheckBoxTitle(
+        `${checkedCategoriesArr[0]}외 ${checkedCategoriesArr.length - 1}`
+      );
+    }
+    if (checkedCategoriesArr.length === 1) {
+      setCheckBoxTitle(`${checkedCategoriesArr[0]}`);
+    }
   }
+
+  function resetcheckedCategoriesArr() {
+    setcheckedCategoriesArr([]);
+  }
+  useEffect(() => {
+    checkedCatogories();
+  }, [checks]);
 
   return (
     <section>
@@ -108,11 +80,11 @@ function LayOutThird({ checkBoxTitle, setCheckBoxTitle }) {
       <BlackButton
         content="적용하기"
         onClick={e => {
-          // showChecks();
-          // resetNames();
-          // changetitle();
-          closeModal(e);
+          checkedCatogories();
+          changetitle();
+          onHidden('hidden');
           historyHandler();
+          resetcheckedCategoriesArr();
         }}
       />
       <section style={{ marginTop: 20 }}>
@@ -120,7 +92,7 @@ function LayOutThird({ checkBoxTitle, setCheckBoxTitle }) {
         {mokDataCategorie.map((data, index) => (
           <CheckBox
             key={data.id}
-            setNames={setNames}
+            setcheckedCategoriesArr={setcheckedCategoriesArr}
             content={data.name}
             checked={checks[index]}
             onChecked={() => individualCheck(index)}

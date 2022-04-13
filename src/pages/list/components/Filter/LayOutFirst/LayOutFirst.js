@@ -6,7 +6,7 @@ import BlackButton from '../../../../../components/BlackButton/BlackButton';
 const peopleObj = { 성인: 0, 아동: 0, 영아: 0 };
 let totalpeople = 0;
 
-function LayOutFirst({ setHeadCountStr }) {
+function LayOutFirst({ setHeadCountStr, onHidden }) {
   const [people, setPeople] = useState({});
 
   useEffect(() => {
@@ -32,18 +32,6 @@ function LayOutFirst({ setHeadCountStr }) {
       `성인: ${peopleObj['성인']}, 아동: ${peopleObj['아동']}, 영아: ${peopleObj['영아']}`
     );
   }
-
-  function closeModal(e) {
-    const parentStyleVisible =
-      e.target.parentElement.parentElement.parentElement.style.visibility;
-    let judge = false;
-    if (parentStyleVisible === 'visible') {
-      judge = true;
-    }
-    e.target.parentElement.parentElement.parentElement.style.visibility =
-      judge && 'hidden';
-  }
-
   return (
     <section>
       <SmallModal title="인원" />
@@ -64,9 +52,9 @@ function LayOutFirst({ setHeadCountStr }) {
         ))}
         <BlackButton
           content="적용하기"
-          onClick={e => {
+          onClick={() => {
             onClickHandler();
-            closeModal(e);
+            onHidden('hidden');
           }}
         />
       </section>

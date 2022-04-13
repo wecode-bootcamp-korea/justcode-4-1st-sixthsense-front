@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import ListWhereButton from './components/Filter/ListWhereButton/ListWhereButton';
 import LayOutFirst from './components/Filter/LayOutFirst/LayOutFirst';
@@ -12,7 +12,6 @@ import style from '../list/List.module.css';
 
 function List() {
   const navigate = useNavigate();
-  // const location = useLocation();
   //하위 창 open & close 관리 state
   const [vis1, setVis1] = useState('hidden');
   const [vis2, setVis2] = useState('hidden');
@@ -24,37 +23,10 @@ function List() {
   //창 3 state
   const [checkBoxTitle, setCheckBoxTitle] = useState('스테이 유형');
   //검색(추가구현)
-  // const [searchValue, setSearchValue] = useState('');
 
   const gotoListpage = () => {
     navigate('/list');
   };
-
-  // const searchValueHandler = e => {
-  //   setSearchValue(e.target.value);
-  // };
-
-  // const enterHandler = e => {
-  //   if (e.keyCode === 13) {
-  //     historyHandler();
-  //   }
-  // };
-
-  // const searchButtonHandler = () => {
-  //   historyHandler();
-  // };
-
-  // const historyHandler = () => {
-  //   let beforeQuery = `${location.search}`.slice(1);
-  //   console.log(beforeQuery.length);
-  //   let query = `keyword=${searchValue}`;
-  //   console.log(query);
-  //   if (beforeQuery.length === 0) {
-  //     console.log('야기');
-  //     navigate(`/list?${query}`);
-  //   }
-  //   navigate(`/list?${beforeQuery}&${query}`);
-  // };
 
   const layoutVisibleHandler = e => {
     const index = Number(e.target.id);
@@ -131,7 +103,7 @@ function List() {
               visibility: vis1,
             }}
           >
-            <LayOutFirst setHeadCountStr={setHeadCountStr} />
+            <LayOutFirst setHeadCountStr={setHeadCountStr} onHidden={setVis1} />
           </div>
           <div>
             <button
@@ -150,7 +122,7 @@ function List() {
               visibility: vis2,
             }}
           >
-            <LayOutSecond setTitle={setTitle} />
+            <LayOutSecond setTitle={setTitle} onHidden={setVis2} />
           </div>
           <div>
             <button
@@ -170,8 +142,8 @@ function List() {
             }}
           >
             <LayOutThird
-              checkBoxTitle={checkBoxTitle}
               setCheckBoxTitle={setCheckBoxTitle}
+              onHidden={setVis3}
             />
           </div>
         </div>

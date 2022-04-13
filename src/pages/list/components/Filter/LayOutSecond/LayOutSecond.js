@@ -4,7 +4,7 @@ import RangeSlider from './Child/RangeSlider';
 import PriceRange from './Child/PriceRange';
 import BlackButton from '../../../../../components/BlackButton/BlackButton';
 
-function LayOutSecond({ setTitle }) {
+function LayOutSecond({ setTitle, onHidden }) {
   const [leftPercent, setLeftPercent] = useState(0);
   const [rightPercent, setrightPercent] = useState(50);
   const lowPrice = leftPercent > -1 && Math.floor(leftPercent);
@@ -38,16 +38,6 @@ function LayOutSecond({ setTitle }) {
     setTitle(`${toLocalprice(lowPrice)} ~ ${toLocalprice(upperPrice)}`);
   }
 
-  function closeModal(e) {
-    const parentStyleVisible =
-      e.target.parentElement.parentElement.style.visibility;
-    let judge = false;
-    if (parentStyleVisible === 'visible') {
-      judge = true;
-    }
-    e.target.parentElement.parentElement.style.visibility = judge && 'hidden';
-  }
-
   return (
     <section
       style={{ display: 'flex', flexDirection: 'column', marginBottom: 10 }}
@@ -74,7 +64,7 @@ function LayOutSecond({ setTitle }) {
         content="적용하기"
         onClick={e => {
           putTitle(e);
-          closeModal(e);
+          onHidden('hidden');
         }}
       />
     </section>
