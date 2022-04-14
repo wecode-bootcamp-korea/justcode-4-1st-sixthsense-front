@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import RoomImg from './roomImg/RoomImg';
 import style from './Rooms.module.css';
 import { IoCaretBackCircle, IoCaretForwardCircle } from 'react-icons/io5';
+import BASE_URL from '../../../config';
 
 const Rooms = () => {
   const slideRef = useRef();
@@ -14,7 +15,7 @@ const Rooms = () => {
   ]);
 
   useEffect(() => {
-    fetch('http://localhost:8000/rooms/images', {
+    fetch(`${BASE_URL}/rooms/images`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

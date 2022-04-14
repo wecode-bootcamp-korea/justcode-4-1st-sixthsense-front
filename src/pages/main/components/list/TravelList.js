@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import BASE_URL from '../../../../config';
 import style from './TravelList.module.css';
 
 function TravelList() {
@@ -37,7 +38,7 @@ function TravelList() {
   ]);
 
   useEffect(() => {
-    fetch('http://localhost:8000/dormitories', { method: 'GET' })
+    fetch(`${BASE_URL}/dormitories`, { method: 'GET' })
       .then(res => res.json())
       .then(result => setContents(result.data));
   }, []);

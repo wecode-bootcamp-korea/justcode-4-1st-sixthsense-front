@@ -7,6 +7,7 @@ import Special from './special/Special';
 import Location from './location/Location';
 import Places from './places/Places';
 import FAQ from './faq/FAQ';
+import BASE_URL from '../../config';
 
 function Detail() {
   const [detail, setDetail] = useState({
@@ -40,7 +41,7 @@ function Detail() {
   });
 
   useEffect(() => {
-    fetch('http://localhost:8000/dormitories/2', {
+    fetch(`${BASE_URL}/dormitories/2`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

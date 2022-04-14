@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import BASE_URL from '../../../../config';
 import style from './BannerSlideMedium.module.css';
 
 function BannerSliderMedium() {
@@ -19,7 +20,7 @@ function BannerSliderMedium() {
   ]);
 
   useEffect(() => {
-    fetch('http://localhost:8000/dormitories', { method: 'GET' })
+    fetch(`${BASE_URL}/dormitories`, { method: 'GET' })
       .then(res => res.json())
       .then(result => {
         setSlide(result.data);

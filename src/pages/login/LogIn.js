@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import style from './LogIn.module.css';
 import { Link } from 'react-router-dom';
+import BASE_URL from '../../config';
+import style from './LogIn.module.css';
 
 function LogIn() {
   const [email, setEmail] = useState(null);
@@ -15,7 +16,7 @@ function LogIn() {
   };
 
   const onLogin = () => {
-    fetch('http://localhost:8000/users/login', {
+    fetch(`${BASE_URL}/users/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -28,7 +29,6 @@ function LogIn() {
       .then(res => res.json())
       .then(res => {
         if (res.token) {
-          console.log(res.token);
           sessionStorage.setItem('login-token', res.token);
         }
       });
@@ -36,7 +36,7 @@ function LogIn() {
 
   const checkAuthorization = () => {
     let token = sessionStorage.getItem('login-token') || '';
-    fetch('http://localhost:8000/users/test', {
+    fetch(`${BASE_URL}/users/test`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

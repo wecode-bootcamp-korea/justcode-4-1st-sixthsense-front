@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
+import BASE_URL from '../../../../../../config';
 
 import style from './ListWhereModal.module.css';
 
@@ -21,7 +22,7 @@ function ListWhereModal({ setTitle, modalRef, closeModal }) {
 
   useEffect(() => {
     setCountries(mockCountry);
-    fetch('http://localhost:8000/dormitories/cities', { method: 'GET' })
+    fetch(`${BASE_URL}/dormitories/cities`, { method: 'GET' })
       .then(res => res.json())
       .then(result => setDomestic(result.data));
   }, []);

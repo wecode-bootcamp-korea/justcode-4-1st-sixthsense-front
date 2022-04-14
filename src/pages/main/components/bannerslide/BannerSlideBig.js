@@ -1,10 +1,11 @@
-import style from './BannerSlideBig.module.css';
 import React, { useState, useEffect } from 'react';
+import BASE_URL from '../../../../config';
+import style from './BannerSlideBig.module.css';
 
 function BannerSlideBig(props) {
   const [items, setItems] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:8000/dormitories/images', {
+    fetch(`${BASE_URL}/dormitories/images`, {
       method: 'GET',
     })
       .then(res => res.json())
