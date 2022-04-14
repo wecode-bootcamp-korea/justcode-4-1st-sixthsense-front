@@ -3,6 +3,7 @@
   width: 100%;
   height: 80px;
   position: fixed;
+  top: 0;
   display: flex;
   z-index: 9999;
   justify-content: center;
