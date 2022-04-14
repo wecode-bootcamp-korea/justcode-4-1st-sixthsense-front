@@ -1,0 +1,9 @@
+.placesWrapper {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.placesList {
+  display: flex;
+  justify-content: center;
+}

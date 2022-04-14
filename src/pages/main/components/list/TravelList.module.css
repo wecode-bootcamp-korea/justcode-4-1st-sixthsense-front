@@ -1,0 +1,51 @@
+.travelList {
+  display: flex;
+  justify-content: center;
+}
+.travelText {
+  text-align: center;
+  letter-spacing: 8px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.gridWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.contentsWrapper {
+  width: 380px;
+  margin: 40px 20px;
+}
+.img {
+  width: 380px;
+  height: 380px;
+  object-fit: cover;
+}
+.textSection {
+  margin-top: 30px;
+}
+.textTitle {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.textPlace {
+  font-size: 15px;
+  margin-bottom: 40px;
+}
+.readMore {
+  display: inline-block;
+  position: relative;
+  font-size: 12px;
+  padding-bottom: 7px;
+}
+.readMore::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 0.1px;
+  background: black;
+}
