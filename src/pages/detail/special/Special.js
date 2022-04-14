@@ -12,9 +12,9 @@ const Special = ({ detail }) => {
         <h1>SPECIAL</h1>
       </div>
       <div className={style.cardWrapper}>
-        <SpecialCard title={title[0]} des={des[0]} />
-        <SpecialCard title={title[1]} des={des[1]} />
-        <SpecialCard title={title[2]} des={des[2]} />
+        {title.map((title, idx) => {
+          return <SpecialCard title={title} des={des[idx]} key={idx} />;
+        })}
       </div>
     </div>
   );
