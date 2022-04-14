@@ -9,13 +9,18 @@ import WhenModal from '../whenModal/WhenModal';
 
 function Nav() {
   const [modalActive, setModalActive] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
   const modalWhereRef = useRef();
   const modalWhenRef = useRef();
 
   const openModal = e => {
     e.currentTarget.id === 'modal1' ? setModalActive(1) : setModalActive(2);
+    setScrollY(window.pageYOffset);
   };
-  const closeModal = () => setModalActive(0);
+  const closeModal = () => {
+    setModalActive(0);
+    setScrollY(0);
+  };
 
   // 모달 ON/OFF 상태 관리
   useEffect(() => {
@@ -33,8 +38,8 @@ function Nav() {
   useEffect(() => {
     if (modalActive) {
       document.body.style.cssText = `
+        top: -${scrollY}px;
         position: fixed; 
-        top: -${window.scrollY}px;
         width: 100%;`;
     }
     return () => {
@@ -42,7 +47,7 @@ function Nav() {
       document.body.style.cssText = '';
       window.scrollTo(0, parseInt(scrollY || '0') * -1);
     };
-  }, [modalActive]);
+  }, [modalActive, scrollY]);
 
   return (
     <>
