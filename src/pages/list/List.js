@@ -2,11 +2,11 @@ import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import ListWhereButton from './Filter/ListWhereButton/ListWhereButton';
-import LayOutFirst from './Filter/LayOutFirst/LayOutFirst';
-import LayOutSecond from './Filter//LayOutSecond/LayOutSecond';
-import LayOutThird from './Filter//LayOutThird/LayOutThird';
-import Products from './Products/Products';
+import ListWhereButton from './components/Filter/ListWhereButton/ListWhereButton';
+import LayOutFirst from './components/Filter/LayOutFirst/LayOutFirst';
+import LayOutSecond from './components/Filter/LayOutSecond/LayOutSecond';
+import LayOutThird from './components/Filter/LayOutThird/LayOutThird';
+import Products from './components/Products/Products';
 
 import style from '../list/List.module.css';
 
@@ -22,6 +22,7 @@ function List() {
   const [title, setTitle] = useState('가격범위');
   //창 3 state
   const [checkBoxTitle, setCheckBoxTitle] = useState('스테이 유형');
+  //검색(추가구현)
 
   const gotoListpage = () => {
     navigate('/list');
@@ -57,7 +58,7 @@ function List() {
           <div>
             <div className={style.searchBar}>
               <p>여행지/숙소</p>
-              <input type="search" />
+              <input type="search" style={{ paddingLeft: 10 }} />
               <ListWhereButton />
             </div>
 
@@ -102,7 +103,7 @@ function List() {
               visibility: vis1,
             }}
           >
-            <LayOutFirst setHeadCountStr={setHeadCountStr} />
+            <LayOutFirst setHeadCountStr={setHeadCountStr} onHidden={setVis1} />
           </div>
           <div>
             <button
@@ -121,7 +122,7 @@ function List() {
               visibility: vis2,
             }}
           >
-            <LayOutSecond setTitle={setTitle} />
+            <LayOutSecond setTitle={setTitle} onHidden={setVis2} />
           </div>
           <div>
             <button
@@ -141,8 +142,8 @@ function List() {
             }}
           >
             <LayOutThird
-              checkBoxTitle={checkBoxTitle}
               setCheckBoxTitle={setCheckBoxTitle}
+              onHidden={setVis3}
             />
           </div>
         </div>

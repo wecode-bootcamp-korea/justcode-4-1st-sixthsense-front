@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Product from './Product/Product';
 
 import style from './Products.module.css';
 
 function Products() {
+  const location = useLocation();
   const [products, setProducts] = useState([
     {
       id: 1,
@@ -30,10 +32,33 @@ function Products() {
     })
       .then(res => res.json())
       .then(result => {
-        console.log(products);
         setProducts(result.data);
       });
   }, []);
+  useEffect(() => {
+    if (location.search === '') {
+      fetch('http://localhost:8000/dormitories/', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+        .then(res => res.json())
+        .then(result => {
+          setProducts(result.data);
+        });
+    }
+
+    if (location.search !== '') {
+      fetch(`http://localhost:8000/dormitories/search/${location.search}`, {
+        method: 'GET',
+      })
+        .then(res => res.json())
+        .then(result => {
+          result.searchedDormitories && setProducts(result.searchedDormitories);
+        });
+    }
+  }, [location]);
 
   return (
     <section className={style.componentWap}>

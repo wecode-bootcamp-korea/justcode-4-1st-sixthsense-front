@@ -41,7 +41,7 @@ p {
   flex-direction: column;
 }
 
-a {
+.blogLink {
   text-decoration: none;
   color: black;
 }
