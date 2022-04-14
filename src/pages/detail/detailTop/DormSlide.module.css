@@ -60,7 +60,7 @@
   display: flex;
   align-items: center;
   position: absolute;
-  margin-left: 20%;
+  margin-left: 25%;
   bottom: 0px;
   width: 50%;
   height: 80px;
@@ -68,7 +68,7 @@
 }
 
 .quote {
-  margin: 0 180px 0 30px;
+  margin: 0 100px 0 30px;
   font-size: 15px;
   color: white;
 }
@@ -96,7 +96,7 @@
   justify-content: center;
   height: 100%;
   border-left: 1px solid rgba(255, 255, 255, 0.4);
-  padding-left: 50px;
+  padding-left: 100px;
   color: white;
   text-align: center;
   line-height: 20px;
