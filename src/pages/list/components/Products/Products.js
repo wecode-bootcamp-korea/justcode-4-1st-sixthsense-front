@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Product from './Product/Product';
+import BASE_URL from '../../../../config';
 
 import style from './Products.module.css';
 
@@ -24,7 +25,7 @@ function Products() {
     },
   ]);
   useEffect(() => {
-    fetch('http://localhost:8000/dormitories/', {
+    fetch(`${BASE_URL}/dormitories/`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -37,7 +38,7 @@ function Products() {
   }, []);
   useEffect(() => {
     if (location.search === '') {
-      fetch('http://localhost:8000/dormitories/', {
+      fetch(`${BASE_URL}/dormitories/`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -50,7 +51,7 @@ function Products() {
     }
 
     if (location.search !== '') {
-      fetch(`http://localhost:8000/dormitories/search/${location.search}`, {
+      fetch(`${BASE_URL}/dormitories/search/${location.search}`, {
         method: 'GET',
       })
         .then(res => res.json())

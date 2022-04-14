@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import BASE_URL from '../../../../config';
 import style from './HashtagList.module.css';
 
 function HashtagList() {
@@ -37,7 +38,7 @@ function HashtagList() {
   ]);
 
   useEffect(() => {
-    fetch('http://localhost:8000/rooms/images', { method: 'GET' })
+    fetch(`${BASE_URL}/rooms/images`, { method: 'GET' })
       .then(res => res.json())
       .then(result => setContents(result.data));
   }, []);

@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import style from './SignUp.module.css';
-import { IoIosArrowDown } from 'react-icons/io';
 import CountryCode from './CountryCodes';
 import PrivateAgree1 from './PrivateAgree1';
 import PrivateAgree2 from './PrivateAgree2';
 import PrivateAgree3 from './PrivateAgree3';
 import PrivateAgree4 from './PrivateAgree4';
 import PrivateAgree5 from './PrivateAgree5';
+import { IoIosArrowDown } from 'react-icons/io';
+import BASE_URL from '../../config';
+import style from './SignUp.module.css';
 
 function SignUp() {
   const onSignup = () => {
-    fetch('http://localhost:8000/users/signup', {
+    fetch(`${BASE_URL}/users/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -1,5 +1,6 @@
-import style from './BannerSlideSmall1.module.css';
 import React, { useState, useEffect } from 'react';
+import BASE_URL from '../../../../config';
+import style from './BannerSlideSmall1.module.css';
 
 function BannerSlideSmall1(props) {
   const transitionTime = 400;
@@ -49,7 +50,7 @@ function BannerSlideSmall1(props) {
   let slides = setSlides();
 
   useEffect(() => {
-    fetch('http://localhost:8000/dormitories', { method: 'GET' })
+    fetch(`${BASE_URL}/dormitories`, { method: 'GET' })
       .then(res => res.json())
       .then(result => setItems(result.data));
   }, []);

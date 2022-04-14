@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FiHeart } from 'react-icons/fi';
 import { FaHeart } from 'react-icons/fa';
+import BASE_URL from '../../../../../config';
 
 import style from './Product.module.css';
 
@@ -25,7 +26,7 @@ function Product({
 
   const changeHeartData = id => {
     let token = sessionStorage.getItem('login-token') || '';
-    fetch('http://localhost:8000/users/heart', {
+    fetch(`${BASE_URL}/users/heart`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
