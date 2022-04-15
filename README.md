@@ -20,9 +20,25 @@
 
 ## 3. DEMO
 
+<br>
+
+- 프론트
+
+---
+
+<br>
+
 [![스테이포레스트 데모](https://img.youtube.com/vi/WkTQ5fGVEXw/0.jpg)](https://www.youtube.com/watch?v=WkTQ5fGVEXw&feature=youtu.be)
 
 - 이미지 클릭시 스테이포레스트 시연 영상을 보실 수 있습니다.
+
+<br>
+
+- 백엔드
+
+---
+
+[식스센스 백엔드 API 문서](https://documenter.getpostman.com/view/20004181/Uyr4Lfof)
 
 <br>
 
